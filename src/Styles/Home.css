@@ -1,0 +1,59 @@
+.hero-sect-container {
+    @apply w-full h-screen relative
+}
+
+/* .hero-slide-container{
+    @apply hidden opacity-0
+} */
+
+.hero-slide-container.active{
+    @apply block opacity-100
+}
+
+.hero-overlay {
+    @apply absolute top-0 h-screen w-full bg-grey bg-opacity-20
+}
+
+.hero-slide-container {
+    @apply   transition-transform duration-500 ease-in-out opacity-0
+}
+
+.hero-slide-container .hero-slide {
+    @apply absolute left-[50%] top-0 h-screen w-full translate-x-[-50%]
+}
+
+.hero-slide-container .hero-slide .hero-slide-content{
+    @apply  text-[#fff] z-[999] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full max-w-[85%] mx-auto
+}
+
+.hero-slide-container .hero-slide .hero-slide-content h1 {
+    @apply text-f25 md:text-f30 lg:text-f35  font-bold w-[300px] md:w-[500px]
+}
+
+.hero-slide-container .hero-slide .hero-slide-content p {
+    @apply text-f14 md:text-f18 leading-[30px] w-[300px] md:w-[600px] mt-5
+}
+
+.hero-slide-container .hero-slide .hero-slide-image {
+    @apply h-screen w-full 
+}
+
+.hero-slide-container .hero-slide .hero-slide-image img {
+    @apply w-full h-screen object-cover 
+}
+
+.hero-sect-container .next, .hero-sect-container .prev {
+    @apply absolute top-[50%]  transform -translate-y-[50%]
+}
+
+.hero-sect-container .prev {
+    @apply left-[10px]
+}
+
+.hero-sect-container .next {
+    @apply right-[10px]
+}
+
+.service-sect-container {
+    @apply bg-green mt-[50px] h-screen w-full
+}

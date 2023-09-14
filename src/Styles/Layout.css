@@ -1,0 +1,55 @@
+.nav-container {
+    @apply sticky top-0 z-[999] 
+}
+
+.nav-wrapper {
+    @apply w-full bg-grey bg-opacity-10 absolute left-[50%] translate-x-[-50%]
+}
+
+.nav-wrapper-bg {
+    @apply bg-blue w-full absolute left-[50%] translate-x-[-50%]
+}
+
+nav {
+    @apply  w-full flex items-center justify-between  max-w-[90%] lg:max-w-[85%] mx-auto relative z-[999]
+}
+.brand {
+    @apply flex flex-row items-center gap-2 h-[80px]
+}
+
+.brand img {
+    @apply h-[3rem] w-auto
+}
+
+.brand .brand-name {
+    @apply font-headFamily font-[700] text-[18px] text-pink
+}
+
+nav .nav-links {
+    @apply flex flex-row items-center gap-5 text-[#fff]
+}
+
+nav .nav-links li  {
+    @apply cursor-pointer 
+}
+
+
+.nav-wrapper button {
+    @apply bg-pink text-[#fff] w-[180px] h-[30px] rounded 
+}
+
+.nav-wrapper nav ul.mobile-nav-links .mobile-nav-children, .nav-wrapper nav ul.disactive .mobile-nav-children {
+    @apply max-w-[85%] mx-auto my-10
+}
+
+.nav-wrapper nav ul.mobile-nav-links {
+    @apply bg-blue w-full fixed left-0 top-[70px] text-[#fff] transition-all duration-500 ease-in-out
+}
+
+.nav-wrapper nav ul.disactive {
+    @apply fixed top-[-350%] w-full left-0 transition-all duration-500 ease-in-out
+}
+
+.nav-wrapper nav ul.mobile-nav-links li {
+    @apply my-5 
+}
