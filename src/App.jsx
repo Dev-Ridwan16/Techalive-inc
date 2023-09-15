@@ -26,10 +26,6 @@ function App() {
           path="/"
           element={<Home />}
         />
-        {/* <Route
-          path="/about"
-          element={}
-        /> */}
       </Routes>
     </div>
   );

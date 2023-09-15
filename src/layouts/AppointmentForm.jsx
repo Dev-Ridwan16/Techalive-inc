@@ -8,6 +8,7 @@ import {
 } from "../features/formValiditySlice";
 
 export const AppointmentForm = ({ closeAppointmentForm }) => {
+  // Pop up transition
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   useEffect(() => {
@@ -134,7 +135,7 @@ export const AppointmentForm = ({ closeAppointmentForm }) => {
                 Select a Purpose
               </option>
               <option value="business">Business</option>
-              <option value="individual">Individual Service</option>
+              <option value="individual">Individual</option>
             </select>
           </div>
           <div className="field3">
