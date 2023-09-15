@@ -1,13 +1,17 @@
 .nav-container {
-    @apply sticky top-0 z-[999] 
+    @apply sticky top-0 z-[1000] 
 }
 
 .nav-wrapper {
-    @apply w-full bg-grey bg-opacity-10 absolute left-[50%] translate-x-[-50%]
+    @apply w-full bg-grey bg-opacity-20 absolute left-[50%] translate-x-[-50%]
 }
 
 .nav-wrapper-bg {
-    @apply bg-blue w-full absolute left-[50%] translate-x-[-50%]
+    @apply bg-blue w-full absolute left-[50%] translate-x-[-50%] 
+}
+
+.changing-nav-bg {
+    @apply bg-blue
 }
 
 nav {
@@ -34,8 +38,8 @@ nav .nav-links li  {
 }
 
 
-.nav-wrapper button {
-    @apply bg-pink text-[#fff] w-[180px] h-[30px] rounded 
+.nav-wrapper button, .changing-nav-bg button {
+    @apply bg-pink text-[#fff] w-[180px] h-[30px] rounded
 }
 
 .nav-wrapper nav ul.mobile-nav-links .mobile-nav-children, .nav-wrapper nav ul.disactive .mobile-nav-children {

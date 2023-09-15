@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // importing dependecies
 import { nav_links } from "../default_data";
@@ -11,14 +11,24 @@ export const Navbar = ({ openAppointmentForm }) => {
   const isDesktop = window.innerWidth >= 1024;
 
   const [isToggle, setIsToggle] = useState(true);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const handleNavToggle = () => {
     setIsToggle(!isToggle);
   };
 
+  const changeNavbarBg = () => {
+    if (window.scrollY >= 600) setIsScrolling(true);
+    else {
+      setIsScrolling(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeNavbarBg);
+
   return (
     <div className="nav-container">
-      <div className="nav-wrapper">
+      <div className={isScrolling ? "changing-nav-bg" : "nav-wrapper"}>
         {isDesktop ? (
           <nav>
             <div className="brand">
@@ -61,8 +71,32 @@ export const MobileNavbar = ({
   handleNavToggle,
   openAppointmentForm,
 }) => {
+  const [isScrolling, setIsScrolling] = useState(true);
+  const changeNavbarBg = () => {
+    if (window.scrollY >= 600) {
+      setIsScrolling(true);
+      console.log("sc");
+    } else {
+      setIsScrolling(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNavbarBg);
+
+    // Remove the event listener when unmounting
+    return () => {
+      window.removeEventListener("scroll", changeNavbarBg);
+    };
+  }, []);
+
   return (
-    <div className={isToggle ? "nav-wrapper" : "nav-wrapper-bg"}>
+    <div
+      className={`
+        ${isToggle ? "nav-wrapper" : "nav-wrapper-bg changing-nav-bg"}
+        ${isScrolling ? "changing-nav-bg" : "nav-wrapper"}
+      `}
+    >
       <nav>
         <div className="brand">
           <img

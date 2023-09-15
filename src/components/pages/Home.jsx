@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { hero_slide_contents } from "../../default_data";
+import { hero_slide_contents, services_contents } from "../../default_data";
 
 // Styling
 import "primeicons/primeicons.css";
@@ -10,7 +10,9 @@ export const Home = () => {
   return (
     <div>
       <HeroSect />
-      {/* <ServiceSect /> */}
+      <div className="max-w-[85%] mx-auto">
+        <ServiceSect />
+      </div>
     </div>
   );
 };
@@ -77,13 +79,39 @@ export const HeroSect = () => {
   );
 };
 
-// export const ServiceSect = () => {
-//   return (
-//     <div
-//       className="service-sect-container"
-//       id="services"
-//     >
-//       Service
-//     </div>
-//   );
-// };
+export const ServiceSect = () => {
+  return (
+    <div
+      className="service-sect-container"
+      id="services"
+    >
+      <h1 className="section-subhead">
+        Our <span className="text-pink underline">Services</span>
+      </h1>
+      <p className="text-center my-5 w-full md:w-[600px] mx-auto">
+        Welcome to our wide range of services designed to meet your needs. At
+        Techalive Consult LTD, we take pride in offering high-quality solutions
+        tailored to your requirements. Explore our services below and discover
+        how we can help you.
+      </p>
+
+      <div className="services-container">
+        {services_contents.map((content, index) => (
+          <div className="service-wrapper">
+            <img
+              src={content.image_url}
+              alt=""
+            />
+            <div className="overlay-content">
+              <h3>{content.service}</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Laudantium, odit!
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};

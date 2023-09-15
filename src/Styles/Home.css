@@ -1,3 +1,7 @@
+.section-subhead {
+    @apply text-center text-f20 md:text-f25 lg:text-f30 font-bold text-blue
+}
+
 .hero-sect-container {
     @apply w-full h-screen relative
 }
@@ -54,6 +58,37 @@
     @apply right-[10px]
 }
 
+/* ==================== Service Section Starts here */
+
 .service-sect-container {
-    @apply bg-green mt-[50px] h-screen w-full
+    @apply w-full h-screen relative py-10
+}
+
+.service-sect-container .services-container {
+    @apply flex flex-col md:flex-row flex-wrap w-full
+}
+
+.service-sect-container .services-container .service-wrapper {
+    @apply relative mt-3 flex-shrink-[1] flex-grow-[1] md:basis-[35%] lg:basis-[20%] mx-2
+}
+
+.service-sect-container .services-container .service-wrapper img {
+    @apply w-full h-[200px] rounded-xl
+}
+
+.service-sect-container .services-container .service-wrapper .overlay-content {
+    @apply absolute top-[100%] translate-y-[-100%] bg-blue;
+    @apply bg-opacity-50 h-[70px] w-full px-5 pt-2 rounded-b-xl
+}
+
+.service-sect-container .services-container .service-wrapper .overlay-content h3 {
+    @apply font-bold text-f12 md:text-f14 lg:text-f16 text-[#fff]
+}
+
+.service-sect-container .services-container .service-wrapper .overlay-content p {
+    @apply text-f10 text-[#fff] opacity-0 transition-opacity duration-500 ease-in-out
+}
+
+.service-sect-container .services-container .service-wrapper img:hover + .overlay-content p {
+    @apply text-[#6dbbfa] opacity-100
 }

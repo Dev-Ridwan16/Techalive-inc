@@ -7,3 +7,15 @@
 body {
     @apply text-grey
 }
+
+body::-webkit-scrollbar {
+    @apply w-[0.5rem] 
+}
+
+body::-webkit-scrollbar-track {
+    @apply bg-none
+}
+
+body::-webkit-scrollbar-thumb {
+    @apply bg-blue bg-opacity-70 rounded-full 
+}

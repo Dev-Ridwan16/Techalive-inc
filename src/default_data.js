@@ -64,3 +64,46 @@ export const hero_slide_contents = [
       "https://i.pinimg.com/564x/45/b1/f3/45b1f3125f515c7c2e4714c35e64d4d5.jpg",
   },
 ];
+
+export const services_contents = [
+  {
+    image_url:
+      "https://i.pinimg.com/564x/2f/20/4b/2f204ba8eaedf419ab53604e31fe39d5.jpg",
+    service: "Computer Repair Service",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/1b/45/16/1b4516037f60bebb7707700cc34eb401.jpg",
+    service: "Smartphone Repair Service",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/09/06/d8/0906d8e0edbfe6c1e33424132f3e1949.jpg",
+    service: "Car Tracking System",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/0a/bd/90/0abd90cd2dd2c09f7e5c96c7f17e040b.jpg",
+    service: "Solar and CCTV Instalation",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/8a/1b/e9/8a1be9cb952d125af59ebab84c79d7f9.jpg",
+    service: "Gadgets & Accessories Sales",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/73/7e/48/737e48ca3e4789beb8cdc38a9ad7033c.jpg",
+    service: "Wireless Intercom",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/ef/4f/cc/ef4fcc2c6808f8582a6c2ea369f65387.jpg",
+    service: "Hardware Trainig",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/7f/d6/f0/7fd6f0816658cc2be69f7eff52fa7374.jpg",
+    service: "Technical Consultant",
+  },
+];
