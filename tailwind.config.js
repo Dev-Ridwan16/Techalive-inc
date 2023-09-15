@@ -13,7 +13,10 @@ export default {
         f25: "25px",
         f20: "20px",
         f18: "18px",
+        f16: "16px",
         f14: "14px",
+        f12: "12px",
+        f10: "10px",
       },
       colors: {
         pink: "#FF046E",

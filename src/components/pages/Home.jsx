@@ -4,12 +4,13 @@ import { hero_slide_contents } from "../../default_data";
 // Styling
 import "primeicons/primeicons.css";
 import "../../Styles/Home.css";
+import { AppointmentForm } from "../../layouts/AppointmentForm";
 
 export const Home = () => {
   return (
     <div>
       <HeroSect />
-      <ServiceSect />
+      {/* <ServiceSect /> */}
     </div>
   );
 };
@@ -76,13 +77,13 @@ export const HeroSect = () => {
   );
 };
 
-export const ServiceSect = () => {
-  return (
-    <div
-      className="service-sect-container"
-      id="services"
-    >
-      Service
-    </div>
-  );
-};
+// export const ServiceSect = () => {
+//   return (
+//     <div
+//       className="service-sect-container"
+//       id="services"
+//     >
+//       Service
+//     </div>
+//   );
+// };

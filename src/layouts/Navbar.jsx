@@ -7,7 +7,7 @@ import { Link } from "react-scroll";
 // Styling
 import "../Styles/Layout.css";
 
-export const Navbar = () => {
+export const Navbar = ({ openAppointmentForm }) => {
   const isDesktop = window.innerWidth >= 1024;
 
   const [isToggle, setIsToggle] = useState(true);
@@ -42,12 +42,13 @@ export const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <button>Book Appointement</button>
+            <button onClick={openAppointmentForm}>Book Appointement</button>
           </nav>
         ) : (
           <MobileNavbar
             isToggle={isToggle}
             handleNavToggle={handleNavToggle}
+            openAppointmentForm={openAppointmentForm}
           />
         )}
       </div>
@@ -55,7 +56,11 @@ export const Navbar = () => {
   );
 };
 
-export const MobileNavbar = ({ isToggle, handleNavToggle }) => {
+export const MobileNavbar = ({
+  isToggle,
+  handleNavToggle,
+  openAppointmentForm,
+}) => {
   return (
     <div className={isToggle ? "nav-wrapper" : "nav-wrapper-bg"}>
       <nav>
@@ -92,7 +97,7 @@ export const MobileNavbar = ({ isToggle, handleNavToggle }) => {
                 </Link>
               </li>
             ))}
-            <button>Book Appointement</button>
+            <button onClick={openAppointmentForm}>Book Appointement</button>
           </div>
         </ul>
       </nav>

@@ -53,3 +53,76 @@ nav .nav-links li  {
 .nav-wrapper nav ul.mobile-nav-links li {
     @apply my-5 
 }
+
+/* ==================== APPOINTMENT CSS STARTS HERE */
+
+.appoint-layout {
+    @apply w-full h-screen bg-blue bg-opacity-50 z-[999] grid place-items-center transition-all duration-500 ease-in-out; 
+    @apply absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] 
+}
+
+.appoint-container {
+    @apply bg-blue w-[350px] md:w-[500px] py-10 rounded-xl shadow-2xl opacity-0 transition-opacity duration-[1s] ease-in-out
+}
+
+.appoint-container.activateForm {
+    @apply opacity-100 
+}
+
+.lead-appoint-head {
+    @apply flex flex-row justify-between items-center max-w-[300px] md:max-w-[450px] mx-auto;
+    @apply text-f16 md:text-f20 font-bold text-[#fff]
+}
+
+.lead-appoint-head i:hover {
+    @apply text-[#fa4a4a] transition-all duration-500 ease-in-out
+}
+
+.appoint-form {
+    @apply flex flex-col max-w-[300px] md:max-w-[450px] mx-auto
+}
+
+.appoint-form .field1, .appoint-form .field2, .appoint-form .field3 {
+    @apply flex flex-col
+}
+
+.appoint-form .field {
+    @apply flex flex-col
+}
+
+.appoint-form .field div {
+    @apply text-f10 absolute mt-[3.8rem] text-red
+}
+.appoint-form input {
+    @apply bg-inherit outline-none border border-grey h-[40px] mt-5 rounded-md px-3 text-grey w-full
+}
+
+.appoint-form input::placeholder, .appoint-form textarea::placeholder, .appoint-form .field2 select {
+    @apply text-grey text-f12
+}
+
+.appoint-form .field2 select {
+    @apply bg-inherit border border-grey h-[40px] px-3 rounded-md mt-5
+}
+
+.appoint-form .field3 .appoint-msg {
+    @apply w-full min-h-[80px] max-h-[80px] bg-inherit mt-5 pt-2 px-5 border border-grey rounded-md outline-none relative 
+}
+
+.appoint-form .field3 .field div.error-msg {
+    @apply mt-[6.2rem] 
+}
+
+.appoint-form .field3 .appoint-time {
+    @apply h-[50px]
+}
+
+.appoint-form .field3 .field:nth-child(2) .error-msg {
+    @apply mt-[4.5rem]
+}
+
+.appoint-form button {
+    @apply bg-pink text-[#fff] w-[200px] mx-auto h-[40px] rounded-md outline-none mt-5
+}
+
+
