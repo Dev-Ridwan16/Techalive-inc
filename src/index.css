@@ -19,3 +19,4 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     @apply bg-blue bg-opacity-70 rounded-full 
 }
+

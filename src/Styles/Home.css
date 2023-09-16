@@ -1,5 +1,9 @@
 .section-subhead {
-    @apply text-center text-f20 md:text-f25 lg:text-f30 font-bold text-blue
+    @apply text-f20 md:text-f25 lg:text-f30 font-bold text-blue
+}
+
+.service-sect-container, .product-sect-container {
+    @apply w-full relative pt-10 
 }
 
 .hero-sect-container {
@@ -60,12 +64,8 @@
 
 /* ==================== Service Section Starts here */
 
-.service-sect-container {
-    @apply w-full h-screen relative py-10
-}
-
 .service-sect-container .services-container {
-    @apply flex flex-col md:flex-row flex-wrap w-full
+    @apply flex flex-col md:flex-row md:flex-wrap w-full
 }
 
 .service-sect-container .services-container .service-wrapper {
@@ -92,3 +92,41 @@
 .service-sect-container .services-container .service-wrapper img:hover + .overlay-content p {
     @apply text-[#6dbbfa] opacity-100
 }
+
+/* ==================== Product Section Starts here */
+
+.product-sect-container .product-container {
+    @apply flex flex-row overflow-x-scroll
+}
+
+.product-sect-container .product-container .product-wrapper-card {
+    @apply  flex-shrink-[0] flex-grow-[0] basis-[65%] md:basis-[40%] lg:flex-shrink-[1] lg:flex-grow-[1] lg:basis-[15%] mx-3 h-[350px] px-2 shadow-sm rounded-lg
+}
+
+.product-sect-container .product-container .product-wrapper-card img {
+    @apply w-[200px] h-[150px] mx-auto object-contain
+}
+
+.product-sect-container .product-container .product-wrapper-card  p{
+    @apply text-white text-f12 md:text-f14 mt-3
+}
+
+.product-sect-container .product-container .product-wrapper-card h4#name{
+    @apply text-blue text-f16 font-semibold my-5 h-[50px]
+}
+
+.product-sect-container .product-container .product-wrapper-card h4#price{
+    @apply text-pink font-semibold
+}
+
+.product-sect-container .product-container .product-wrapper-card  .product-intrested{
+    @apply flex items-center justify-between
+}
+
+.product-sect-container .product-container .product-wrapper-card .product-intrested span{
+    @apply text-f12
+}
+
+.product-sect-container .product-container .product-wrapper-card .product-intrested i.pi-whatsapp{
+    @apply text-green
+} 

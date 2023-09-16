@@ -3,30 +3,40 @@ import "./App.css";
 import { Home } from "./components/pages/Home";
 import { Navbar } from "./layouts/Navbar";
 import { AppointmentForm } from "./layouts/AppointmentForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [showAppointmentForm, setShowAppointmentForm] = useState(false);
+  const body = document.querySelector("body");
   const openAppointmentForm = () => {
     setShowAppointmentForm(true);
+    body.style.overflow = "hidden";
   };
 
   const closeAppointmentForm = () => {
     setShowAppointmentForm(false);
+    body.style.overflow = "auto";
   };
+
+  useEffect(() => {
+    return () => {};
+  });
 
   return (
     <div>
-      <Navbar openAppointmentForm={openAppointmentForm} />
+      <div>
+        <Navbar openAppointmentForm={openAppointmentForm} />
+
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
+          />
+        </Routes>
+      </div>
       {showAppointmentForm && (
         <AppointmentForm closeAppointmentForm={closeAppointmentForm} />
       )}
-      <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
-      </Routes>
     </div>
   );
 }

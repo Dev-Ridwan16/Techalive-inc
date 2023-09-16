@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { hero_slide_contents, services_contents } from "../../default_data";
+import {
+  hero_slide_contents,
+  products_contents,
+  services_contents,
+} from "../../default_data";
 
 // Styling
 import "primeicons/primeicons.css";
@@ -12,6 +16,7 @@ export const Home = () => {
       <HeroSect />
       <div className="max-w-[85%] mx-auto">
         <ServiceSect />
+        <ProductSect />
       </div>
     </div>
   );
@@ -85,7 +90,7 @@ export const ServiceSect = () => {
       className="service-sect-container"
       id="services"
     >
-      <h1 className="section-subhead">
+      <h1 className="section-subhead text-center">
         Our <span className="text-pink underline">Services</span>
       </h1>
       <p className="text-center my-5 w-full md:w-[600px] mx-auto">
@@ -108,6 +113,46 @@ export const ServiceSect = () => {
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Laudantium, odit!
               </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export const ProductSect = () => {
+  return (
+    <div
+      className="product-sect-container"
+      id="products"
+    >
+      <h1 className="section-subhead text-center">
+        Our <span className="text-pink underline">Product</span>
+      </h1>
+      <p className="text-center my-5 w-full md:w-[600px] mx-auto">
+        Explore our top-notch products designed to elevate your experience. From
+        cutting-edge technology to stylish accessories, we offer a range of
+        solutions tailored to your lifestyle.
+      </p>
+      <div className="product-container">
+        {products_contents.map((content, index) => (
+          <div className="product-wrapper-card">
+            <img
+              src={content.image_url}
+              alt=""
+            />
+            <p>{content.category}</p>
+            <h4 id="name">{content.name}</h4>
+            <h4 id="price">{content.price}</h4>
+            <div className="product-intrested">
+              <span>Intrested? </span>
+              <i className="pi pi-arrow-right"></i>
+              <div className="contact-to-get">
+                <a href="https://wa.me/2348050500466">
+                  <i className="pi pi-whatsapp"></i>
+                </a>
+              </div>
             </div>
           </div>
         ))}

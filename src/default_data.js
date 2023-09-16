@@ -99,11 +99,49 @@ export const services_contents = [
   {
     image_url:
       "https://i.pinimg.com/564x/ef/4f/cc/ef4fcc2c6808f8582a6c2ea369f65387.jpg",
-    service: "Hardware Trainig",
+    service: "Hardware Training",
   },
   {
     image_url:
       "https://i.pinimg.com/564x/7f/d6/f0/7fd6f0816658cc2be69f7eff52fa7374.jpg",
     service: "Technical Consultant",
+  },
+];
+
+export const products_contents = [
+  {
+    image_url:
+      "https://i.pinimg.com/564x/ec/c4/54/ecc454ef5af8c5cf2f835da0144fbbf4.jpg",
+    category: "Computer & Laptop",
+    name: "Apple MacBook Pro 2020 ",
+    price: "₹ 12000",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/79/a0/43/79a0431faff7274353b5d0657a404a50.jpg",
+    category: "Smartphones & Mobile",
+    name: "Samsung Galaxy S22 Ultra ",
+    price: "₹ 500",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/4a/be/c1/4abec1eb927d8325a248b4e8fdb5f348.jpg",
+    category: "Smartphones & Mobile",
+    name: "Apple iPhone 12 Pro Max ",
+    price: "₹ 1000",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/d1/ae/bd/d1aebdcbaa85ff8182f986d505b6bf2a.jpg",
+    category: "Computer and Laptops",
+    name: "Microsoft Surface Laptop 3",
+    price: "₹ 6000",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/c8/4a/2b/c84a2be2b4c26377fe0a7047f2f7d3b1.jpg",
+    category: "Computer and Laptops",
+    name: "HP 15 15s-gy0003AU Laptop ",
+    price: "₹ 10000",
   },
 ];
