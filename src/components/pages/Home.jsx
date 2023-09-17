@@ -257,6 +257,14 @@ export const BlogSect = () => {
     }
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextSlide = (currentSlide + divisionFactor) % blog_posts.length;
+      setCurrentSlide(nextSlide);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentSlide]);
   const slideStyle = {
     transform: `translateX(-${(currentSlide * 100) / divisionFactor}%)`,
   };

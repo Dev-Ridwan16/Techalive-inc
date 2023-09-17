@@ -194,7 +194,7 @@
 
 .blog-container .blog-slider .blog-post-slide {
     @apply flex-shrink-[1] flex-grow-[1] basis-[100%] md:basis-[50%] lg:basis-[24.5%] min-w-[100%] md:min-w-[48.9%] lg:min-w-[24.3%];
-    @apply bg-grey bg-opacity-5 rounded-md
+    @apply bg-grey bg-opacity-5 rounded-md h-[480px]
 }
 
 .blog-container .blog-slider .blog-post-slide img {
