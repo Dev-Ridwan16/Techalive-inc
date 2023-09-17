@@ -145,3 +145,39 @@ export const products_contents = [
     price: "₹ 10000",
   },
 ];
+
+export const about_contents = [
+  {
+    image_url:
+      "https://i.pinimg.com/564x/2d/00/3f/2d003f1afe2eb5a96450b351e664d028.jpg",
+    header: "Know who we are",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/24/2e/19/242e190fba6b0212207f08487e7cdec0.jpg",
+    header: "What will have Passion for",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/564x/45/b1/f3/45b1f3125f515c7c2e4714c35e64d4d5.jpg",
+    header: "What we're looking forward to",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!",
+  },
+];
+
+export const about_indicators = [
+  {
+    title: "About Us",
+  },
+  {
+    title: "Our Mission",
+  },
+  {
+    title: "Our Vision",
+  },
+];

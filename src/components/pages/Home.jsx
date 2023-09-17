@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
+  about_contents,
+  about_indicators,
   hero_slide_contents,
   products_contents,
   services_contents,
@@ -17,6 +19,7 @@ export const Home = () => {
       <div className="max-w-[85%] mx-auto">
         <ServiceSect />
         <ProductSect />
+        <AboutSect />
       </div>
     </div>
   );
@@ -153,6 +156,68 @@ export const ProductSect = () => {
                   <i className="pi pi-whatsapp"></i>
                 </a>
               </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export const AboutSect = () => {
+  const [currentAbout, setCurrentAbout] = useState(0);
+
+  // Autoslide Functionalities
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextAbout = (currentAbout + 1) % about_contents.length;
+      setCurrentAbout(nextAbout);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentAbout]);
+
+  const slideStyle = {
+    transform: `translateX(-${(currentAbout * 100) / 1}%)`,
+  };
+  return (
+    <div
+      className="about-sect-container"
+      id="about"
+    >
+      <div className="about-indicators">
+        {about_indicators.map((indicator, index) => (
+          <h3
+            className={`indicator ${currentAbout === index ? "active" : ""}`}
+            onClick={() => setCurrentAbout(index)}
+            key={index}
+          >
+            {indicator.title}
+          </h3>
+        ))}
+      </div>
+      <div
+        className="the-about"
+        style={slideStyle}
+      >
+        {about_contents.map((content, index) => (
+          <div
+            key={index}
+            className={`the-about-wrapper ${
+              currentAbout === index ? "active" : ""
+            }`}
+          >
+            <div className="img">
+              <img
+                src={content.image_url}
+                alt=""
+              />
+            </div>
+            <div className="about-content">
+              <h5 className="text-f20 font-medium text-blue">
+                {content.header}
+              </h5>
+              <p>{content.content}</p>
             </div>
           </div>
         ))}

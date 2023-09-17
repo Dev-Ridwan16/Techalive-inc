@@ -2,7 +2,7 @@
     @apply text-f20 md:text-f25 lg:text-f30 font-bold text-blue
 }
 
-.service-sect-container, .product-sect-container {
+.service-sect-container, .product-sect-container, .about-sect-container {
     @apply w-full relative pt-10 
 }
 
@@ -99,6 +99,10 @@
     @apply flex flex-row overflow-x-scroll
 }
 
+.product-sect-container .product-container::-webkit-scrollbar {
+    @apply hidden
+}
+
 .product-sect-container .product-container .product-wrapper-card {
     @apply  flex-shrink-[0] flex-grow-[0] basis-[65%] md:basis-[40%] lg:flex-shrink-[1] lg:flex-grow-[1] lg:basis-[15%] mx-3 h-[350px] px-2 shadow-sm rounded-lg
 }
@@ -130,3 +134,52 @@
 .product-sect-container .product-container .product-wrapper-card .product-intrested i.pi-whatsapp{
     @apply text-green
 } 
+
+/* ==================== Product Section Starts here */
+.about-sect-container {
+    @apply overflow-hidden
+}
+
+.about-sect-container .about-indicators {
+    @apply flex items-center justify-center gap-12
+}
+
+.about-sect-container .about-indicators h3 {
+    @apply text-f14 md:text-f18 lg:text-f20 cursor-pointer transition-all duration-1000 ease-in-out
+}
+
+.about-sect-container .about-indicators h3.active {
+    @apply text-pink font-bold 
+}
+
+.about-sect-container .the-about {
+    @apply flex flex-row items-center justify-start transition-transform duration-500 ease-in-out w-full
+}
+
+.about-sect-container .the-about .the-about-wrapper {
+    @apply min-h-[500px] min-w-[100%] flex-shrink-0 flex-grow-0 basis-[100%];
+    @apply flex flex-row flex-wrap md:flex-nowrap items-center gap-[20px] mt-10 md:mt-0
+ }
+
+/* .about-sect-container .the-about .the-about-wrapper.active {
+    @apply flex flex-row items-center 
+} */
+
+.about-sect-container .the-about .the-about-wrapper .img {
+    @apply flex-shrink-[1] flex-grow-[1] basis-[200px] lg:basis-[350px]
+}
+.about-sect-container .the-about .the-about-wrapper .img img {
+    @apply w-full h-[300px] lg:w-[500px] lg:h-[450px] rounded-lg
+}
+.about-sect-container .the-about .the-about-wrapper .about-content {
+    @apply flex-shrink-[1] flex-grow-[1] basis-[350px]
+}
+
+.about-sect-container .the-about .the-about-wrapper .about-content h5 {
+    @apply mb-3
+}
+
+.about-sect-container .the-about .the-about-wrapper .about-content p {
+    @apply leading-[30px]
+}
+
