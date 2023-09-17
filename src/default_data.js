@@ -181,3 +181,87 @@ export const about_indicators = [
     title: "Our Vision",
   },
 ];
+
+// Initial Blog Post Will be remove when the server is set
+export const blog_posts = [
+  {
+    title: "Minor Computer Problems and How to Fix Them",
+    image_url:
+      "https://i.pinimg.com/564x/40/8e/5b/408e5b78cc60be034001bf128a57cb53.jpg",
+    content:
+      "In today's tech-driven world, we've all encountered those frustrating minor computer glitches that can disrupt our workflow. From software hiccups to hardware quirks, these issues can be a nuisance. But fear not! In this blog",
+    author: "Ridwan Adewole",
+    date: "2023-06-12",
+    read_more: "Read More",
+  },
+  {
+    title: "Check these things before buying your phone",
+    image_url:
+      "https://i.pinimg.com/564x/30/b2/cd/30b2cd2ef3357436686956db8e60b0bd.jpg",
+    content:
+      "Are you planning to invest in a new smartphone? With the ever-evolving world of technology, buying a phone has become more than just a simple transaction—it's an important decision. Your smartphone is your constant companion, and choosing the right one can greatly impact your daily life. ",
+    author: "Ridwan Adewole",
+    date: "2023-06-12",
+    read_more: "Read More",
+  },
+  {
+    title: "Importance of Solar Power",
+    image_url:
+      "https://i.pinimg.com/564x/dd/2d/5c/dd2d5c20b2119ab1062cba0b61d3d508.jpg",
+    content:
+      "In an era where sustainability and environmental consciousness are gaining momentum, solar panels have emerged as a shining star in the world of energy. These remarkable devices harness the power of the sun to generate clean and renewable electricity, offering a multitude of benefits for both individuals and the planet. ",
+    author: "Ridwan Adewole",
+    date: "2023-06-12",
+    read_more: "Read More",
+  },
+  {
+    title: "CCTV Camera: The Latest Technology in Security",
+    image_url:
+      "https://i.pinimg.com/564x/f7/05/4b/f7054b262dd7aa971319196f7dbcd714.jpg",
+    content:
+      "In an era where security is paramount, technology continues to evolve to safeguard our homes, businesses, and public spaces. One such innovation that has taken center stage is Closed-Circuit Television (CCTV) cameras. CCTV cameras have rapidly become an integral part of modern security systems, offering advanced features and peace of mind like never before.",
+    author: "Ridwan Adewole",
+    date: "2023-06-12",
+    read_more: "Read More",
+  },
+  {
+    title: "Blog Post 5",
+    image_url:
+      "https://i.pinimg.com/564x/f7/05/4b/f7054b262dd7aa971319196f7dbcd714.jpg",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis officia reprehenderit alias asperiores eveniet earum et, officiis voluptatum dolore, expedita quisquam similique mollitia, illum obcaecati in ab consectetur corporis ipsa? Officiis, aspernatur, neque ratione non reiciendis id autem cumque consequuntur laborum ut exercitationem sunt suscipit nemo maxime totam voluptates iste numquam dolorem iure veritatis. Dolorem quaerat animi consequuntur. Quibusdam, qui.",
+    author: "Ridwan Adewole",
+    date: "2023-06-12",
+    read_more: "Read More",
+  },
+  {
+    title: "Blog Post 6",
+    image_url:
+      "https://i.pinimg.com/564x/f7/05/4b/f7054b262dd7aa971319196f7dbcd714.jpg",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis officia reprehenderit alias asperiores eveniet earum et, officiis voluptatum dolore, expedita quisquam similique mollitia, illum obcaecati in ab consectetur corporis ipsa? Officiis, aspernatur, neque ratione non reiciendis id autem cumque consequuntur laborum ut exercitationem sunt suscipit nemo maxime totam voluptates iste numquam dolorem iure veritatis. Dolorem quaerat animi consequuntur. Quibusdam, qui.",
+    author: "Ridwan Adewole",
+    date: "2023-06-12",
+    read_more: "Read More",
+  },
+  {
+    title: "Blog Post 6",
+    image_url:
+      "https://i.pinimg.com/564x/f7/05/4b/f7054b262dd7aa971319196f7dbcd714.jpg",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis officia reprehenderit alias asperiores eveniet earum et, officiis voluptatum dolore, expedita quisquam similique mollitia, illum obcaecati in ab consectetur corporis ipsa? Officiis, aspernatur, neque ratione non reiciendis id autem cumque consequuntur laborum ut exercitationem sunt suscipit nemo maxime totam voluptates iste numquam dolorem iure veritatis. Dolorem quaerat animi consequuntur. Quibusdam, qui.",
+    author: "Ridwan Adewole",
+    date: "2023-06-12",
+    read_more: "Read More",
+  },
+  {
+    title: "CCTV Camera: The Latest Technology in Security",
+    image_url:
+      "https://i.pinimg.com/564x/f7/05/4b/f7054b262dd7aa971319196f7dbcd714.jpg",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis officia reprehenderit alias asperiores eveniet earum et, officiis voluptatum dolore, expedita quisquam similique mollitia, illum obcaecati in ab consectetur corporis ipsa? Officiis, aspernatur, neque ratione non reiciendis id autem cumque consequuntur laborum ut exercitationem sunt suscipit nemo maxime totam voluptates iste numquam dolorem iure veritatis. Dolorem quaerat animi consequuntur. Quibusdam, qui.",
+    author: "Ridwan Adewole",
+    date: "2023-06-12",
+    read_more: "Read More",
+  },
+];

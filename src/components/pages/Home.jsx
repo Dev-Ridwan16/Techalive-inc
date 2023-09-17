@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   about_contents,
   about_indicators,
+  blog_posts,
   hero_slide_contents,
   products_contents,
   services_contents,
@@ -20,6 +21,7 @@ export const Home = () => {
         <ServiceSect />
         <ProductSect />
         <AboutSect />
+        <BlogSect />
       </div>
     </div>
   );
@@ -221,6 +223,97 @@ export const AboutSect = () => {
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  );
+};
+
+export const BlogSect = () => {
+  const mobile = window.innerWidth <= 767;
+  const tablet = window.innerWidth <= 1023;
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  let divisionFactor = 4;
+
+  if (mobile) {
+    divisionFactor = 1;
+  } else if (tablet) {
+    divisionFactor = 2;
+  }
+
+  const handlePrev = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(currentSlide - divisionFactor);
+    } else {
+      setCurrentSlide(blog_posts.length - divisionFactor);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentSlide < blog_posts.length - divisionFactor) {
+      setCurrentSlide(currentSlide + divisionFactor);
+    } else {
+      setCurrentSlide(0);
+    }
+  };
+
+  const slideStyle = {
+    transform: `translateX(-${(currentSlide * 100) / divisionFactor}%)`,
+  };
+
+  return (
+    <div
+      className="blog-sect-container"
+      id="blog"
+    >
+      <h1 className="section-subhead text-center">
+        Our <span className="text-pink underline">Blog</span>
+      </h1>
+      <p className="text-center my-5 w-full md:w-[600px] mx-auto">
+        Discover our collection of insightful articles covering a variety of
+        topics. Dive into our latest posts below.
+      </p>
+
+      <div className="blog-container">
+        <div
+          className="blog-slider"
+          style={slideStyle}
+        >
+          {blog_posts.map((post, index) => (
+            <div className="blog-post-slide">
+              <img
+                src={post.image_url}
+                alt=""
+              />
+              <div className="blog-post-content">
+                <h3>{post.title}</h3>
+                <p>
+                  {post.content.length > 20
+                    ? post.content.slice(0, 150) + "..."
+                    : post.content}
+                </p>
+                <button>{post.read_more}</button>
+                <div className="the-footer">
+                  <i>{post.author}</i>
+                  <i>{post.date}</i>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="btns">
+          <div className="blog-page-btn">
+            <button>View all blogs</button>
+          </div>
+          <div className="controller">
+            <button onClick={handlePrev}>
+              <i className="pi pi-angle-left"></i>
+            </button>
+            <button onClick={handleNext}>
+              <i className="pi pi-angle-right"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

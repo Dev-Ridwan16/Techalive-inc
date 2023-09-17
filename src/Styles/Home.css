@@ -183,3 +183,56 @@
     @apply leading-[30px]
 }
 
+/* ==================== Product Section Starts here */
+.blog-container {
+    @apply overflow-hidden
+}
+
+.blog-container .blog-slider {
+    @apply flex flex-row items-center md:gap-2 w-full transition-transform duration-700 ease-in-out
+}
+
+.blog-container .blog-slider .blog-post-slide {
+    @apply flex-shrink-[1] flex-grow-[1] basis-[100%] md:basis-[50%] lg:basis-[24.5%] min-w-[100%] md:min-w-[48.9%] lg:min-w-[24.3%];
+    @apply bg-grey bg-opacity-5 rounded-md
+}
+
+.blog-container .blog-slider .blog-post-slide img {
+    @apply w-full h-[200px] object-fill rounded-t-md
+}
+
+.blog-container .blog-slider .blog-post-slide .blog-post-content {
+    @apply flex flex-col
+}
+
+.blog-container .blog-slider .blog-post-slide .blog-post-content h3 {
+    @apply h-[50px] my-2 text-f16 text-blue font-semibold px-2
+}
+
+.blog-container .blog-slider .blog-post-slide .blog-post-content p {
+    @apply leading-[30px] px-2 mb-3
+}
+
+.blog-container .blog-slider .blog-post-slide .blog-post-content button {
+    @apply bg-blue w-[85%] mx-auto h-[30px] rounded-md
+}
+
+.blog-container .blog-slider .blog-post-slide .blog-post-content .the-footer {
+    @apply flex items-center justify-between px-2 text-f12 my-3
+}
+
+.blog-container .btns {
+    @apply flex items-center mt-5
+}
+
+.blog-container .btns .blog-page-btn {
+    @apply w-[150px] h-[40px] bg-green flex items-center justify-center rounded-md text-[#fff]
+}
+
+.blog-container .btns .controller {
+    @apply flex items-center justify-center gap-10 w-[full] mx-auto
+}
+
+.blog-container .btns .controller button {
+    @apply bg-grey bg-opacity-10 w-[50px] h-[50px] rounded-full
+}
