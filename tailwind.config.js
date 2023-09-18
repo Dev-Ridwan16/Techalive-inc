@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        headFamily: "'Josefin Sans', sans-serif",
-        bodyFamily: "'Open Sans', sans-serif;",
+        headFamily: "'IBM Plex Serif', serif",
+        bodyFamily: "'Poppins', sans-serif",
       },
       fontSize: {
         f35: "35px",

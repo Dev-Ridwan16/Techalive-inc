@@ -17,19 +17,19 @@ export const nav_links = [
   },
   {
     name: "Our Blog",
-    path: "/blogs",
+    path: "blogs",
   },
   {
     name: "Why Choose Us",
-    path: "/blogs",
+    path: "why-choose-us",
   },
   {
     name: "Reviews",
-    path: "/blogs",
+    path: "reviews",
   },
   {
     name: "Contact Us",
-    path: "/blogs",
+    path: "contact-us",
   },
 ];
 
@@ -263,5 +263,32 @@ export const blog_posts = [
     author: "Ridwan Adewole",
     date: "2023-06-12",
     read_more: "Read More",
+  },
+];
+
+export const why_choose_us_contents = [
+  {
+    icon: "pi pi-bolt",
+    header: "We Fast and Reliable",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nam, eos perspiciatis quos sit nihil inventore. Sed atque facere unde dolorum. ",
+  },
+  {
+    icon: "pi pi-bolt",
+    header: "We Fast and Reliable",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nam, eos perspiciatis quos sit nihil inventore. Sed atque facere unde dolorum. ",
+  },
+  {
+    icon: "pi pi-bolt",
+    header: "We Fast and Reliable",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nam, eos perspiciatis quos sit nihil inventore. Sed atque facere unde dolorum. ",
+  },
+  {
+    icon: "pi pi-bolt",
+    header: "We Fast and Reliable",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nam, eos perspiciatis quos sit nihil inventore. Sed atque facere unde dolorum. ",
   },
 ];

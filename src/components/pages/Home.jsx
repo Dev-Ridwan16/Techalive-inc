@@ -6,6 +6,7 @@ import {
   hero_slide_contents,
   products_contents,
   services_contents,
+  why_choose_us_contents,
 } from "../../default_data";
 
 // Styling
@@ -22,6 +23,7 @@ export const Home = () => {
         <ProductSect />
         <AboutSect />
         <BlogSect />
+        <Why_Choose_Us />
       </div>
     </div>
   );
@@ -107,7 +109,10 @@ export const ServiceSect = () => {
 
       <div className="services-container">
         {services_contents.map((content, index) => (
-          <div className="service-wrapper">
+          <div
+            key={index}
+            className="service-wrapper"
+          >
             <img
               src={content.image_url}
               alt=""
@@ -142,7 +147,10 @@ export const ProductSect = () => {
       </p>
       <div className="product-container">
         {products_contents.map((content, index) => (
-          <div className="product-wrapper-card">
+          <div
+            key={index}
+            className="product-wrapper-card"
+          >
             <img
               src={content.image_url}
               alt=""
@@ -272,7 +280,7 @@ export const BlogSect = () => {
   return (
     <div
       className="blog-sect-container"
-      id="blog"
+      id="blogs"
     >
       <h1 className="section-subhead text-center">
         Our <span className="text-pink underline">Blog</span>
@@ -288,7 +296,10 @@ export const BlogSect = () => {
           style={slideStyle}
         >
           {blog_posts.map((post, index) => (
-            <div className="blog-post-slide">
+            <div
+              key={index}
+              className="blog-post-slide"
+            >
               <img
                 src={post.image_url}
                 alt=""
@@ -322,6 +333,37 @@ export const BlogSect = () => {
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  );
+};
+
+export const Why_Choose_Us = () => {
+  return (
+    <div
+      className="why-choose-us-container"
+      id="why-choose-us"
+    >
+      <h1 className="section-subhead text-center">
+        Why <span className="text-pink underline">Choose Us</span>
+      </h1>
+      <p className="text-center my-5 w-full md:w-[600px] mx-auto">
+        Explore our wide range of services designed to meet your needs. At
+        Techalive Consult LTD, we take pride in offering high-quality solutions
+        tailored to your requirements. Explore our services below and discover
+        how we can help you.
+      </p>
+      <div className="why_choose_us_container">
+        {why_choose_us_contents.map((content, index) => (
+          <div
+            key={index}
+            className="why_choose_us_wrapper"
+          >
+            <i className={content.icon}></i>
+            <h3>{content.header}</h3>
+            <p>{content.content}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

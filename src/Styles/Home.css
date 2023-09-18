@@ -2,8 +2,8 @@
     @apply text-f20 md:text-f25 lg:text-f30 font-bold text-blue
 }
 
-.service-sect-container, .product-sect-container, .about-sect-container {
-    @apply w-full relative pt-10 
+.service-sect-container, .product-sect-container, .about-sect-container, .why-choose-us-container {
+    @apply w-full relative py-10 
 }
 
 .hero-sect-container {
@@ -35,11 +35,11 @@
 }
 
 .hero-slide-container .hero-slide .hero-slide-content h1 {
-    @apply text-f25 md:text-f30 lg:text-f35  font-bold w-[300px] md:w-[500px]
+    @apply w-[300px] md:w-[500px] leading-[40px]
 }
 
 .hero-slide-container .hero-slide .hero-slide-content p {
-    @apply text-f14 md:text-f18 leading-[30px] w-[300px] md:w-[600px] mt-5
+    @apply text-f14 md:text-f14 leading-[30px] w-[300px] md:w-[600px] mt-5
 }
 
 .hero-slide-container .hero-slide .hero-slide-image {
@@ -78,7 +78,11 @@
 
 .service-sect-container .services-container .service-wrapper .overlay-content {
     @apply absolute top-[100%] translate-y-[-100%] bg-blue;
-    @apply bg-opacity-50 h-[70px] w-full px-5 pt-2 rounded-b-xl
+    @apply bg-opacity-50 h-[70px] w-full px-5 pt-2 rounded-b-xl transition-all duration-300 ease-in-out
+}
+
+.service-sect-container .services-container .service-wrapper img:hover + .overlay-content {
+    @apply h-[100px] 
 }
 
 .service-sect-container .services-container .service-wrapper .overlay-content h3 {
@@ -194,7 +198,7 @@
 
 .blog-container .blog-slider .blog-post-slide {
     @apply flex-shrink-[1] flex-grow-[1] basis-[100%] md:basis-[50%] lg:basis-[24.5%] min-w-[100%] md:min-w-[48.9%] lg:min-w-[24.3%];
-    @apply bg-grey bg-opacity-5 rounded-md h-[480px]
+    @apply bg-grey bg-opacity-5 rounded-md h-auto
 }
 
 .blog-container .blog-slider .blog-post-slide img {
@@ -210,7 +214,7 @@
 }
 
 .blog-container .blog-slider .blog-post-slide .blog-post-content p {
-    @apply leading-[30px] px-2 mb-3
+    @apply leading-[30px] px-2 my-2
 }
 
 .blog-container .blog-slider .blog-post-slide .blog-post-content button {
@@ -235,4 +239,26 @@
 
 .blog-container .btns .controller button {
     @apply bg-grey bg-opacity-10 w-[50px] h-[50px] rounded-full
+}
+
+/* ==================== Product Section Starts here */
+
+.why_choose_us_container {
+    @apply flex flex-wrap gap-3 my-10
+}
+
+.why_choose_us_container .why_choose_us_wrapper {
+    @apply bg-grey bg-opacity-5 w-full md:w-[49%] rounded-md flex flex-col items-center justify-center py-5 px-3 text-center
+}
+
+.why_choose_us_container .why_choose_us_wrapper i {
+    @apply text-f35 text-blue
+}
+
+.why_choose_us_container .why_choose_us_wrapper h3 {
+    @apply text-f20 text-blue font-semibold my-4
+}
+
+.why_choose_us_container .why_choose_us_wrapper p {
+    @apply leading-[30px]
 }
