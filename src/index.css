@@ -12,7 +12,7 @@ h1 {
     @apply text-f25 md:text-f30 lg:text-f35 font-bold
 }
 
-h1, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
     @apply font-headFamily 
 }
 

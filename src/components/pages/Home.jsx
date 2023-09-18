@@ -45,6 +45,14 @@ export const HeroSect = () => {
     setCurrentSlide(prevSlide);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextSlide = (currentSlide + 1) % hero_slide_contents.length;
+      setCurrentSlide(nextSlide);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentSlide]);
   const slideStyle = {
     transition: `opacity 2s ease-in-out`,
   };
