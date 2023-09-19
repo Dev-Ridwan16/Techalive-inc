@@ -25,6 +25,7 @@ export const Home = () => {
         <BlogSect />
         <Why_Choose_Us />
       </div>
+      <Archivement />
     </div>
   );
 };
@@ -372,6 +373,75 @@ export const Why_Choose_Us = () => {
             <p>{content.content}</p>
           </div>
         ))}
+      </div>
+    </div>
+  );
+};
+
+export const Archivement = () => {
+  const [counters, setCounters] = useState({
+    workers: 0,
+    contracts: 0,
+    awards: 0,
+    clients: 0,
+  });
+
+  const limit = {
+    workers: 10,
+    contracts: 20,
+    awards: 40,
+    clients: 30,
+  };
+
+  let interval;
+
+  const incrementCounts = (counterName) => {
+    setCounters((prevCount) => ({
+      ...prevCount,
+      [counterName]: prevCount[counterName] + 1,
+    }));
+  };
+
+  useEffect(() => {
+    const counterNames = Object.keys(counters);
+
+    interval = setInterval(() => {
+      counterNames.forEach((counterName) => {
+        if (counters[counterName] < limit[counterName]) {
+          incrementCounts(counterName);
+        }
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [counters, limit]);
+
+  return (
+    <div className="archievement-container">
+      <img
+        src="https://i.pinimg.com/564x/7a/e9/e9/7ae9e9fd2b348f03421abc3a6a3a1be9.jpg"
+        alt=""
+      />
+
+      <div className="overlay"></div>
+
+      <div className="content">
+        <div className="workers">
+          <h1>{counters.workers}</h1>
+          <p>Workers</p>
+        </div>
+        <div className="contract">
+          <h1>{counters.contracts}</h1>
+          <p>Contracts</p>
+        </div>
+        <div className="award">
+          <h1>{counters.awards}</h1>
+          <p>Awards</p>
+        </div>
+        <div className="custormer">
+          <h1>{counters.clients}</h1>
+          <p>Clients</p>
+        </div>
       </div>
     </div>
   );

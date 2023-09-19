@@ -262,3 +262,24 @@
 .why_choose_us_container .why_choose_us_wrapper p {
     @apply leading-[30px]
 }
+
+.archievement-container {
+    @apply relative
+}
+
+.archievement-container img {
+    @apply w-full object-fill h-[300px]
+}
+
+.archievement-container .overlay {
+    @apply absolute bg-blue bg-opacity-80 w-full h-full top-0
+}
+
+.archievement-container .content {
+    @apply absolute top-0 z-[50] text-[#fff] flex items-center justify-between;
+    @apply w-[85%] h-full left-[50%] translate-x-[-50%] text-center
+}
+
+.archievement-container .content div{
+    @apply flex flex-col gap-5
+}
