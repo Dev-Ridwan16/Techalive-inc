@@ -1,8 +1,8 @@
 .section-subhead {
-    @apply text-f20 md:text-f25 lg:text-f30 font-bold text-blue
+    @apply text-f20 md:text-f25 font-bold text-blue
 }
 
-.service-sect-container, .product-sect-container, .about-sect-container, .why-choose-us-container {
+.service-sect-container, .product-sect-container, .about-sect-container, .why-choose-us-container, .reviews-container {
     @apply w-full relative py-10 
 }
 
@@ -139,7 +139,7 @@
     @apply text-green
 } 
 
-/* ==================== Product Section Starts here */
+/* ==================== About Section Starts here */
 .about-sect-container {
     @apply overflow-hidden
 }
@@ -283,3 +283,45 @@
 .archievement-container .content div{
     @apply flex flex-col gap-5
 }
+
+/* ==================== Reviews Section Starts here */
+.reviews-container {
+    @apply overflow-hidden
+}
+
+.reviews-wrapper {
+    @apply flex flex-col lg:flex-row lg:items-center lg:justify-between 
+}
+
+.reviews-wrapper .section-intro p {
+    @apply w-[500px] mt-5
+}
+
+.reviews-slides {
+    @apply flex flex-row lg:w-[500px] gap-3 transition-all duration-500 ease-in-out
+}
+
+.reviews-slides .reviews_slide {
+    @apply  flex-shrink-[1] flex-grow-[1] basis-[100%] md:basis-[49%] lg:basis-[100%] min-w-[100%] md:min-w-[49%] lg:min-w-[100%] border rounded-md h-[300px] p-5
+}
+
+.reviews-slides .reviews_slide .client-details  {
+    @apply flex gap-5 items-center
+}
+
+.reviews-slides .reviews_slide .client-details img {
+    @apply w-[100px] h-[100px] rounded-full
+}
+
+.reviews-slides-wrapper div.indicators {
+    @apply flex justify-center mt-5 gap-3
+}
+
+.reviews-slides-wrapper div.indicators .indicator {
+    @apply border w-[10px] h-[10px] rounded-full 
+}
+
+.reviews-slides-wrapper div.indicators .indicator.active {
+    @apply w-[15px] bg-pink
+}
+

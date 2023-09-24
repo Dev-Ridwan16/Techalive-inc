@@ -292,3 +292,51 @@ export const why_choose_us_contents = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nam, eos perspiciatis quos sit nihil inventore. Sed atque facere unde dolorum. ",
   },
 ];
+
+export const reviews_contents = [
+  {
+    image_url:
+      "https://i.pinimg.com/236x/3f/e9/fe/3fe9fe7f0573b76d84f1bc313e43c98d.jpg",
+    name: "Obi Chibuzo",
+    position: "CEO",
+    company: "WestPC",
+    review:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum similique officia minus quae doloribus repellat, laudantium reiciendis, voluptatibus, tenetur ullam provident! Ullam veniam praesentium repudiandae temporibus iusto itaque dolorum.",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/236x/3f/e9/fe/3fe9fe7f0573b76d84f1bc313e43c98d.jpg",
+    name: "Kamal Issa",
+    position: "",
+    company: "Individual Client",
+    review:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum similique officia minus quae doloribus repellat, laudantium reiciendis, voluptatibus, tenetur ullam provident! Ullam veniam praesentium repudiandae temporibus iusto itaque dolorum.",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/236x/3f/e9/fe/3fe9fe7f0573b76d84f1bc313e43c98d.jpg",
+    name: "Isiaq Farouq",
+    position: "Founder",
+    company: "WestPC",
+    review:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum similique officia minus quae doloribus repellat, laudantium reiciendis, voluptatibus, tenetur ullam provident! Ullam veniam praesentium repudiandae temporibus iusto itaque dolorum.",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/236x/3f/e9/fe/3fe9fe7f0573b76d84f1bc313e43c98d.jpg",
+    name: "Peter Chinyemerem",
+    position: "Director",
+    company: "Tundex Mega",
+    review:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum similique officia minus quae doloribus repellat, laudantium reiciendis, voluptatibus, tenetur ullam provident! Ullam veniam praesentium repudiandae temporibus iusto itaque dolorum.",
+  },
+  {
+    image_url:
+      "https://i.pinimg.com/236x/3f/e9/fe/3fe9fe7f0573b76d84f1bc313e43c98d.jpg",
+    name: "Praise",
+    position: "",
+    company: "Individual",
+    review:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum similique officia minus quae doloribus repellat, laudantium reiciendis, voluptatibus, tenetur ullam provident! Ullam veniam praesentium repudiandae temporibus iusto itaque dolorum.",
+  },
+];

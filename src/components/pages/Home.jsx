@@ -5,6 +5,7 @@ import {
   blog_posts,
   hero_slide_contents,
   products_contents,
+  reviews_contents,
   services_contents,
   why_choose_us_contents,
 } from "../../default_data";
@@ -26,6 +27,9 @@ export const Home = () => {
         <Why_Choose_Us />
       </div>
       <Archivement />
+      <div className="max-w-[85%] mx-auto">
+        <ReviewsSect />
+      </div>
     </div>
   );
 };
@@ -441,6 +445,77 @@ export const Archivement = () => {
         <div className="custormer">
           <h1>{counters.clients}</h1>
           <p>Clients</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const ReviewsSect = () => {
+  const [currentReview, setCurrentReview] = useState(0);
+
+  const slideStyle = {
+    transform: `translateX(-${(currentReview * 100) / 1}%)`,
+  };
+  return (
+    <div
+      className="reviews-container"
+      id="reviews"
+    >
+      <div className="reviews-wrapper">
+        <div className="section-intro">
+          <h1 className="section-subhead">
+            What <span className="text-pink">Our Customers</span> Say
+          </h1>
+          <p>
+            We care what people say about us. We work hard to gain the trust and
+            kind words our customers share. Choose us and be one of the
+            thousands of happy customers we have worked with.
+          </p>
+        </div>
+        <div className="reviews-slides-wrapper">
+          <div
+            className="reviews-slides"
+            style={slideStyle}
+          >
+            {reviews_contents.map((content, index) => (
+              <div
+                key={index}
+                className={`reviews_slide ${
+                  currentReview === index ? "active" : ""
+                }`}
+              >
+                <div className="client-details">
+                  <img
+                    src={content.image_url}
+                    alt=""
+                  />
+                  <div className="handle">
+                    <h5>{content.name}</h5>
+                    <p>
+                      {content.position === "CEO" ||
+                      content.position === "Director"
+                        ? content.position + " @ " + content.company
+                        : content.position === "Founder"
+                        ? content.position + " of " + content.company
+                        : content.company}
+                    </p>
+                  </div>
+                </div>
+                <p>{content.review}</p>
+              </div>
+            ))}
+          </div>
+          <div className="indicators">
+            {reviews_contents.map((indicator, index) => (
+              <div
+                className={`indicator ${
+                  currentReview === index ? "active" : ""
+                }`}
+                onClick={() => setCurrentReview(index)}
+              ></div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
