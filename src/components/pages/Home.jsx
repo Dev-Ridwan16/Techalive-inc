@@ -452,12 +452,15 @@ export const Archivement = () => {
 };
 
 export const ReviewsSect = () => {
+  const mobile = window.innerWidth <= 767;
   const tablet = window.innerWidth <= 1023;
   const [currentReview, setCurrentReview] = useState(0);
 
   let divisionFactor = 1;
 
-  if (tablet) {
+  if (mobile) {
+    divisionFactor = 1;
+  } else if (tablet) {
     divisionFactor = 2;
   }
 
@@ -516,6 +519,7 @@ export const ReviewsSect = () => {
           <div className="indicators">
             {reviews_contents.map((indicator, index) => (
               <div
+                key={index}
                 className={`indicator ${
                   currentReview === index ? "active" : ""
                 }`}

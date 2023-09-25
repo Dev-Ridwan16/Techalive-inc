@@ -301,7 +301,7 @@
 
 .reviews-slides-wrapper {
     
-    @apply overflow-hidden lg:w-[500px]
+    @apply overflow-hidden lg:w-[500px] mt-5 lg:mt-0
 }
 
 .reviews-slides-wrapper .reviews-slides {
@@ -313,7 +313,7 @@
 }
 
 .reviews-slides-wrapper .reviews-slides .reviews_slide .client-details  {
-    @apply flex gap-5 items-center
+    @apply flex gap-5 items-center mb-3
 }
 
 .reviews-slides-wrapper .reviews-slides .reviews_slide .client-details img {
