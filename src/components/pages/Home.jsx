@@ -452,10 +452,17 @@ export const Archivement = () => {
 };
 
 export const ReviewsSect = () => {
+  const tablet = window.innerWidth <= 1023;
   const [currentReview, setCurrentReview] = useState(0);
 
+  let divisionFactor = 1;
+
+  if (tablet) {
+    divisionFactor = 2;
+  }
+
   const slideStyle = {
-    transform: `translateX(-${(currentReview * 100) / 1}%)`,
+    transform: `translateX(-${(currentReview * 100) / divisionFactor}%)`,
   };
   return (
     <div

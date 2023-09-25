@@ -297,19 +297,26 @@
     @apply w-[500px] mt-5
 }
 
-.reviews-slides {
-    @apply flex flex-row lg:w-[500px] gap-3 transition-all duration-500 ease-in-out
+/* Converted the pixel to percent */
+
+.reviews-slides-wrapper {
+    
+    @apply overflow-hidden lg:w-[500px]
 }
 
-.reviews-slides .reviews_slide {
-    @apply  flex-shrink-[1] flex-grow-[1] basis-[100%] md:basis-[49%] lg:basis-[100%] min-w-[100%] md:min-w-[49%] lg:min-w-[100%] border rounded-md h-[300px] p-5
+.reviews-slides-wrapper .reviews-slides {
+    @apply flex flex-row lg:w-full transition-all duration-500 ease-in-out gap-[1.28%] 
 }
 
-.reviews-slides .reviews_slide .client-details  {
+.reviews-slides-wrapper .reviews-slides .reviews_slide {
+    @apply  flex-shrink-[1] flex-grow-[1] basis-[100%] md:basis-[49%] lg:basis-[100%] min-w-[99%] md:min-w-[49%] lg:min-w-[98.73%] border rounded-md h-[350px] md:h-[380px] lg:h-[300px] p-5
+}
+
+.reviews-slides-wrapper .reviews-slides .reviews_slide .client-details  {
     @apply flex gap-5 items-center
 }
 
-.reviews-slides .reviews_slide .client-details img {
+.reviews-slides-wrapper .reviews-slides .reviews_slide .client-details img {
     @apply w-[100px] h-[100px] rounded-full
 }
 
