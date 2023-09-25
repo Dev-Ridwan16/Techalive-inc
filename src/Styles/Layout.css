@@ -139,4 +139,45 @@ nav .nav-links li  {
     @apply bg-pink text-[#fff] w-[200px] mx-auto h-[40px] rounded-md outline-none mt-5
 }
 
+/* ==================== FOOTER CSS STARTS HERE ==================== */
+.footer {
+    @apply bg-blue text-[12px] 
+}
+
+.footer-margin {
+    @apply max-w-[90%] mx-auto
+}
+
+.footer-head {
+    @apply flex items-center justify-between h-[100px]
+}
+
+.footer-head .brand {
+    @apply flex flex-col items-center
+}
+
+.footer-head .quick-link {
+    @apply hidden md:block
+}
+
+.footer-head .quick-link ul, .footer-head .media-link {
+    @apply flex items-center gap-3 lg:gap-5 
+}
+
+.footer-contact-info {
+    @apply flex items-center justify-center 
+}
+
+.footer-contact-info .contact-info {
+    @apply flex flex-col md:flex-row gap-5 lg:gap-10
+}
+
+.footer-contact-info .contact-info div.info {
+    @apply  flex flex-row items-center gap-3
+}
+
+.footer-contact-info .contact-info div.info:nth-child(3) {
+    @apply w-[300px] lg:w-auto
+}
+
 

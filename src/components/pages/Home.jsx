@@ -14,6 +14,7 @@ import {
 import "primeicons/primeicons.css";
 import "../../Styles/Home.css";
 import { AppointmentForm } from "../../layouts/AppointmentForm";
+import Footer from "../../layouts/Footer";
 
 export const Home = () => {
   return (
@@ -29,7 +30,9 @@ export const Home = () => {
       <Archivement />
       <div className="max-w-[85%] mx-auto">
         <ReviewsSect />
+        <ContactUsSect />
       </div>
+      <Footer />
     </div>
   );
 };
@@ -529,6 +532,19 @@ export const ReviewsSect = () => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+export const ContactUsSect = () => {
+  return (
+    <div
+      className="contact-us-container"
+      id="contact-us"
+    >
+      <h1 className="section-subhead">
+        Contact <span className="text-pink">Us</span>
+      </h1>
     </div>
   );
 };

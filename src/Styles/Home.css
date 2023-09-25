@@ -2,7 +2,7 @@
     @apply text-f20 md:text-f25 font-bold text-blue
 }
 
-.service-sect-container, .product-sect-container, .about-sect-container, .why-choose-us-container, .reviews-container {
+.service-sect-container, .product-sect-container, .about-sect-container, .why-choose-us-container, .reviews-container, .contact-us-container {
     @apply w-full relative py-10 
 }
 
