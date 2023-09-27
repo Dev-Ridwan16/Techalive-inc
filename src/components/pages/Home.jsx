@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Footer from "../../layouts/Footer";
+// In app API
 import {
   about_contents,
   about_indicators,
@@ -13,10 +15,8 @@ import {
 // Styling
 import "primeicons/primeicons.css";
 import "../../Styles/Home.css";
-import { AppointmentForm } from "../../layouts/AppointmentForm";
-import Footer from "../../layouts/Footer";
 
-export const Home = () => {
+export const Home = ({ openAppointmentForm }) => {
   return (
     <div>
       <HeroSect />
@@ -30,7 +30,7 @@ export const Home = () => {
       <Archivement />
       <div className="max-w-[85%] mx-auto">
         <ReviewsSect />
-        <ContactUsSect />
+        <ContactUsSect openAppointmentForm={openAppointmentForm} />
       </div>
       <Footer />
     </div>
@@ -536,7 +536,7 @@ export const ReviewsSect = () => {
   );
 };
 
-export const ContactUsSect = () => {
+export const ContactUsSect = ({ openAppointmentForm }) => {
   return (
     <div
       className="contact-us-container"
@@ -545,6 +545,51 @@ export const ContactUsSect = () => {
       <h1 className="section-subhead">
         Contact <span className="text-pink">Us</span>
       </h1>
+
+      <div className="information">
+        <div className="phone">
+          <a href="tel:+234 703 670 7698">+234 703 670 7698</a>
+          <a href="tel:+234 805 050 0466">+234 805 050 0466</a>
+        </div>
+        <div className="address">
+          <a href="https://maps.app.goo.gl/YNVP8jy6EbR3ZZG27">
+            Shop 3, Phill Adeoye Shopping Complex Opposite Sabo Trailer Garage,
+            Sabo Area, Ogbomoso
+          </a>
+        </div>
+        <div className="mail">
+          <a href="mailto:techalive.inc@gmail.com">techalive.inc@gmail.com</a>
+          <a href="mailto:info@techalive.com">info@techalive.com</a>
+        </div>
+        <div className="quick-link">
+          <a href="">
+            <i className="pi pi-facebook"></i>
+            <span> Facebook</span>
+          </a>
+          <a href="">
+            <i className="pi pi-twitter"></i>
+            <span> Twitter</span>
+          </a>
+          <a href="">
+            <i className="pi pi-instagram"></i>
+            <span> Instagram</span>
+          </a>
+          <a href="">
+            <i className="pi pi-telegram"></i>
+            <span> Telegram</span>
+          </a>
+          <a href="">
+            <i className="pi pi-linkedin"></i>
+            <span> LinkedIn</span>
+          </a>
+        </div>
+      </div>
+      <button
+        className="appoint-btn"
+        onClick={openAppointmentForm}
+      >
+        Book Appointement
+      </button>
     </div>
   );
 };

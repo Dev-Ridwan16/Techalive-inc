@@ -135,7 +135,7 @@ nav .nav-links li  {
     @apply mt-[4.5rem]
 }
 
-.appoint-form button {
+.appoint-form button  {
     @apply bg-pink text-[#fff] w-[200px] mx-auto h-[40px] rounded-md outline-none mt-5
 }
 

@@ -30,7 +30,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Home />}
+            element={<Home openAppointmentForm={openAppointmentForm} />}
           />
         </Routes>
       </div>
