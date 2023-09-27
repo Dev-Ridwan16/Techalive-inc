@@ -4,6 +4,7 @@ import Error from "../../../public/error.svg";
 
 import "../../Styles/Blog.css";
 import { blog_posts } from "../../default_data";
+import Footer from "../../layouts/Footer";
 
 export const Blog = () => {
   return (
@@ -12,6 +13,7 @@ export const Blog = () => {
       <div className="max-w-[85%] mx-auto">
         <BlogPosts />
       </div>
+      <Footer />
     </div>
   );
 };
