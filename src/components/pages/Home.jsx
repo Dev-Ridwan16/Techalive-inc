@@ -553,7 +553,6 @@ export const ContactUsSect = ({ openAppointmentForm }) => {
 
       <div className="information">
         <div className="phone">
-          <a href="tel:+234 703 670 7698">+234 703 670 7698</a>
           <a href="tel:+234 805 050 0466">+234 805 050 0466</a>
         </div>
         <div className="address">
