@@ -552,7 +552,10 @@ export const ContactUsSect = ({ openAppointmentForm }) => {
           <a href="tel:+234 805 050 0466">+234 805 050 0466</a>
         </div>
         <div className="address">
-          <a href="https://maps.app.goo.gl/YNVP8jy6EbR3ZZG27">
+          <a
+            href="https://maps.app.goo.gl/YNVP8jy6EbR3ZZG27"
+            target="_blank"
+          >
             Shop 3, Phill Adeoye Shopping Complex Opposite Sabo Trailer Garage,
             Sabo Area, Ogbomoso
           </a>
