@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 // importing dependecies
 import { nav_links } from "../default_data";
 import { Link } from "react-scroll";
+import { Link as PathLink } from "react-router-dom";
 
 // Styling
 import "../Styles/Layout.css";
@@ -41,14 +42,18 @@ export const Navbar = ({ openAppointmentForm }) => {
             <ul className="nav-links">
               {nav_links.map((nav_link, index) => (
                 <li key={index}>
-                  <Link
-                    to={nav_link.path}
-                    smooth={true}
-                    offset={200}
-                    duration={500}
-                  >
-                    {nav_link.name}
-                  </Link>
+                  {window.location.pathname === "/blog-posts" ? (
+                    <PathLink to="/">{nav_link.name}</PathLink>
+                  ) : (
+                    <Link
+                      to={nav_link.path}
+                      smooth={true}
+                      offset={200}
+                      duration={500}
+                    >
+                      {nav_link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -57,6 +62,7 @@ export const Navbar = ({ openAppointmentForm }) => {
         ) : (
           <MobileNavbar
             isToggle={isToggle}
+            setIsToggle={setIsToggle}
             handleNavToggle={handleNavToggle}
             openAppointmentForm={openAppointmentForm}
           />
@@ -68,10 +74,15 @@ export const Navbar = ({ openAppointmentForm }) => {
 
 export const MobileNavbar = ({
   isToggle,
+  setIsToggle,
   handleNavToggle,
   openAppointmentForm,
 }) => {
   const [isScrolling, setIsScrolling] = useState(true);
+
+  const closeNavbar = () => {
+    setIsToggle(true);
+  };
   const changeNavbarBg = () => {
     if (window.location.pathname === "/blog-posts") {
       if (window.scrollY >= 200) {
@@ -129,14 +140,19 @@ export const MobileNavbar = ({
           <div className="mobile-nav-children">
             {nav_links.map((nav_link, index) => (
               <li key={index}>
-                <Link
-                  to={nav_link.path}
-                  smooth={true}
-                  offset={200}
-                  duration={500}
-                >
-                  {nav_link.name}
-                </Link>
+                {window.location.pathname === "/blog-posts" ? (
+                  <PathLink to="/">{nav_link.name}</PathLink>
+                ) : (
+                  <Link
+                    to={nav_link.path}
+                    smooth={true}
+                    offset={200}
+                    duration={500}
+                    onClick={closeNavbar}
+                  >
+                    {nav_link.name}
+                  </Link>
+                )}
               </li>
             ))}
             <button onClick={openAppointmentForm}>Book Appointement</button>
