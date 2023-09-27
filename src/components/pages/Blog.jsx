@@ -67,7 +67,7 @@ export const BlogPosts = () => {
               src={Error}
               alt=""
             />
-            <h3 className="no-post">No post found</h3>
+            <h3 className="no-post">No post found!</h3>
           </div>
         ) : (
           (searchTerm === "" ? blog_posts : filteredData).map(

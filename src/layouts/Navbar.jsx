@@ -73,11 +73,19 @@ export const MobileNavbar = ({
 }) => {
   const [isScrolling, setIsScrolling] = useState(true);
   const changeNavbarBg = () => {
-    if (window.scrollY >= 600) {
-      setIsScrolling(true);
-      console.log("sc");
+    if (window.location.pathname === "/blog-posts") {
+      if (window.scrollY >= 200) {
+        console.log(300);
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
     } else {
-      setIsScrolling(false);
+      if (window.scrollY >= 600) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
     }
   };
 
