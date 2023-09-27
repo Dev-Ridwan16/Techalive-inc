@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import Error from "../../../public/error.svg";
 
 import "../../Styles/Blog.css";
 import { blog_posts } from "../../default_data";
@@ -31,6 +33,20 @@ export const BlogHero = () => {
 
 export const BlogPosts = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+
+  const filterData = () => {
+    const filtered = blog_posts.filter(
+      (item) => item.title.toLowerCase().includes(searchTerm.toLowerCase())
+      // item.content.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setFilteredData(filtered);
+  };
+
+  useEffect(() => {
+    filterData();
+  }, [searchTerm]);
 
   return (
     <div className="post-container">
@@ -45,22 +61,34 @@ export const BlogPosts = () => {
         />
       </div>
       <div className="posts">
-        {blog_posts.map((blog_post, index) => (
-          <div
-            key={index}
-            className="post-wrapper"
-          >
+        {filteredData.length === 0 ? (
+          <div className="error-class">
             <img
-              src={blog_post.image_url}
+              src={Error}
               alt=""
             />
-            <div className="date">
-              <i className="pi pi-calendar-minus" />
-              <span>{blog_post.date}</span>
-            </div>
-            <h3>{blog_post.title}</h3>
+            <h3 className="no-post">No post found</h3>
           </div>
-        ))}
+        ) : (
+          (searchTerm === "" ? blog_posts : filteredData).map(
+            (blog_post, index) => (
+              <div
+                key={index}
+                className="post-wrapper"
+              >
+                <img
+                  src={blog_post.image_url}
+                  alt=""
+                />
+                <div className="date">
+                  <i className="pi pi-calendar-minus" />
+                  <span>{blog_post.date}</span>
+                </div>
+                <h3>{blog_post.title}</h3>
+              </div>
+            )
+          )
+        )}
       </div>
     </div>
   );
