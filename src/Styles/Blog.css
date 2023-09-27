@@ -1,0 +1,15 @@
+.blog-post-container {
+    @apply relative
+}
+
+.blog-post-container img {
+    @apply h-[300px] w-full object-cover
+}
+
+.blog-post-container .overlay {
+    @apply bg-blue bg-opacity-50 absolute top-0 h-[300px] w-full
+}
+
+.blog-post-container h1 {
+    @apply text-[#fff] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]
+}

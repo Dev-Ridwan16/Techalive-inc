@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../../layouts/Footer";
+import { useNavigate } from "react-router-dom";
+
 // In app API
 import {
   about_contents,
@@ -253,6 +255,7 @@ export const AboutSect = () => {
 };
 
 export const BlogSect = () => {
+  const navigate = useNavigate();
   const mobile = window.innerWidth <= 767;
   const tablet = window.innerWidth <= 1023;
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -338,7 +341,9 @@ export const BlogSect = () => {
         </div>
         <div className="btns">
           <div className="blog-page-btn">
-            <button>View all blogs</button>
+            <button onClick={() => navigate("/blog-posts")}>
+              View all blogs
+            </button>
           </div>
           <div className="controller">
             <button onClick={handlePrev}>

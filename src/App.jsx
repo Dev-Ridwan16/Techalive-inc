@@ -4,6 +4,7 @@ import { Home } from "./components/pages/Home";
 import { Navbar } from "./layouts/Navbar";
 import { AppointmentForm } from "./layouts/AppointmentForm";
 import { useEffect, useState } from "react";
+import { Blog } from "./components/pages/Blog";
 
 function App() {
   const [showAppointmentForm, setShowAppointmentForm] = useState(false);
@@ -31,6 +32,10 @@ function App() {
           <Route
             path="/"
             element={<Home openAppointmentForm={openAppointmentForm} />}
+          />
+          <Route
+            path="/blog-posts"
+            element={<Blog />}
           />
         </Routes>
       </div>
