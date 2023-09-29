@@ -37,7 +37,7 @@
 }
 
 .post-container .posts .post-wrapper {
-    @apply w-[245px]
+    @apply w-full md:w-[315px] lg:w-[272px] 
 }
 
 .post-container .posts .post-wrapper:hover {
@@ -45,7 +45,7 @@
 }
 
 .post-container .posts .post-wrapper img {
-    @apply w-[245px] h-[200px] mb-2 
+    @apply w-full md:w-[315px] lg:w-[272px] h-[200px] mb-2 
 }
 
 .post-container .posts .post-wrapper h3 {

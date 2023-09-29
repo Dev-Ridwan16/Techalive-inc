@@ -177,11 +177,12 @@ export const ProductSect = () => {
             <h4 id="name">{content.name}</h4>
             <h4 id="price">{content.price}</h4>
             <div className="product-intrested">
-              <span>Intrested? </span>
-              <i className="pi pi-arrow-right"></i>
               <div className="contact-to-get">
                 <a href="https://wa.me/2348050500466">
                   <i className="pi pi-whatsapp"></i>
+                </a>
+                <a href="tel:+2348050500466">
+                  <i className="pi pi-phone"></i>
                 </a>
               </div>
             </div>
@@ -305,7 +306,7 @@ export const BlogSect = () => {
         Our <span className="text-pink underline">Blog</span>
       </h1>
       <p className="text-center my-5 w-full md:w-[600px] mx-auto">
-        Discover our collection of insightful articles covering a variety of
+        Discover our colction of insightful articles covering a variety of
         topics. Dive into our latest posts below.
       </p>
 
@@ -552,43 +553,60 @@ export const ContactUsSect = ({ openAppointmentForm }) => {
       </h1>
 
       <div className="information">
-        <div className="phone">
-          <a href="tel:+234 805 050 0466">+234 805 050 0466</a>
+        <div className="col col-1">
+          <div className="phone">
+            <div className="wrap">
+              <i className="pi pi-phone" />
+              <a href="tel:+234 805 050 0466">+234 805 050 0466</a>
+            </div>
+          </div>
+          <div className="address">
+            <div className="wrap">
+              <i className="pi pi-map-marker" />
+              <a
+                href="https://maps.app.goo.gl/YNVP8jy6EbR3ZZG27"
+                target="_blank"
+              >
+                Address on map
+              </a>
+            </div>
+          </div>
+          <div className="mail">
+            <div className="wrap">
+              <i className="pi pi-envelope" />
+              <a href="mailto:techalive.inc@gmail.com">
+                techalive.inc@gmail.com
+              </a>
+            </div>
+            <div className="wrap">
+              <i className="pi pi-inbox" />
+              <a href="mailto:info@techalive.com">info@techalive.com</a>
+            </div>
+          </div>
         </div>
-        <div className="address">
-          <a
-            href="https://maps.app.goo.gl/YNVP8jy6EbR3ZZG27"
-            target="_blank"
-          >
-            Shop 3, Phill Adeoye Shopping Complex Opposite Sabo Trailer Garage,
-            Sabo Area, Ogbomoso
-          </a>
-        </div>
-        <div className="mail">
-          <a href="mailto:techalive.inc@gmail.com">techalive.inc@gmail.com</a>
-          <a href="mailto:info@techalive.com">info@techalive.com</a>
-        </div>
-        <div className="quick-link">
-          <a href="">
-            <i className="pi pi-facebook"></i>
-            <span> Facebook</span>
-          </a>
-          <a href="">
-            <i className="pi pi-twitter"></i>
-            <span> Twitter</span>
-          </a>
-          <a href="">
-            <i className="pi pi-instagram"></i>
-            <span> Instagram</span>
-          </a>
-          <a href="">
-            <i className="pi pi-telegram"></i>
-            <span> Telegram</span>
-          </a>
-          <a href="">
-            <i className="pi pi-linkedin"></i>
-            <span> LinkedIn</span>
-          </a>
+        <div className="col">
+          <div className="quick-link">
+            <a href="">
+              <i className="pi pi-facebook"></i>
+              <span> Facebook</span>
+            </a>
+            <a href="">
+              <i className="pi pi-twitter"></i>
+              <span> Twitter</span>
+            </a>
+            <a href="">
+              <i className="pi pi-instagram"></i>
+              <span> Instagram</span>
+            </a>
+            <a href="">
+              <i className="pi pi-telegram"></i>
+              <span> Telegram</span>
+            </a>
+            <a href="">
+              <i className="pi pi-linkedin"></i>
+              <span> LinkedIn</span>
+            </a>
+          </div>
         </div>
       </div>
       <button

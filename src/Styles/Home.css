@@ -127,16 +127,16 @@
     @apply text-pink font-semibold
 }
 
-.product-sect-container .product-container .product-wrapper-card .product-intrested {
-    @apply flex items-center justify-between
+.product-sect-container .product-container .product-wrapper-card .product-intrested .contact-to-get {
+    @apply flex flex-row  items-center gap-3
 }
 
-.product-sect-container .product-container .product-wrapper-card .product-intrested span {
-    @apply text-f12
-}
-
-.product-sect-container .product-container .product-wrapper-card .product-intrested i.pi-whatsapp {
+.product-sect-container .product-container .product-wrapper-card .product-intrested .contact-to-get i.pi-whatsapp {
     @apply text-green
+}
+
+.product-sect-container .product-container .product-wrapper-card .product-intrested .contact-to-get i.pi-phone {
+    @apply text-indigo-500
 }
 
 /* ==================== About Section Starts here */
@@ -336,40 +336,42 @@
 
 
 .contact-us-container .information {
-    @apply flex flex-row flex-wrap justify-between mt-5 gap-5
+    @apply flex flex-row  justify-start mt-5 gap-[50px] md:gap-[200px]
 }
 
-.contact-us-container .information .phone,
-.contact-us-container .information .mail,
-.contact-us-container .information .address,
-.contact-us-container .information .quick-link {
-    @apply flex flex-col transition-all duration-200 ease-in-out w-[200px] 
+.contact-us-container .information .col-1 {
+    @apply flex flex-col lg:flex-row justify-between w-auto lg:w-full
 }
 
-.contact-us-container .information .phone a,
-.contact-us-container .information .mail a,
-.contact-us-container .information .address a,
-.contact-us-container .information .quick-link a {
-    @apply transition-all duration-200 ease-in-out 
-}
-
-
-
-.contact-us-container .information .address a {
-    @apply w-[250px]
-}
-
-.contact-us-container .information .quick-link a {
+.contact-us-container .information .col div .wrap {
     @apply flex items-center gap-3
 }
 
-.contact-us-container .information .phone a:hover,
-.contact-us-container .information .mail a:hover,
-.contact-us-container .information .address a:hover,
-.contact-us-container .information .quick-link a:hover {
+.contact-us-container .information .col .col .phone,
+.contact-us-container .information .col .mail,
+.contact-us-container .information .col .address,
+.contact-us-container .information .col .quick-link {
+    @apply flex flex-col transition-all duration-200 ease-in-out  
+}
+
+.contact-us-container .information .col .phone a,
+.contact-us-container .information .col .mail a,
+.contact-us-container .information .col .address a,
+.contact-us-container .information .col .quick-link a {
+    @apply transition-all duration-200 ease-in-out 
+}
+
+.contact-us-container .information .col .quick-link a {
+    @apply flex items-center gap-3
+}
+
+.contact-us-container .information .col .phone a:hover,
+.contact-us-container .information .col .mail a:hover,
+.contact-us-container .information .col .address a:hover,
+.contact-us-container .information .col .quick-link a:hover {
     @apply text-[15px]
 }
 
 .appoint-btn {
-    @apply bg-pink text-[#fff] w-[200px] mx-auto h-[40px] rounded-md outline-none mt-5 
+    @apply bg-pink text-[#fff] w-full md:w-[200px] mx-auto h-[40px] rounded-md outline-none mt-5 
 }
