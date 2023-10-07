@@ -100,7 +100,7 @@
 /* ==================== Product Section Starts here */
 
 .product-sect-container .product-container {
-    @apply flex flex-row overflow-x-scroll
+    @apply flex flex-row items-center justify-between gap-1 overflow-x-scroll mx-2 h-[300px]
 }
 
 .product-sect-container .product-container::-webkit-scrollbar {
@@ -108,11 +108,17 @@
 }
 
 .product-sect-container .product-container .product-wrapper-card {
-    @apply flex-shrink-[0] flex-grow-[0] basis-[65%] md:basis-[40%] lg:flex-shrink-[1] lg:flex-grow-[1] lg:basis-[15%] mx-3 h-[350px] px-2 shadow-sm rounded-lg
+    /* @apply flex-shrink-[0] flex-grow-[0] basis-[65%] md:basis-[40%] lg:flex-shrink-[1] lg:flex-grow-[1] lg:basis-[15%]; */
+    /* @apply mx-3 h-[350px] px-2 shadow-sm rounded-lg */
+    @apply w-[250px] h-[250px] p-2 transition-all duration-300 ease-in-out bg-grey bg-opacity-5 rounded-md
+}
+
+.product-sect-container .product-container .product-wrapper-card:hover {
+    @apply shadow-md
 }
 
 .product-sect-container .product-container .product-wrapper-card img {
-    @apply w-[200px] h-[150px] mx-auto object-contain
+    @apply w-[100px] h-[70px] mx-auto object-contain
 }
 
 .product-sect-container .product-container .product-wrapper-card p {
@@ -120,11 +126,15 @@
 }
 
 .product-sect-container .product-container .product-wrapper-card h4#name {
-    @apply text-blue text-f16 font-semibold my-5 h-[50px]
+    @apply text-blue text-f16 font-semibold my-2
 }
 
 .product-sect-container .product-container .product-wrapper-card h4#price {
     @apply text-pink font-semibold
+}
+
+.product-sect-container .product-container .product-wrapper-card .product-intrested {
+    @apply flex flex-row justify-between items-center
 }
 
 .product-sect-container .product-container .product-wrapper-card .product-intrested .contact-to-get {
@@ -137,6 +147,10 @@
 
 .product-sect-container .product-container .product-wrapper-card .product-intrested .contact-to-get i.pi-phone {
     @apply text-indigo-500
+}
+
+.product-sect-container .product-container .product-wrapper-card .product-intrested button.description-btn {
+    @apply w-[50px] h-[25px] text-f10 bg-grey bg-opacity-10 rounded
 }
 
 /* ==================== About Section Starts here */
