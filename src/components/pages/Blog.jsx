@@ -3,8 +3,19 @@ import React, { useEffect, useState } from "react";
 import Error from "../../../public/error.svg";
 
 import "../../Styles/Blog.css";
-import { blog_posts } from "../../default_data";
 import Footer from "../../layouts/Footer";
+import axios from "axios";
+import { Link } from "react-router-dom";
+
+const formatDate = (dateString) => {
+  const options = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    weekday: "short",
+  };
+  return new Date(dateString).toLocaleDateString("en-US", options);
+};
 
 export const Blog = () => {
   return (
@@ -13,7 +24,7 @@ export const Blog = () => {
       <div className="max-w-[85%] mx-auto">
         <BlogPosts />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
@@ -35,20 +46,24 @@ export const BlogHero = () => {
 
 export const BlogPosts = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
 
-  const filterData = () => {
-    const filtered = blog_posts.filter(
-      (item) => item.title.toLowerCase().includes(searchTerm.toLowerCase())
-      // item.content.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    setFilteredData(filtered);
-  };
+  const [allBlogs, setAllBlogs] = useState([]);
 
   useEffect(() => {
-    filterData();
-  }, [searchTerm]);
+    (async () => {
+      try {
+        const response = await axios.get(
+          "https://techalive.onrender.com/api/v1/blog-post/other-blogs"
+        );
+
+        const data = response.data;
+
+        setAllBlogs(data.allBlogs);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  });
 
   return (
     <div className="post-container">
@@ -63,7 +78,7 @@ export const BlogPosts = () => {
         />
       </div>
       <div className="posts">
-        {filteredData.length === 0 ? (
+        {allBlogs.length === 0 ? (
           <div className="error-class">
             <img
               src={Error}
@@ -72,24 +87,33 @@ export const BlogPosts = () => {
             <h3 className="no-post">No post found!</h3>
           </div>
         ) : (
-          (searchTerm === "" ? blog_posts : filteredData).map(
-            (blog_post, index) => (
-              <div
+          allBlogs
+            .filter((blog) =>
+              searchTerm.toLowerCase() === ""
+                ? blog
+                : blog.title.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            .map((blog, index) => (
+              <Link
+                to={`/techalive/blog/${blog._id}`}
                 key={index}
                 className="post-wrapper"
               >
                 <img
-                  src={blog_post.image_url}
+                  src={blog.image}
                   alt=""
                 />
                 <div className="date">
                   <i className="pi pi-calendar-minus" />
-                  <span>{blog_post.date}</span>
+                  <span>{formatDate(blog.createdOn)}</span>
                 </div>
-                <h3>{blog_post.title}</h3>
-              </div>
-            )
-          )
+                <h3>
+                  {blog.title.length > 25
+                    ? blog.title.slice(0, 25) + "..."
+                    : blog.title}
+                </h3>
+              </Link>
+            ))
         )}
       </div>
     </div>

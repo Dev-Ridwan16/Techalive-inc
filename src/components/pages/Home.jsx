@@ -35,7 +35,7 @@ export const Home = ({ openAppointmentForm }) => {
         <ReviewsSect />
         <ContactUsSect openAppointmentForm={openAppointmentForm} />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
@@ -313,6 +313,7 @@ export const BlogSect = () => {
   const mobile = window.innerWidth <= 767;
   const tablet = window.innerWidth <= 1023;
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [allBlogs, setAllBlogs] = useState([]);
 
   let divisionFactor = 4;
 
@@ -323,15 +324,22 @@ export const BlogSect = () => {
   }
 
   const handlePrev = () => {
-    if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - divisionFactor);
+    if (allBlogs.length <= divisionFactor) {
+      // Handle the case where there are fewer items than divisionFactor.
+      return; // Optionally, you can disable the "Prev" button in this case.
+    }
+
+    const newSlide = currentSlide - divisionFactor;
+    if (newSlide >= 0) {
+      setCurrentSlide(newSlide);
     } else {
-      setCurrentSlide(blog_posts.length - divisionFactor);
+      // If going back would lead to negative indices, wrap around to the end.
+      setCurrentSlide(allBlogs.length - (allBlogs.length % divisionFactor));
     }
   };
 
   const handleNext = () => {
-    if (currentSlide < blog_posts.length - divisionFactor) {
+    if (currentSlide < allBlogs.length - divisionFactor) {
       setCurrentSlide(currentSlide + divisionFactor);
     } else {
       setCurrentSlide(0);
@@ -340,15 +348,31 @@ export const BlogSect = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const nextSlide = (currentSlide + divisionFactor) % blog_posts.length;
+      const nextSlide = (currentSlide + divisionFactor) % allBlogs.length;
       setCurrentSlide(nextSlide);
     }, 5000);
 
     return () => clearInterval(interval);
   }, [currentSlide]);
+
   const slideStyle = {
     transform: `translateX(-${(currentSlide * 100) / divisionFactor}%)`,
   };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get(
+          "https://techalive.onrender.com/api/v1/blog-post/other-blogs"
+        );
+
+        const data = response.data;
+        setAllBlogs(data.allBlogs);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  });
 
   return (
     <div
@@ -363,7 +387,7 @@ export const BlogSect = () => {
         topics. Dive into our latest posts below.
       </p>
 
-      <div className="blog-container">
+      {/* <div className="blog-container">
         <div
           className="blog-slider"
           style={slideStyle}
@@ -388,6 +412,59 @@ export const BlogSect = () => {
                 <div className="the-footer">
                   <i>{post.author}</i>
                   <i>{post.date}</i>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="btns">
+          <div className="blog-page-btn">
+            <button onClick={() => navigate("/blog-posts")}>
+              View all blogs
+            </button>
+          </div>
+          <div className="controller">
+            <button onClick={handlePrev}>
+              <i className="pi pi-angle-left"></i>
+            </button>
+            <button onClick={handleNext}>
+              <i className="pi pi-angle-right"></i>
+            </button>
+          </div>
+        </div>
+      </div> */}
+      <div className="blog-container">
+        <div
+          className="blog-slider"
+          style={slideStyle}
+        >
+          {allBlogs.map((blog, index) => (
+            <div
+              key={index}
+              className="blog-post-slide"
+            >
+              <img
+                src={blog.image}
+                alt=""
+              />
+              <div className="blog-post-content">
+                <h3>
+                  {blog.title.length > 25
+                    ? blog.title.slice(0, 25) + "..."
+                    : blog.title}
+                </h3>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      blog.blog.length > 20
+                        ? blog.blog.slice(0, 100) + "..."
+                        : blog.blog,
+                  }}
+                />
+                {/* <button>Read Post</button> */}
+                <div className="the-footer">
+                  <i>{blog.author}</i>
+                  <i>{blog.date}</i>
                 </div>
               </div>
             </div>

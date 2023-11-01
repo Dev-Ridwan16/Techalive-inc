@@ -2,7 +2,7 @@
     @apply sticky top-0 z-[888] 
 }
 
-.nav-wrapper, .changing-nav-bg {
+.nav-wrapper, .changing-nav-bg, .reading-nav-bg {
     @apply w-full bg-grey bg-opacity-20 absolute left-[50%] translate-x-[-50%]
 }
 
@@ -12,6 +12,10 @@
 
 .changing-nav-bg {
     @apply bg-blue
+}
+
+.reading-nav-bg {
+    @apply bg-pink
 }
 
 nav {

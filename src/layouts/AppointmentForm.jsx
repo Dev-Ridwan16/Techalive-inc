@@ -23,6 +23,7 @@ export const AppointmentForm = ({ closeAppointmentForm }) => {
     name: "",
     email: "",
     phone: "",
+    purpose: "",
     message: "",
     time: "",
   });
@@ -134,8 +135,10 @@ export const AppointmentForm = ({ closeAppointmentForm }) => {
               >
                 Select a Purpose
               </option>
-              <option value="business">Business</option>
-              <option value="individual">Individual</option>
+              <option value="business">Buys</option>
+              <option value="individual">Repairs</option>
+              <option value="individual">Training</option>
+              <option value="individual">Technical Consultant</option>
             </select>
           </div>
           <div className="field3">

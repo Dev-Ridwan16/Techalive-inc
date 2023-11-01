@@ -5,6 +5,8 @@ import { Navbar } from "./layouts/Navbar";
 import { AppointmentForm } from "./layouts/AppointmentForm";
 import { useEffect, useState } from "react";
 import { Blog } from "./components/pages/Blog";
+import BlogPost from "./components/outs/BlogPost";
+import Footer from "./layouts/Footer";
 
 function App() {
   const [showAppointmentForm, setShowAppointmentForm] = useState(false);
@@ -30,6 +32,10 @@ function App() {
 
         <Routes>
           <Route
+            path="techalive/blog/:blogId"
+            element={<BlogPost />}
+          />
+          <Route
             path="/"
             element={<Home openAppointmentForm={openAppointmentForm} />}
           />
@@ -42,6 +48,7 @@ function App() {
       {showAppointmentForm && (
         <AppointmentForm closeAppointmentForm={closeAppointmentForm} />
       )}
+      <Footer />
     </div>
   );
 }

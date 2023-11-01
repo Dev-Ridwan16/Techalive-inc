@@ -30,8 +30,6 @@
     @apply border h-[25px] outline-none w-[160px] md:w-[250px] border-grey rounded-full text-f10 pl-3
 }
 
-
-
 .post-container .posts {
     @apply flex flex-row flex-wrap gap-5
 }
@@ -45,7 +43,11 @@
 }
 
 .post-container .posts .post-wrapper img {
-    @apply w-full md:w-[315px] lg:w-[272px] h-[200px] mb-2 
+    @apply w-full md:w-[315px] lg:w-[272px] h-[200px] mb-2 object-cover transition-all duration-500 ease-in-out
+}
+
+.post-container .posts .post-wrapper img:hover {
+    @apply object-fill transition-all duration-500 ease-in-out
 }
 
 .post-container .posts .post-wrapper h3 {

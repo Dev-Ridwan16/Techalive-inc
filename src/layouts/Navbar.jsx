@@ -3,13 +3,15 @@ import React, { useState, useEffect } from "react";
 // importing dependecies
 import { nav_links } from "../default_data";
 import { Link } from "react-scroll";
-import { Link as PathLink } from "react-router-dom";
+import { Link as PathLink, useLocation, useNavigate } from "react-router-dom";
 
 // Styling
 import "../Styles/Layout.css";
 
 export const Navbar = ({ openAppointmentForm }) => {
   const isDesktop = window.innerWidth >= 1024;
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const [isToggle, setIsToggle] = useState(true);
   const [isScrolling, setIsScrolling] = useState(false);
@@ -19,17 +21,54 @@ export const Navbar = ({ openAppointmentForm }) => {
   };
 
   const changeNavbarBg = () => {
-    if (window.scrollY >= 600) setIsScrolling(true);
-    else {
+    if (window.scrollY >= 600) {
+      setIsScrolling(true);
+    } else {
       setIsScrolling(false);
     }
   };
 
   window.addEventListener("scroll", changeNavbarBg);
 
+  const handleSmoothScroll = (target) => {
+    const targetElement = document.querySelector(target);
+
+    if (targetElement) {
+      const offset = targetElement.getBoundingClientRect().top + window.scrollY;
+
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleNavLinkClick = (e, target) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+
+      setTimeout(() => {
+        handleSmoothScroll(target);
+      }, 1000);
+    }
+
+    handleSmoothScroll(target);
+  };
+
   return (
     <div className="nav-container">
-      <div className={isScrolling ? "changing-nav-bg" : "nav-wrapper"}>
+      <div
+        className={
+          isScrolling
+            ? "changing-nav-bg"
+            : location.pathname.includes("/techalive/blog/")
+            ? isScrolling
+              ? "changing-nav-bg"
+              : "changing-nav-bg"
+            : "nav-wrapper"
+        }
+      >
         {isDesktop ? (
           <nav>
             <div className="brand">
@@ -43,16 +82,16 @@ export const Navbar = ({ openAppointmentForm }) => {
               {nav_links.map((nav_link, index) => (
                 <li key={index}>
                   {window.location.pathname === "/blog-posts" ? (
-                    <PathLink to="/">{nav_link.name}</PathLink>
+                    <a href={`/#${nav_link.path}`}>{nav_link.name}</a>
                   ) : (
-                    <Link
-                      to={nav_link.path}
-                      smooth={true}
-                      offset={200}
-                      duration={500}
+                    <a
+                      href={`/#${nav_link.path}`}
+                      onClick={(e) =>
+                        handleNavLinkClick(e, `#${nav_link.path}`)
+                      }
                     >
                       {nav_link.name}
-                    </Link>
+                    </a>
                   )}
                 </li>
               ))}
@@ -79,6 +118,7 @@ export const MobileNavbar = ({
   openAppointmentForm,
 }) => {
   const [isScrolling, setIsScrolling] = useState(true);
+  const location = useLocation();
 
   const closeNavbar = () => {
     setIsToggle(true);
@@ -86,7 +126,6 @@ export const MobileNavbar = ({
   const changeNavbarBg = () => {
     if (window.location.pathname === "/blog-posts") {
       if (window.scrollY >= 200) {
-        console.log(300);
         setIsScrolling(true);
       } else {
         setIsScrolling(false);
@@ -113,7 +152,13 @@ export const MobileNavbar = ({
     <div
       className={`
         ${isToggle ? "nav-wrapper" : "nav-wrapper-bg changing-nav-bg"}
-        ${isScrolling ? "changing-nav-bg" : "nav-wrapper"}
+        ${
+          location.pathname === "/techalive/blog/:blogId"
+            ? isScrolling
+              ? "changing-nav-bg"
+              : "nav-wrapper"
+            : "changing-nav-bg"
+        }
       `}
     >
       <nav>
@@ -141,17 +186,14 @@ export const MobileNavbar = ({
             {nav_links.map((nav_link, index) => (
               <li key={index}>
                 {window.location.pathname === "/blog-posts" ? (
-                  <PathLink to="/">{nav_link.name}</PathLink>
+                  <a href={`/#${nav_link.path}`}>{nav_link.name}</a>
                 ) : (
-                  <Link
-                    to={nav_link.path}
-                    smooth={true}
-                    offset={200}
-                    duration={500}
-                    onClick={closeNavbar}
+                  <a
+                    href={`/#${nav_link.path}`}
+                    onClick={(e) => handleNavLinkClick(e, `#${nav_link.path}`)}
                   >
                     {nav_link.name}
-                  </Link>
+                  </a>
                 )}
               </li>
             ))}

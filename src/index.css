@@ -5,6 +5,7 @@
 
 
 body {
+    scroll-behavior: smooth;
     @apply text-grey font-bodyFamily text-f12 md:text-f14 leading-[30px]
 }
 

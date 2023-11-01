@@ -1,0 +1,75 @@
+.readingBlog-container {
+    @apply flex flex-col lg:flex-row justify-between w-[85%] mx-auto py-24
+}
+
+.readingBlog-container hr {
+    @apply border my-5 lg:h-[50vh] lg:mt-[200px] lg:sticky lg:top-[200px]
+}
+
+.readingBlog-container .blog-post-wrapper {
+    @apply lg:max-w-[55%]
+}
+
+.readingBlog-container .blog-post-wrapper h1.blog-header {
+    @apply text-f25 mb-5
+}
+
+.readingBlog-container .blog-post-wrapper .blog-det {
+    @apply flex flex-row items-center gap-3 mb-5
+}
+
+.readingBlog-container .blog-post-wrapper p.author {
+    @apply bg-black text-white w-fit px-2 h-[25px] flex items-center
+}
+
+.readingBlog-container .blog-post-wrapper img {
+    @apply w-full h-[20vh] md:h-[30vh] lg:h-[70vh] mb-10 object-cover
+}
+
+.readingBlog-container .blog-post-wrapper div.blog-content h1 {
+    @apply text-f25
+}
+
+.readingBlog-container .blog-post-wrapper div.blog-content h2 {
+    @apply text-f20
+}
+
+.readingBlog-container .blog-post-wrapper div.blog-content h3 {
+    @apply text-f16
+}
+
+.readingBlog-container .blog-post-wrapper div.blog-content p {
+    @apply ml-2 leading-[30px]
+}
+
+.readingBlog-container .blog-post-wrapper div.blog-content ol, div.blog-content ul {
+    @apply ml-10
+}
+
+.readingBlog-container .blog-post-wrapper div.blog-content ol li {
+    @apply list-decimal pb-5
+}
+
+.readingBlog-container .blog-post-wrapper div.blog-content ul li {
+    @apply list-disc pb-5
+}
+
+.readingBlog-container .blog-post-wrapper div.blog-content a {
+    @apply text-pink
+}
+
+.readingBlog-container .other-posts-container {
+    @apply lg:w-[30%] lg:mt-[100px]
+}
+
+.readingBlog-container .other-posts-container .steeve {
+    @apply lg:sticky lg:top-[100px]
+}
+
+.readingBlog-container .other-posts-container .steeve .other-posts-wrapper {
+    @apply flex flex-row justify-between items-center mt-5
+}
+
+.readingBlog-container .other-posts-container .steeve .other-posts-wrapper .other-posts-img img {
+    @apply w-[200px] h-[100px] object-cover
+}
