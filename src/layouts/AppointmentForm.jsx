@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { setLoading } from "../features/loadingSlice";
 
-import {
-  setFormValid,
-  setFormInvalid,
-  setFormErrors,
-} from "../features/formValiditySlice";
+import axios from "axios";
 
 export const AppointmentForm = ({ closeAppointmentForm }) => {
   // Pop up transition
@@ -17,7 +14,8 @@ export const AppointmentForm = ({ closeAppointmentForm }) => {
 
   // user deatils functionalities
   const dispatch = useDispatch();
-  const { isFormValid, errors } = useSelector((state) => state.formValidity);
+  // const { isFormValid, errors } = useSelector((state) => state.formValidity);
+  const { isLoading } = useSelector((state) => state.loading);
 
   const [appointment, setAppointment] = useState({
     name: "",
@@ -61,6 +59,9 @@ export const AppointmentForm = ({ closeAppointmentForm }) => {
     },
   ];
 
+  const [statusName, setStatusName] = useState("");
+  const [notify, setNotify] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -101,44 +102,67 @@ export const AppointmentForm = ({ closeAppointmentForm }) => {
   };
 
   // Submit Handler Touch No Code
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (validateField()) {
-      console.log(appointment);
-    } else {
-      console.log("Some fields are empty");
+    try {
+      if (validateField()) {
+        dispatch(setLoading(true));
 
-      return;
+        const response = await axios.post(
+          "https://techalive.onrender.com/api/v1/appointment/book-appointment",
+          appointment
+        );
+
+        switch (response.status) {
+          case 201:
+            console.log(response.data);
+
+            setNotify(true);
+
+            setAppointment({
+              name: "",
+              email: "",
+              phone: "",
+              purpose: "",
+              message: "",
+              date: "",
+              time: "",
+            });
+
+            setStatusName("success");
+
+            dispatch(setLoading(false));
+
+            break;
+          default:
+        }
+      } else {
+        console.log("Some fields are empty");
+
+        return;
+      }
+    } catch (error) {
+      console.log(error);
+
+      dispatch(setLoading(false));
     }
-
-    // const isValid = Object.values(appointment).every(
-    //   (value) => value.length > 0
-    // );
-
-    // if (isValid) {
-    //   dispatch(setFormValid());
-    //   console.log(appointment);
-    //   setShowError(true);
-    // } else {
-    //   dispatch(setFormInvalid());
-    //   const customError = {};
-    //   Object.entries(appointment).forEach(([field, value]) => {
-    //     if (value.length === 0) {
-    //       customError[field] = `${
-    //         field.charAt(0).toUpperCase() + field.slice(1)
-    //       } is required`;
-    //     }
-    //   });
-    //   dispatch(setFormErrors(customError));
-    // }
   };
+
+  useEffect(() => {
+    const interval = setInterval(function () {
+      setNotify(false);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [statusName]);
 
   return (
     <div className="appoint-layout">
       <div
         className={`appoint-container ${isFormVisible ? "activateForm" : ""}`}
       >
+        {notify && <Notify statusName={statusName} />}
         <div className="lead-appoint-head">
           <h1 className="appoint-header">Book An Appointment</h1>
 
@@ -250,8 +274,48 @@ export const AppointmentForm = ({ closeAppointmentForm }) => {
             <div className="error-msg">{appointmentFieldError.message}</div>
           </div>
 
-          <button type="submit">Make Appointment</button>
+          <button
+            type="submit"
+            disabled={isLoading ? true : false}
+          >
+            {isLoading ? (
+              <div>
+                <span>Booking</span>
+                <i className="pi pi-spin pi-spinner" />
+              </div>
+            ) : (
+              "Book Appointment"
+            )}
+          </button>
         </form>
+      </div>
+    </div>
+  );
+};
+
+export const Notify = ({ statusName }) => {
+  let message, icon;
+
+  switch (statusName) {
+    case "success":
+      message = "Appointment Received";
+      icon = "pi-thumbs-up";
+      break;
+    case "error":
+      message = "Error booking appointment";
+      icon = "pi-exclamation-circle";
+    default:
+  }
+  return (
+    <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[999] bg-[#fff] w-[300px] h-[150px] grid place-content-center rounded-md">
+      <div
+        className={`flex flex-col items-center justify-center gap-5 ${
+          statusName === "success" ? " text-green" : "text-rose-500"
+        }`}
+      >
+        <i className={`pi ${icon} text-f30 font-bold`} />
+
+        <h1 className="text-f20">{message}</h1>
       </div>
     </div>
   );
