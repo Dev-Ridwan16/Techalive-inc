@@ -62,7 +62,7 @@ export const Navbar = ({ openAppointmentForm }) => {
         className={
           isScrolling
             ? "changing-nav-bg"
-            : location.pathname.includes("/techalive/blog/")
+            : location.pathname.includes("/blog/")
             ? isScrolling
               ? "changing-nav-bg"
               : "changing-nav-bg"

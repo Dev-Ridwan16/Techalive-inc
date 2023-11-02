@@ -72,7 +72,7 @@ nav .nav-links li  {
 }
 
 .appoint-container {
-    @apply bg-blue w-[350px] md:w-[500px] py-10 rounded-xl shadow-2xl opacity-0 transition-opacity duration-[1s] ease-in-out
+    @apply bg-blue w-[350px] md:w-[500px] py-8 rounded-xl shadow-2xl opacity-0 transition-opacity duration-[1s] ease-in-out
 }
 
 .appoint-container.activateForm {
@@ -100,47 +100,41 @@ nav .nav-links li  {
     @apply flex flex-col max-w-[300px] md:max-w-[450px] mx-auto
 }
 
-.appoint-form .field1, .appoint-form .field2, .appoint-form .field3 {
-    @apply flex flex-col
+.appoint-form div.appoint-field {
+    @apply flex flex-col my-2
 }
 
-.appoint-form .field {
-    @apply flex flex-col
+.appoint-form div.appoint-field input, 
+.appoint-form div.appoint-field select,  
+.appoint-form div.appoint-field textarea {
+    @apply bg-inherit bg-blue border border-grey h-[35px] rounded outline-none px-3
 }
 
-.appoint-form .field div {
-    @apply text-f10 absolute mt-[3.8rem] text-red
-}
-.appoint-form input {
-    @apply bg-inherit outline-none border border-grey h-[40px] mt-5 rounded-md px-3 text-grey w-full
-}
-
-.appoint-form input::placeholder, .appoint-form textarea::placeholder, .appoint-form .field2 select {
-    @apply text-grey text-f12
+.appoint-form div.appoint-field input::placeholder, 
+.appoint-form div.appoint-field select,
+.appoint-container .asides div.appoint-field, 
+    .appoint-form div.appoint-field textarea {
+    @apply text-grey text-f10
 }
 
-.appoint-form .field2 select {
-    @apply bg-inherit border border-grey h-[40px] px-3 rounded-md mt-5
+.appoint-container .asides {
+    @apply flex flex-row gap-4
 }
 
-.appoint-form .field3 .appoint-msg {
-    @apply w-full min-h-[80px] max-h-[80px] bg-inherit mt-5 pt-2 px-5 border border-grey rounded-md outline-none relative 
+.appoint-container .asides div.appoint-field {
+    @apply w-[50%]
 }
 
-.appoint-form .field3 .field div.error-msg {
-    @apply mt-[6.2rem] 
+.appoint-form div.appoint-field textarea {
+    @apply h-[10px] max-h-[100px] min-h-[100px]
 }
 
-.appoint-form .field3 .appoint-time {
-    @apply h-[50px]
-}
-
-.appoint-form .field3 .field:nth-child(2) .error-msg {
-    @apply mt-[4.5rem]
+.appoint-form div.appoint-field .error-msg {
+    @apply h-[15px] text-[#f55757] text-f10
 }
 
 .appoint-form button  {
-    @apply bg-pink text-[#fff] w-[200px] mx-auto h-[40px] rounded-md outline-none mt-5
+    @apply bg-pink text-[#fff] w-[200px] mx-auto h-[40px] rounded-md outline-none mt-3
 }
 
 /* ==================== FOOTER CSS STARTS HERE ==================== */

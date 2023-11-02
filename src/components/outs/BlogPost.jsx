@@ -98,7 +98,7 @@ const BlogPost = () => {
         <div className="steeve">
           <h3 className="text-f16">Other Posts</h3>
           {otherPostsExcludingCurrent.map((otherPost) => (
-            <Link to={`/techalive/blog/${otherPost._id}`}>
+            <Link to={`/blog/${otherPost._id}`}>
               <div className="other-posts-wrapper">
                 <div className="other-posts-content">
                   <h3>

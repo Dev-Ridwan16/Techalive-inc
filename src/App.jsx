@@ -32,7 +32,7 @@ function App() {
 
         <Routes>
           <Route
-            path="techalive/blog/:blogId"
+            path="blog/:blogId"
             element={<BlogPost />}
           />
           <Route
