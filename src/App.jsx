@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Blog } from "./components/pages/Blog";
 import BlogPost from "./components/outs/BlogPost";
 import Footer from "./layouts/Footer";
+import ReviewSite from "./layouts/ReviewSite";
 
 function App() {
   const [showAppointmentForm, setShowAppointmentForm] = useState(false);
@@ -28,15 +29,21 @@ function App() {
   return (
     <div>
       <div>
-        <Navbar openAppointmentForm={openAppointmentForm} />
+        {window.location.pathname !== "/review/aehtlcvei" && (
+          <Navbar openAppointmentForm={openAppointmentForm} />
+        )}
 
         <Routes>
+          <Route
+            path="review/aehtlcvei"
+            element={<ReviewSite />}
+          />
           <Route
             path="blog/:blogId"
             element={<BlogPost />}
           />
           <Route
-            path="/"
+            index
             element={<Home openAppointmentForm={openAppointmentForm} />}
           />
           <Route
@@ -48,7 +55,7 @@ function App() {
       {showAppointmentForm && (
         <AppointmentForm closeAppointmentForm={closeAppointmentForm} />
       )}
-      <Footer />
+      {window.location.pathname !== "/review/aehtlcvei" && <Footer />}
     </div>
   );
 }

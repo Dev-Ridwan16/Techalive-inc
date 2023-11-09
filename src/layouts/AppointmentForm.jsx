@@ -145,6 +145,8 @@ export const AppointmentForm = ({ closeAppointmentForm }) => {
     } catch (error) {
       console.log(error);
 
+      setStatusName("error");
+
       dispatch(setLoading(false));
     }
   };
