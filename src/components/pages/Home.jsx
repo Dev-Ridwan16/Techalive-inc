@@ -828,7 +828,7 @@ export const ReviewsSect = () => {
                             role.short === content.role
                         )
                           ? content.role + " @ " + content.company
-                          : content.role === "Founder"
+                          : content.role === "Founder" || "co-founder"
                           ? content.role + " of " + content.company
                           : content.company}
                       </p>

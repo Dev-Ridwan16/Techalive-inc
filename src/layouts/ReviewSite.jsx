@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 const ReviewSite = () => {
@@ -19,7 +20,11 @@ const ReviewSite = () => {
     testimonial: "",
   });
 
-  const [testimonialMaxLength, setTestimonialMaxLength] = useState(150);
+  const [testimonialMaxLength, setTestimonialMaxLength] = useState(300);
+
+  const [appreciation, setAppreciation] = useState(false);
+  const [badRequest, setBadRequest] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -63,15 +68,66 @@ const ReviewSite = () => {
     return isValid;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (validateForm()) {
-      console.log("Cool");
+      setLoading(true);
+      try {
+        const response = await axios.post(
+          "https://techalive.onrender.com/api/v1/review/post-review",
+          review
+        );
+
+        switch (response.status) {
+          case 201:
+            setReview({
+              name: "",
+              category: "",
+              service: "",
+              companyName: "",
+              role: "",
+              testimonial: "",
+            });
+            setLoading(false);
+            setAppreciation(true);
+            break;
+          default:
+        }
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+
+        setAppreciation(true);
+        setBadRequest(true);
+      }
     }
   };
 
+  useState(() => {
+    const timeOut = setTimeout(() => {
+      setAppreciation(false);
+    }, 5000);
+
+    return () => clearTimeout(timeOut);
+  }, [appreciation]);
+
   return (
     <div className="grid place-items-center h-screen">
+      {appreciation && (
+        <div
+          className="appreciation bg-[#fff] w-[250px] h-[150px] rounded-md text-blue grid place-content-center
+      absolute top-[45%] left-[50%] translate-x-[-50%] translate-y-[-45%]"
+        >
+          <div className="flex flex-col items-center justify-center gap-5 max-w-[800px] mx-auto w-full px-3">
+            <i className="fa-regular fa-handshake text-f30" />
+            <h2 className="text-f18 text-center">
+              {badRequest
+                ? "An error occur, please try again!"
+                : "Thank you for the Time and the Review"}
+            </h2>
+          </div>
+        </div>
+      )}
       <div className="shadow-md w-[90%] md:w-[400px] py-5 flex flex-col gap-5">
         <div>
           <div className="flex flex-row items-center justify-center">
@@ -158,6 +214,7 @@ const ReviewSite = () => {
             >
               <div>
                 <input
+                  name="companyName"
                   type="text"
                   placeholder="Company name"
                   className="border outline-none w-full h-[30px] rounded px-2"
@@ -171,6 +228,7 @@ const ReviewSite = () => {
 
               <div>
                 <input
+                  name="role"
                   type="text"
                   placeholder="Role"
                   className="border outline-none w-full h-[30px] rounded px-2"
@@ -185,7 +243,7 @@ const ReviewSite = () => {
           )}
           <div>
             <textarea
-              maxLength={150}
+              maxLength={300}
               name="testimonial"
               className="border outline-none w-full min-h-[100px] max-h-[100px] rounded-md px-2"
               placeholder="Testimonial"
@@ -197,13 +255,20 @@ const ReviewSite = () => {
                 {reviewFieldError.testimonial}
               </p>
               <p style={{ fontVariant: "tabular-nums" }}>
-                {testimonialMaxLength} / 150
+                {testimonialMaxLength} / 300
               </p>
             </div>
           </div>
 
-          <button className="bg-blue text-white w-[200px] h-[30px] rounded mx-auto  ">
-            Post Review
+          <button className="bg-blue text-white w-[200px] h-[30px] rounded mx-auto">
+            {loading ? (
+              <div>
+                <span>Please wait</span>
+                <i className="pi pi-spin pi-spinner" />
+              </div>
+            ) : (
+              "Post Review"
+            )}
           </button>
         </form>
       </div>
