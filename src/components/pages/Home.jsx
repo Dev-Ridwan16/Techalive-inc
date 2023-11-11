@@ -754,6 +754,8 @@ export const ReviewsSect = () => {
     }
   }
 
+  // console.log(alphabetCategories);
+
   return (
     <div
       className="reviews-container"
@@ -775,54 +777,67 @@ export const ReviewsSect = () => {
             className="reviews-slides"
             style={slideStyle}
           >
-            {reviews.map((content, index) => (
-              <div
-                key={index}
-                className={`reviews_slide ${
-                  currentReview === index ? "active" : ""
-                }`}
-              >
-                <div className="client-details">
-                  <p
-                    className={`w-[80px] h-[80px] border rounded-full grid place-content-center ${
-                      alphabetCategories.group1.includes(content.name.charAt(0))
-                        ? "bg-purple"
-                        : alphabetCategories.group2.includes(
-                            content.name.charAt(0)
-                          )
-                        ? "bg-gold"
-                        : alphabetCategories.group3.includes(
-                            content.name.charAt(0)
-                          )
-                        ? "bg-bulue"
-                        : alphabetCategories.group4.includes(
-                            content.name.charAt(0)
-                          )
-                        ? "bg-redi"
-                        : ""
-                    }`}
-                  >
-                    {content.name.charAt(0).toUpperCase()}
-                  </p>
-                  <div className="handle">
-                    <h5>{content.name}</h5>
-                    <p>{content.category}</p>
-                    <p>
-                      {roles.some(
-                        (role) =>
-                          role.full === content.role ||
-                          role.short === content.role
-                      )
-                        ? content.role + " @ " + content.company
-                        : content.role === "Founder"
-                        ? content.role + " of " + content.company
-                        : content.company}
+            {reviews.map((content, index) => {
+              let bgColor;
+              if (
+                alphabetCategories.group1.includes(
+                  content.name.charAt(0).toLowerCase()
+                )
+              ) {
+                bgColor = "#8B008B";
+              } else if (
+                alphabetCategories.group2.includes(
+                  content.name.charAt(0).toLowerCase()
+                )
+              ) {
+                bgColor = "#FFD700";
+              } else if (
+                alphabetCategories.group3.includes(
+                  content.name.charAt(0).toLowerCase()
+                )
+              ) {
+                bgColor = "#62C9E5";
+              } else if (
+                alphabetCategories.group4.includes(
+                  content.name.charAt(0).toLowerCase()
+                )
+              ) {
+                bgColor = "#FF5733";
+              }
+              return (
+                <div
+                  key={index}
+                  className={`reviews_slide ${
+                    currentReview === index ? "active" : ""
+                  }`}
+                >
+                  <div className="client-details">
+                    <p
+                      className={`w-[80px] h-[80px] border rounded-full grid place-content-center text-[#fff] text-xl font-bold font-headFamily`}
+                      style={{ backgroundColor: bgColor }}
+                    >
+                      {content.name.charAt(0).toUpperCase()}
                     </p>
+                    <div className="handle">
+                      <h5>{content.name}</h5>
+                      <p>{content.category}</p>
+                      <p>
+                        {roles.some(
+                          (role) =>
+                            role.full === content.role ||
+                            role.short === content.role
+                        )
+                          ? content.role + " @ " + content.company
+                          : content.role === "Founder"
+                          ? content.role + " of " + content.company
+                          : content.company}
+                      </p>
+                    </div>
                   </div>
+                  <p>{content.testimonial}</p>
                 </div>
-                <p>{content.testimonial}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
           <div className="indicators">
             {reviews.map((indicator, index) => (
