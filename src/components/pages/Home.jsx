@@ -594,6 +594,7 @@ export const ReviewsSect = () => {
   const mobile = window.innerWidth <= 767;
   const tablet = window.innerWidth <= 1023;
   const [currentReview, setCurrentReview] = useState(0);
+  const [reviews, setReviews] = useState([]);
 
   let divisionFactor = 1;
 
@@ -603,9 +604,156 @@ export const ReviewsSect = () => {
     divisionFactor = 2;
   }
 
+  useEffect(() => {
+    const fetchReviews = async () => {
+      const response = await axios.get(
+        "https://techalive.onrender.com/api/v1/review/get-review"
+      );
+
+      const data = response.data;
+
+      setReviews(data.review);
+    };
+
+    fetchReviews();
+  });
+
   const slideStyle = {
     transform: `translateX(-${(currentReview * 100) / divisionFactor}%)`,
   };
+
+  const roles = [
+    { full: "Chief Executive Officer", short: "CEO" },
+    { full: "Chief Operating Officer", short: "COO" },
+    { full: "Chief Financial Officer", short: "CFO" },
+    { full: "Chief Technology Officer", short: "CTO" },
+    { full: "Chief Marketing Officer", short: "CMO" },
+    { full: "Chief Operating Officer", short: "COO" },
+    { full: "Chief Human Resources Officer", short: "CHRO" },
+    { full: "General Manager", short: "GM" },
+    { full: "Department Manager", short: "Dept. Manager" },
+    { full: "Project Manager", short: "Project Mgr" },
+    { full: "Team Leader", short: "Team Leader" },
+    { full: "Secretary", short: "Secretary" },
+    { full: "Supervisor", short: "Supervisor" },
+    { full: "Administrative Assistant", short: "Admin. Asst." },
+    { full: "Receptionist", short: "Receptionist" },
+    { full: "Office Manager", short: "Office Mgr" },
+    { full: "Data Entry Clerk", short: "Data Entry Clerk" },
+    { full: "Administrative Coordinator", short: "Admin. Coordinator" },
+    { full: "Accountant", short: "Accountant" },
+    { full: "Financial Analyst", short: "Fin. Analyst" },
+    { full: "Controller", short: "Controller" },
+    { full: "Bookkeeper", short: "Bookkeeper" },
+    { full: "Payroll Specialist", short: "Payroll Specialist" },
+    { full: "HR Manager", short: "HR Manager" },
+    { full: "Talent Acquisition Specialist", short: "Talent Acq. Specialist" },
+    { full: "HR Generalist", short: "HR Generalist" },
+    {
+      full: "Training and Development Specialist",
+      short: "Training & Dev. Specialist",
+    },
+    {
+      full: "Compensation and Benefits Specialist",
+      short: "Compensation & Benefits Specialist",
+    },
+    { full: "Sales Representative", short: "Sales Rep" },
+    { full: "Marketing Manager", short: "Mktg. Manager" },
+    { full: "Digital Marketing Specialist", short: "Digital Mktg. Specialist" },
+    { full: "Brand Manager", short: "Brand Manager" },
+    { full: "Customer Relationship Manager", short: "CRM Manager" },
+    { full: "Systems Administrator", short: "Sys. Admin" },
+    { full: "Network Engineer", short: "Network Engineer" },
+    { full: "Software Developer", short: "Software Dev" },
+    { full: "IT Support Specialist", short: "IT Support" },
+    { full: "Database Administrator", short: "DB Admin" },
+    { full: "Customer Service Representative", short: "CS Rep" },
+    { full: "Call Center Agent", short: "Call Center Agent" },
+    { full: "Customer Support Specialist", short: "CS Specialist" },
+    { full: "Client Relations Manager", short: "Client Relations Mgr" },
+    { full: "Help Desk Support", short: "Help Desk Support" },
+    { full: "Operations Manager", short: "Ops. Manager" },
+    { full: "Production Supervisor", short: "Prod. Supervisor" },
+    { full: "Quality Control Inspector", short: "QC Inspector" },
+    { full: "Supply Chain Manager", short: "SCM Manager" },
+    { full: "Manufacturing Engineer", short: "Mfg. Engineer" },
+    { full: "Research Scientist", short: "Res. Scientist" },
+    { full: "Product Development Engineer", short: "Prod. Dev. Engineer" },
+    { full: "Lab Technician", short: "Lab Tech" },
+    { full: "R&D Manager", short: "R&D Manager" },
+    { full: "Innovation Specialist", short: "Innovation Specialist" },
+    { full: "Attorney", short: "Attorney" },
+    { full: "Legal Counsel", short: "Legal Counsel" },
+    { full: "Compliance Officer", short: "Compliance Officer" },
+    { full: "Paralegal", short: "Paralegal" },
+    { full: "Regulatory Affairs Specialist", short: "Reg. Affairs Specialist" },
+    { full: "Physician", short: "Physician" },
+    { full: "Nurse", short: "Nurse" },
+    { full: "Pharmacist", short: "Pharmacist" },
+    { full: "Medical Technologist", short: "Med. Technologist" },
+    { full: "Healthcare Administrator", short: "Health Admin" },
+    { full: "Teacher", short: "Teacher" },
+    { full: "Principal", short: "Principal" },
+    { full: "School Counselor", short: "School Counselor" },
+    { full: "Education Coordinator", short: "Ed. Coordinator" },
+    { full: "Academic Dean", short: "Academic Dean" },
+    { full: "Store Manager", short: "Store Manager" },
+    { full: "Sales Associate", short: "Sales Assoc." },
+    { full: "Visual Merchandiser", short: "Visual Merchandiser" },
+    { full: "Inventory Manager", short: "Inventory Mgr" },
+    { full: "Loss Prevention Specialist", short: "Loss Prev. Specialist" },
+    { full: "Mechanical Engineer", short: "Mech. Engineer" },
+    { full: "Civil Engineer", short: "Civil Engineer" },
+    { full: "Electrical Engineer", short: "Elec. Engineer" },
+    { full: "Chemical Engineer", short: "Chem. Engineer" },
+    { full: "Aerospace Engineer", short: "Aero. Engineer" },
+    { full: "Graphic Designer", short: "Graphic Designer" },
+    { full: "Art Director", short: "Art Director" },
+    { full: "Copywriter", short: "Copywriter" },
+    { full: "Web Designer", short: "Web Designer" },
+    { full: "Interior Designer", short: "Interior Designer" },
+    { full: "Data Analyst", short: "Data Analyst" },
+    { full: "Market Research Analyst", short: "Mkt. Research Analyst" },
+    { full: "Business Analyst", short: "Business Analyst" },
+    { full: "Statistician", short: "Statistician" },
+    { full: "Data Scientist", short: "Data Scientist" },
+    { full: "Project Coordinator", short: "Project Coordinator" },
+    { full: "Scrum Master", short: "Scrum Master" },
+    { full: "Project Scheduler", short: "Project Scheduler" },
+    { full: "Project Planner", short: "Project Planner" },
+    { full: "Program Manager", short: "Program Manager" },
+    { full: "Environmental Scientist", short: "Env. Scientist" },
+    { full: "Sustainability Coordinator", short: "Sustain. Coordinator" },
+    { full: "Social Worker", short: "Social Worker" },
+    { full: "Nonprofit Director", short: "Nonprofit Director" },
+    { full: "Program Manager", short: "Program Manager" },
+    { full: "Fundraising Coordinator", short: "Fundraising Coordinator" },
+    { full: "Volunteer Coordinator", short: "Vol. Coordinator" },
+  ];
+
+  const reviewImgBgs = ["#8B008B", "#FFD700", "#62C9E5", "#FF5733"];
+
+  const alphabetCategories = {
+    group1: [],
+    group2: [],
+    group3: [],
+    group4: [],
+  };
+
+  const fixedShuffledAlphabet = "mfdzqajbgwnkotxhieprlcusvy";
+
+  for (let i = 0; i < fixedShuffledAlphabet.length; i++) {
+    if (i < fixedShuffledAlphabet.length / 4) {
+      alphabetCategories.group1.push(fixedShuffledAlphabet[i]);
+    } else if (i < (fixedShuffledAlphabet.length / 4) * 2) {
+      alphabetCategories.group2.push(fixedShuffledAlphabet[i]);
+    } else if (i < (fixedShuffledAlphabet.length / 4) * 3) {
+      alphabetCategories.group3.push(fixedShuffledAlphabet[i]);
+    } else {
+      alphabetCategories.group4.push(fixedShuffledAlphabet[i]);
+    }
+  }
+
   return (
     <div
       className="reviews-container"
@@ -627,7 +775,7 @@ export const ReviewsSect = () => {
             className="reviews-slides"
             style={slideStyle}
           >
-            {reviews_contents.map((content, index) => (
+            {reviews.map((content, index) => (
               <div
                 key={index}
                 className={`reviews_slide ${
@@ -635,28 +783,49 @@ export const ReviewsSect = () => {
                 }`}
               >
                 <div className="client-details">
-                  <img
-                    src={content.image_url}
-                    alt=""
-                  />
+                  <p
+                    className={`w-[80px] h-[80px] border rounded-full grid place-content-center ${
+                      alphabetCategories.group1.includes(content.name.charAt(0))
+                        ? "bg-purple"
+                        : alphabetCategories.group2.includes(
+                            content.name.charAt(0)
+                          )
+                        ? "bg-gold"
+                        : alphabetCategories.group3.includes(
+                            content.name.charAt(0)
+                          )
+                        ? "bg-bulue"
+                        : alphabetCategories.group4.includes(
+                            content.name.charAt(0)
+                          )
+                        ? "bg-redi"
+                        : ""
+                    }`}
+                  >
+                    {content.name.charAt(0).toUpperCase()}
+                  </p>
                   <div className="handle">
                     <h5>{content.name}</h5>
+                    <p>{content.category}</p>
                     <p>
-                      {content.position === "CEO" ||
-                      content.position === "Director"
-                        ? content.position + " @ " + content.company
-                        : content.position === "Founder"
-                        ? content.position + " of " + content.company
+                      {roles.some(
+                        (role) =>
+                          role.full === content.role ||
+                          role.short === content.role
+                      )
+                        ? content.role + " @ " + content.company
+                        : content.role === "Founder"
+                        ? content.role + " of " + content.company
                         : content.company}
                     </p>
                   </div>
                 </div>
-                <p>{content.review}</p>
+                <p>{content.testimonial}</p>
               </div>
             ))}
           </div>
           <div className="indicators">
-            {reviews_contents.map((indicator, index) => (
+            {reviews.map((indicator, index) => (
               <div
                 key={index}
                 className={`indicator ${

@@ -1,0 +1,15 @@
+.bg-purple {
+    @apply bg-[#8B008B]
+}
+
+.bg-gold {
+    @apply bg-[#FFD700]
+}
+
+.bg-bulue {
+    @apply bg-[#62C9E5]
+}
+
+.bg-redi {
+    @apply bg-[#FF5733]
+}
