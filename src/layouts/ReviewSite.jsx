@@ -70,9 +70,10 @@ const ReviewSite = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (validateForm()) {
-      setLoading(true);
-      try {
+
+    try {
+      if (validateForm()) {
+        setLoading(true);
         const response = await axios.post(
           "https://techalive.onrender.com/api/v1/review/post-review",
           review
@@ -88,18 +89,22 @@ const ReviewSite = () => {
               role: "",
               testimonial: "",
             });
+
             setLoading(false);
+
             setAppreciation(true);
+
             break;
+
           default:
         }
-      } catch (error) {
-        console.log(error);
-        setLoading(false);
-
-        setAppreciation(true);
-        setBadRequest(true);
       }
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+
+      setAppreciation(true);
+      setBadRequest(true);
     }
   };
 
@@ -119,7 +124,11 @@ const ReviewSite = () => {
       absolute top-[45%] left-[50%] translate-x-[-50%] translate-y-[-45%]"
         >
           <div className="flex flex-col items-center justify-center gap-5 max-w-[800px] mx-auto w-full px-3">
-            <i className="fa-regular fa-handshake text-f30" />
+            {badRequest ? (
+              <i className="fa-regular fa-face-sad-tear" />
+            ) : (
+              <i className="fa-regular fa-handshake text-f30" />
+            )}
             <h2 className="text-f18 text-center">
               {badRequest
                 ? "An error occur, please try again!"
@@ -263,7 +272,7 @@ const ReviewSite = () => {
           <button className="bg-blue text-white w-[200px] h-[30px] rounded mx-auto">
             {loading ? (
               <div>
-                <span>Please wait</span>
+                <span>Please wait...</span>
                 <i className="pi pi-spin pi-spinner" />
               </div>
             ) : (
