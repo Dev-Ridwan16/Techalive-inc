@@ -1,46 +1,61 @@
-import axios from "axios";
-import React, { useState } from "react";
+import axios from "axios"
+import React, { useState } from "react"
 
 const ReviewSite = () => {
   const [review, setReview] = useState({
     name: "",
-    category: "",
     service: "",
+    category: "",
     companyName: "",
     role: "",
     testimonial: "",
-  });
+  })
 
   const [reviewFieldError, setReviewFieldError] = useState({
     name: "",
-    category: "",
     service: "",
+    category: "",
     companyName: "",
     role: "",
     testimonial: "",
-  });
+  })
 
-  const [testimonialMaxLength, setTestimonialMaxLength] = useState(300);
+  const [testimonialMaxLength, setTestimonialMaxLength] = useState(300)
 
-  const [appreciation, setAppreciation] = useState(false);
-  const [badRequest, setBadRequest] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [appreciation, setAppreciation] = useState(false)
+  const [badRequest, setBadRequest] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
 
     if (name === "testimonial") {
-      const currentLength = value.length;
+      const currentLength = value.length
 
-      const previousLenght = review.testimonial.length;
-      const changeInLength = currentLength - previousLenght;
+      const previousLenght = review.testimonial.length
+      const changeInLength = currentLength - previousLenght
 
       setTestimonialMaxLength((prevMaxLength) =>
         Math.max(prevMaxLength - changeInLength, 0)
-      );
+      )
     }
 
-    setReview({ ...review, [name]: value });
+    setReview((prevReview) => ({
+      ...prevReview,
+      [name]: value,
+      companyName:
+        prevReview.category === "Business"
+          ? name === "companyName"
+            ? value
+            : prevReview.companyName
+          : "",
+      role:
+        prevReview.category === "Business"
+          ? name === "role"
+            ? value
+            : prevReview.role
+          : "",
+    }))
 
     setReviewFieldError({
       ...reviewFieldError,
@@ -48,36 +63,44 @@ const ReviewSite = () => {
         value === ""
           ? `${name.charAt(0).toUpperCase() + name.slice(1)} is required please`
           : "",
-    });
-  };
+    })
+  }
 
   const validateForm = () => {
-    const newError = {};
+    const newError = {}
 
-    let isValid = true;
+    let isValid = true
     Object.entries(review).forEach(([fieldName, fieldVale]) => {
-      if (fieldVale.trim() === "") {
-        newError[fieldName] = `${
-          fieldName.charAt(0).toUpperCase() + fieldName.slice(1)
-        } is required please`;
-        isValid = false;
+      if (
+        review.category !== "Individual" ||
+        (fieldName !== "companyName" && fieldName !== "role")
+      ) {
+        if (fieldVale.trim() === "") {
+          newError[fieldName] = `${
+            fieldName.charAt(0).toUpperCase() + fieldName.slice(1)
+          } is required please`
+          isValid = false
+        }
       }
-    });
+    })
 
-    setReviewFieldError(newError);
-    return isValid;
-  };
+    setReviewFieldError(newError)
+    return isValid
+  }
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     try {
       if (validateForm()) {
-        setLoading(true);
+        setLoading(true)
+
+        console.log(review)
+
         const response = await axios.post(
           "https://techalive.onrender.com/api/v1/review/post-review",
           review
-        );
+        )
 
         switch (response.status) {
           case 201:
@@ -88,33 +111,33 @@ const ReviewSite = () => {
               companyName: "",
               role: "",
               testimonial: "",
-            });
+            })
 
-            setLoading(false);
+            setLoading(false)
 
-            setAppreciation(true);
+            setAppreciation(true)
 
-            break;
+            break
 
           default:
         }
       }
     } catch (error) {
-      console.log(error);
-      setLoading(false);
+      console.log(error)
+      setLoading(false)
 
-      setAppreciation(true);
-      setBadRequest(true);
+      setAppreciation(true)
+      setBadRequest(true)
     }
-  };
+  }
 
   useState(() => {
-    const timeOut = setTimeout(() => {
-      setAppreciation(false);
-    }, 5000);
+    const interval = setInterval(() => {
+      setAppreciation(false)
+    }, 5000)
 
-    return () => clearTimeout(timeOut);
-  }, [appreciation]);
+    return () => clearTimeout(interval)
+  }, [appreciation])
 
   return (
     <div className="grid place-items-center h-screen">
@@ -125,7 +148,7 @@ const ReviewSite = () => {
         >
           <div className="flex flex-col items-center justify-center gap-5 max-w-[800px] mx-auto w-full px-3">
             {badRequest ? (
-              <i className="fa-regular fa-face-sad-tear" />
+              <i className="fa-regular fa-face-sad-tear text-f30" />
             ) : (
               <i className="fa-regular fa-handshake text-f30" />
             )}
@@ -282,7 +305,7 @@ const ReviewSite = () => {
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ReviewSite;
+export default ReviewSite
