@@ -157,7 +157,7 @@ export const ProductSect = () => {
     const getProducts = async function () {
       try {
         const response = await axios.get(
-          "https://techalive.onrender.com/api/v1/product/all-products"
+          "https://techalive.onrender.com/api/v1/product/list-products"
         );
 
         const { data } = response.data;
@@ -191,7 +191,7 @@ export const ProductSect = () => {
             className="product-wrapper-card"
           >
             <img
-              src="https://i.imgur.com/UKGl5Qk.png"
+              src={product.image}
               alt=""
             />
             <p>{product.category}</p>
