@@ -18,6 +18,7 @@ import {
 import 'primeicons/primeicons.css'
 import '../../Styles/Home.css'
 import axios from 'axios'
+import ProductInforModal from '../../layouts/ProductInforModal'
 
 export const Home = ({ openAppointmentForm }) => {
   return (
@@ -152,6 +153,8 @@ export const ServiceSect = () => {
 
 export const ProductSect = () => {
   const [productData, setProductData] = useState([])
+  const [productInfo, setProductInfo] = useState(null)
+  const [showInfo, setShowInfo] = useState(false)
 
   useEffect(() => {
     const getProducts = async function () {
@@ -163,7 +166,6 @@ export const ProductSect = () => {
         const data = response.data
 
         setProductData(data.products)
-        console.log(productData)
       } catch (error) {
         console.log('Error:', error)
       }
@@ -171,6 +173,16 @@ export const ProductSect = () => {
 
     getProducts()
   }, [])
+
+  const handleShowInfo = (product) => {
+    setShowInfo(true)
+    setProductInfo(product)
+  }
+
+  const handleCloseInfo = () => {
+    setShowInfo(false)
+  }
+
   return (
     <div
       className='product-sect-container'
@@ -195,7 +207,11 @@ export const ProductSect = () => {
               alt=''
             />
             <p>{product.category}</p>
-            <h4 id='name'>{product.name}</h4>
+            <h4 id='name'>
+              {product.name.length > 20
+                ? product.name.slice(0, 16) + '...'
+                : product.name}
+            </h4>
             <h4 id='price'>${product.price}</h4>
             <div className='product-intrested'>
               <div className='contact-to-get'>
@@ -206,42 +222,23 @@ export const ProductSect = () => {
                   <i className='pi pi-phone'></i>
                 </a>
               </div>
-              <button className='description-btn'>
+              <button
+                onClick={() => handleShowInfo(product)}
+                className='description-btn'
+              >
                 <span>Info </span>
                 <i className='pi pi-info-circle'></i>
               </button>
             </div>
           </div>
         ))}
-        {/* {products_contents.map((content, index) => (
-          <div
-            key={index}
-            className="product-wrapper-card"
-          >
-            <img
-              src={content.image_url}
-              alt=""
-            />
-            <p>{content.category}</p>
-            <h4 id="name">{content.name}</h4>
-            <h4 id="price">{content.price}</h4>
-            <div className="product-intrested">
-              <div className="contact-to-get">
-                <a href="https://wa.me/2348050500466">
-                  <i className="pi pi-whatsapp"></i>
-                </a>
-                <a href="tel:+2348050500466">
-                  <i className="pi pi-phone"></i>
-                </a>
-              </div>
-              <button className="description-btn">
-                <span>Info </span>
-                <i className="pi pi-info-circle"></i>
-              </button>
-            </div>
-          </div>
-        ))} */}
       </div>
+      {showInfo && (
+        <ProductInforModal
+          productInfo={productInfo}
+          handleCloseInfo={handleCloseInfo}
+        />
+      )}
     </div>
   )
 }
