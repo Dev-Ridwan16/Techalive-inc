@@ -19,6 +19,7 @@ import 'primeicons/primeicons.css'
 import '../../Styles/Home.css'
 import axios from 'axios'
 import ProductInforModal from '../../layouts/ProductInforModal'
+import { ShowService } from '../../layouts/ShowService'
 
 export const Home = ({ openAppointmentForm }) => {
   return (
@@ -112,6 +113,16 @@ export const HeroSect = () => {
 }
 
 export const ServiceSect = () => {
+  const [subCat, setSubCat] = useState([])
+  const [showSubCat, setShowSubCat] = useState(false)
+  const showService = (content) => {
+    setSubCat(content)
+    setShowSubCat(true)
+  }
+
+  const closeModal = () => {
+    setShowSubCat(false)
+  }
   return (
     <div
       className='service-sect-container'
@@ -120,11 +131,14 @@ export const ServiceSect = () => {
       <h1 className='section-subhead text-center'>
         Our <span className='text-pink underline'>Services</span>
       </h1>
-      <p className='text-center my-5 w-full md:w-[600px] mx-auto'>
-        Welcome to our wide range of services designed to meet your needs. At
-        Techalive Consult LTD, we take pride in offering high-quality solutions
-        tailored to your requirements. Explore our services below and discover
-        how we can help you.
+      <p className='text-center my-5 w-full md:w-[800px] mx-auto'>
+        An experienced and reliable company that offers a wide range of
+        technology services from computer to electronics,and and
+        telecommunication. we are committed to providing & delievering high
+        quality services solution tailoured to meet your needs/requirements
+        while offering quick turnaround times explore our top-notch services
+        below and find out we can assist in alleviating your technological
+        concern or stress
       </p>
 
       <div className='services-container'>
@@ -139,14 +153,19 @@ export const ServiceSect = () => {
             />
             <div className='overlay-content'>
               <h3>{content.service}</h3>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laudantium, odit!
-              </p>
+              <button onClick={() => showService(content)}>
+                Check service
+              </button>
             </div>
           </div>
         ))}
       </div>
+      {showSubCat && (
+        <ShowService
+          subCat={subCat}
+          closeModal={closeModal}
+        />
+      )}
     </div>
   )
 }
