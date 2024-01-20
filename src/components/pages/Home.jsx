@@ -210,10 +210,12 @@ export const ProductSect = () => {
       <h1 className='section-subhead text-center'>
         Our <span className='text-pink underline'>Product</span>
       </h1>
-      <p className='text-center my-5 w-full md:w-[600px] mx-auto'>
-        Explore our top-notch products designed to elevate your experience. From
-        cutting-edge technology to stylish accessories, we offer a range of
-        solutions tailored to your lifestyle.
+      <p className='text-center my-5 w-full md:w-[800px] mx-auto'>
+        Immerse yourself in the world of productivity and connectivity, explore
+        the energy of our sleek, good performance, and versatile laptops
+        designed for efficiency & style. Experience the epitome of innovation,
+        discover endless possibilities, dive into the realm of our product
+        designs, and stay connected effortlessly to enhance your experience.
       </p>
       <div className='product-container'>
         {productData.slice(0, 5).map((product, index) => (
@@ -315,7 +317,10 @@ export const AboutSect = () => {
               <h5 className='text-f20 font-medium text-blue'>
                 {content.header}
               </h5>
-              <p>{content.content}</p>
+              <p>{content.intro}</p>
+              <button className='bg-pink text-[#fff] w-[100px] rounded mt-4'>
+                Know More
+              </button>
             </div>
           </div>
         ))}

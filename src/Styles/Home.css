@@ -7,7 +7,7 @@
 }
 
 .hero-sect-container {
-    @apply w-full h-screen relative
+    @apply w-full h-[70vh] lg:h-screen relative
 }
 
 /* .hero-slide-container{
@@ -19,7 +19,7 @@
 }
 
 .hero-overlay {
-    @apply absolute top-0 h-screen w-full bg-grey bg-opacity-20
+    @apply absolute top-0 h-[70vh] lg:h-screen w-full bg-grey bg-opacity-20
 }
 
 .hero-slide-container {
@@ -27,7 +27,7 @@
 }
 
 .hero-slide-container .hero-slide {
-    @apply absolute left-[50%] top-0 h-screen w-full translate-x-[-50%]
+    @apply absolute left-[50%] top-0 h-[70vh] lg:h-screen w-full translate-x-[-50%]
 }
 
 .hero-slide-container .hero-slide .hero-slide-content {
@@ -43,11 +43,11 @@
 }
 
 .hero-slide-container .hero-slide .hero-slide-image {
-    @apply h-screen w-full
+    @apply h-[70vh] lg:h-screen w-full
 }
 
 .hero-slide-container .hero-slide .hero-slide-image img {
-    @apply w-full h-screen object-cover
+    @apply w-full h-[70vh] lg:h-screen object-cover
 }
 
 .hero-sect-container .next, .hero-sect-container .prev {

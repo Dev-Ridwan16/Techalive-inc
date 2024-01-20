@@ -1,45 +1,46 @@
-import { Route, Routes, useLocation } from "react-router-dom";
-import "./App.css";
-import { Home } from "./components/pages/Home";
-import { Navbar } from "./layouts/Navbar";
-import { AppointmentForm } from "./layouts/AppointmentForm";
-import { useEffect, useState } from "react";
-import { Blog } from "./components/pages/Blog";
-import BlogPost from "./components/outs/BlogPost";
-import Footer from "./layouts/Footer";
-import ReviewSite from "./layouts/ReviewSite";
+import { Route, Routes, useLocation } from 'react-router-dom'
+import './App.css'
+import { Home } from './components/pages/Home'
+import { Navbar } from './layouts/Navbar'
+import { AppointmentForm } from './layouts/AppointmentForm'
+import { useEffect, useState } from 'react'
+import { Blog } from './components/pages/Blog'
+import BlogPost from './components/outs/BlogPost'
+import Footer from './layouts/Footer'
+import ReviewSite from './layouts/ReviewSite'
+import AboutUs from './components/pages/AboutUs'
 
 function App() {
-  const [showAppointmentForm, setShowAppointmentForm] = useState(false);
-  const body = document.querySelector("body");
+  const [showAppointmentForm, setShowAppointmentForm] = useState(false)
+  const body = document.querySelector('body')
   const openAppointmentForm = () => {
-    setShowAppointmentForm(true);
-    body.style.overflow = "hidden";
-  };
+    setShowAppointmentForm(true)
+    body.style.overflow = 'hidden'
+  }
 
   const closeAppointmentForm = () => {
-    setShowAppointmentForm(false);
-    body.style.overflow = "auto";
-  };
+    setShowAppointmentForm(false)
+    body.style.overflow = 'auto'
+  }
 
   useEffect(() => {
-    return () => {};
-  });
+    return () => {}
+  })
 
   return (
     <div>
       <div>
-        {window.location.pathname !== "/review/aehtlcvei" && (
+        {window.location.pathname !== '/review/aehtlcvei' && (
           <Navbar openAppointmentForm={openAppointmentForm} />
         )}
 
         <Routes>
           <Route
-            path="review/aehtlcvei"
+            path='review/aehtlcvei'
             element={<ReviewSite />}
           />
           <Route
-            path="blog/:blogId"
+            path='blog/:blogId'
             element={<BlogPost />}
           />
           <Route
@@ -47,17 +48,21 @@ function App() {
             element={<Home openAppointmentForm={openAppointmentForm} />}
           />
           <Route
-            path="/blog-posts"
+            path='/blog-posts'
             element={<Blog />}
+          />
+          <Route
+            path='about-us'
+            element={<AboutUs />}
           />
         </Routes>
       </div>
       {showAppointmentForm && (
         <AppointmentForm closeAppointmentForm={closeAppointmentForm} />
       )}
-      {window.location.pathname !== "/review/aehtlcvei" && <Footer />}
+      {window.location.pathname !== '/review/aehtlcvei' && <Footer />}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

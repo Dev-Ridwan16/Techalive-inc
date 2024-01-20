@@ -37,7 +37,7 @@ export const hero_slide_contents = [
   {
     header: 'Your Trusted Destination for Tech Solution',
     paragraph:
-      'Welcome to the future of technology! At [Your Technician Company Name], we are your trusted destination for tech solutions. Our mission is to simplify your digital life and keep you connected. Explore, experience, and excel with us!',
+      'TechAlive: Your go-to tech solution. Simplify your digital life, stay connected, and excel effortlessly. Welcome to the future of seamless technology!',
     image_url:
       'https://i.pinimg.com/564x/2d/00/3f/2d003f1afe2eb5a96450b351e664d028.jpg',
     active: 'active',
@@ -45,21 +45,21 @@ export const hero_slide_contents = [
   {
     header: 'Tech Wizardry in Action',
     paragraph:
-      "Step into a world of technical expertise. Watch as our tech wizards transform the ordinary into extraordinary. Whether it's fixing, enhancing, or innovating, we're the masters behind the magic.",
+      'Experience technical expertise at TechWizards. Transforming ordinary to extraordinary—fixing, enhancing, innovating. Masters behind the magic, your tech transformations await!',
     image_url:
       'https://i.pinimg.com/564x/24/2e/19/242e190fba6b0212207f08487e7cdec0.jpg',
   },
   {
     header: 'Unleash Your Digital Dreams',
     paragraph:
-      "Whether you're envisioning a world where your devices seamlessly connect, your home is secured with cuttingedge systems, or you're harnessing the power of the sun for sustainable energy, we're here to turn those dreams into reality.",
+      'Envision seamless connectivity, cutting-edge security, and sustainable energy. At TechVisions, we turn dreams into reality.',
     image_url:
       'https://images.pexels.com/photos/4066041/pexelsphoto4066041.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     header: 'Embrace Sustainable Power',
     paragraph:
-      "Join the sustainable energy movement. We empower you to harness the sun's energy for a brighter, greener future. Let's make the world a cleaner place, together.",
+      '"Join the sustainable energy movement with TechSun. Harness the sun for a greener future. Together, let\'s make the world cleaner and brighter.',
     image_url:
       'https://i.pinimg.com/564x/45/b1/f3/45b1f3125f515c7c2e4714c35e64d4d5.jpg',
   },
@@ -222,21 +222,29 @@ export const about_contents = [
     image_url:
       'https://i.pinimg.com/564x/2d/00/3f/2d003f1afe2eb5a96450b351e664d028.jpg',
     header: 'Know who we are',
-    content:
+    intro:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!',
+    content: {
+      heading: ['PROBLEM SOLVERS', 'REPUTATION', 'DOMINANCE'],
+      expl: [
+        'we understand the frustration that comes with technological equipment usage.  We have technical aptitude and experience to repair any of your technological equipment.  We specialized in a wide range of computer,electronics and  telecommunication  which includes: Laptops,smartphone,car tracking system,solar cctv system,wireless intercome, solar & inverter system and many more. Every client/customers satisfactionis our priority therefore,we strive to listen to the problem and creat a solution while giving effective and efficent customer  service.',
+        'As a limited company that we are,we have created a great interest in  building a good reputation to all our customers. We have a team of expertize to provide effective customer service in both sales and repair department. Our customer satisfaction means everything to us; Therefore, we continuously grow and improve our skills, process and techniques to better services',
+        'We focus on beign an asset to every client we serve and we are growing tremendensly with over 1000plus customers as at 2020. We continue to provide repair solution,productsales,supply of laptops &   accessories,effective training and efficient technical consultant services to schools,bussinesses and individual within & the communities. We are happy to recieve feedback from our customers about our quality sales,repairs and services.',
+      ],
+    },
   },
   {
     image_url:
       'https://i.pinimg.com/564x/24/2e/19/242e190fba6b0212207f08487e7cdec0.jpg',
     header: 'What will have Passion for',
-    content:
+    intro:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!',
   },
   {
     image_url:
       'https://i.pinimg.com/564x/45/b1/f3/45b1f3125f515c7c2e4714c35e64d4d5.jpg',
     header: "What we're looking forward to",
-    content:
+    intro:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!',
   },
 ]

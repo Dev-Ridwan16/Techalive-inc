@@ -1,87 +1,87 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 
 // importing dependecies
-import { nav_links } from "../default_data";
-import { Link } from "react-scroll";
-import { Link as PathLink, useLocation, useNavigate } from "react-router-dom";
+import { nav_links } from '../default_data'
+import { Link } from 'react-scroll'
+import { Link as PathLink, useLocation, useNavigate } from 'react-router-dom'
 
 // Styling
-import "../Styles/Layout.css";
+import '../Styles/Layout.css'
 
 export const Navbar = ({ openAppointmentForm }) => {
-  const isDesktop = window.innerWidth >= 1024;
-  const location = useLocation();
-  const navigate = useNavigate();
+  const isDesktop = window.innerWidth >= 1024
+  const location = useLocation()
+  const navigate = useNavigate()
 
-  const [isToggle, setIsToggle] = useState(true);
-  const [isScrolling, setIsScrolling] = useState(false);
+  const [isToggle, setIsToggle] = useState(true)
+  const [isScrolling, setIsScrolling] = useState(false)
 
   const handleNavToggle = () => {
-    setIsToggle(!isToggle);
-  };
+    setIsToggle(!isToggle)
+  }
 
   const changeNavbarBg = () => {
     if (window.scrollY >= 600) {
-      setIsScrolling(true);
+      setIsScrolling(true)
     } else {
-      setIsScrolling(false);
+      setIsScrolling(false)
     }
-  };
+  }
 
-  window.addEventListener("scroll", changeNavbarBg);
+  window.addEventListener('scroll', changeNavbarBg)
 
   const handleSmoothScroll = (target) => {
-    const targetElement = document.querySelector(target);
+    const targetElement = document.querySelector(target)
 
     if (targetElement) {
-      const offset = targetElement.getBoundingClientRect().top + window.scrollY;
+      const offset = targetElement.getBoundingClientRect().top + window.scrollY
 
       window.scrollTo({
         top: offset,
-        behavior: "smooth",
-      });
+        behavior: 'smooth',
+      })
     }
-  };
+  }
 
   const handleNavLinkClick = (e, target) => {
-    e.preventDefault();
-    if (location.pathname !== "/") {
-      navigate("/");
+    e.preventDefault()
+    if (location.pathname !== '/') {
+      navigate('/')
 
       setTimeout(() => {
-        handleSmoothScroll(target);
-      }, 1000);
+        handleSmoothScroll(target)
+      }, 1000)
     }
 
-    handleSmoothScroll(target);
-  };
+    handleSmoothScroll(target)
+  }
 
   return (
-    <div className="nav-container">
+    <div className='nav-container'>
       <div
         className={
           isScrolling
-            ? "changing-nav-bg"
-            : location.pathname.includes("/blog/")
+            ? 'changing-nav-bg'
+            : location.pathname.includes('/blog/')
             ? isScrolling
-              ? "changing-nav-bg"
-              : "changing-nav-bg"
-            : "nav-wrapper"
+              ? 'changing-nav-bg'
+              : 'changing-nav-bg'
+            : 'nav-wrapper'
         }
       >
         {isDesktop ? (
           <nav>
-            <div className="brand">
+            <div className='brand'>
               <img
-                src="https://i.imgur.com/UKGl5Qk.png"
-                alt="techalive-logo"
+                src='https://i.imgur.com/UKGl5Qk.png'
+                alt='techalive-logo'
               />
-              <p className="brand-name">TECHALIVE</p>
+              <p className='brand-name'>TECHALIVE</p>
             </div>
-            <ul className="nav-links">
+            <ul className='nav-links'>
               {nav_links.map((nav_link, index) => (
                 <li key={index}>
-                  {window.location.pathname === "/blog-posts" ? (
+                  {window.location.pathname === '/blog-posts' ? (
                     <a href={`/#${nav_link.path}`}>{nav_link.name}</a>
                   ) : (
                     <a
@@ -108,8 +108,8 @@ export const Navbar = ({ openAppointmentForm }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const MobileNavbar = ({
   isToggle,
@@ -117,75 +117,75 @@ export const MobileNavbar = ({
   handleNavToggle,
   openAppointmentForm,
 }) => {
-  const [isScrolling, setIsScrolling] = useState(true);
-  const location = useLocation();
+  const [isScrolling, setIsScrolling] = useState(true)
+  const location = useLocation()
 
   const closeNavbar = () => {
-    setIsToggle(true);
-  };
+    setIsToggle(true)
+  }
   const changeNavbarBg = () => {
-    if (window.location.pathname === "/blog-posts") {
+    if (window.location.pathname === '/blog-posts') {
       if (window.scrollY >= 200) {
-        setIsScrolling(true);
+        setIsScrolling(true)
       } else {
-        setIsScrolling(false);
+        setIsScrolling(false)
       }
     } else {
       if (window.scrollY >= 600) {
-        setIsScrolling(true);
+        setIsScrolling(true)
       } else {
-        setIsScrolling(false);
+        setIsScrolling(false)
       }
     }
-  };
+  }
 
   useEffect(() => {
-    window.addEventListener("scroll", changeNavbarBg);
+    window.addEventListener('scroll', changeNavbarBg)
 
     // Remove the event listener when unmounting
     return () => {
-      window.removeEventListener("scroll", changeNavbarBg);
-    };
-  }, []);
+      window.removeEventListener('scroll', changeNavbarBg)
+    }
+  }, [])
 
   return (
     <div
       className={`
-        ${isToggle ? "nav-wrapper" : "nav-wrapper-bg changing-nav-bg"}
+        ${isToggle ? 'nav-wrapper' : 'nav-wrapper-bg changing-nav-bg'}
         ${
-          location.pathname === "/techalive/blog/:blogId"
+          location.pathname === '/techalive/blog/:blogId'
             ? isScrolling
-              ? "changing-nav-bg"
-              : "nav-wrapper"
-            : "changing-nav-bg"
+              ? 'changing-nav-bg'
+              : 'nav-wrapper'
+            : 'changing-nav-bg'
         }
       `}
     >
       <nav>
-        <div className="brand">
+        <div className='brand'>
           <img
-            src="https://i.imgur.com/UKGl5Qk.png"
-            alt="techalive-logo"
+            src='https://i.imgur.com/UKGl5Qk.png'
+            alt='techalive-logo'
           />
-          <p className="brand-name">TECHALIVE</p>
+          <p className='brand-name'>TECHALIVE</p>
         </div>
 
         <div
-          className="nav-menu-btn text-[#fff]"
+          className='nav-menu-btn text-[#fff]'
           onClick={handleNavToggle}
         >
           {isToggle ? (
-            <i className="pi pi-bars"></i>
+            <i className='pi pi-bars'></i>
           ) : (
-            <i className="pi pi-times"></i>
+            <i className='pi pi-times'></i>
           )}
         </div>
 
-        <ul className={!isToggle ? "mobile-nav-links" : "disactive"}>
-          <div className="mobile-nav-children">
+        <ul className={!isToggle ? 'mobile-nav-links' : 'disactive'}>
+          <div className='mobile-nav-children'>
             {nav_links.map((nav_link, index) => (
               <li key={index}>
-                {window.location.pathname === "/blog-posts" ? (
+                {window.location.pathname === '/blog-posts' ? (
                   <a href={`/#${nav_link.path}`}>{nav_link.name}</a>
                 ) : (
                   <a
@@ -202,5 +202,5 @@ export const MobileNavbar = ({
         </ul>
       </nav>
     </div>
-  );
-};
+  )
+}
