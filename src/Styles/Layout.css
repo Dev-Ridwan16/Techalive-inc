@@ -11,7 +11,7 @@
 }
 
 .changing-nav-bg {
-    @apply bg-blue
+    @apply lg:bg-blue 
 }
 
 .reading-nav-bg {

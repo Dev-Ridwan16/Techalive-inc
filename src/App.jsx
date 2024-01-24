@@ -9,6 +9,7 @@ import BlogPost from './components/outs/BlogPost'
 import Footer from './layouts/Footer'
 import ReviewSite from './layouts/ReviewSite'
 import AboutUs from './components/pages/AboutUs'
+import OurVision from './components/pages/OurVision'
 
 function App() {
   const [showAppointmentForm, setShowAppointmentForm] = useState(false)
@@ -40,7 +41,7 @@ function App() {
             element={<ReviewSite />}
           />
           <Route
-            path='blog/:blogId'
+            path='/techalive/blog/:blogId'
             element={<BlogPost />}
           />
           <Route
@@ -54,6 +55,10 @@ function App() {
           <Route
             path='about-us'
             element={<AboutUs />}
+          />
+          <Route
+            path='our-vision'
+            element={<OurVision />}
           />
         </Routes>
       </div>

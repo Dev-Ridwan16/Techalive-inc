@@ -266,6 +266,7 @@ export const ProductSect = () => {
 
 export const AboutSect = () => {
   const [currentAbout, setCurrentAbout] = useState(0)
+  const navigate = useNavigate()
 
   // Autoslide Functionalities
   useEffect(() => {
@@ -318,7 +319,10 @@ export const AboutSect = () => {
                 {content.header}
               </h5>
               <p>{content.intro}</p>
-              <button className='bg-pink text-[#fff] w-[100px] rounded mt-4'>
+              <button
+                onClick={() => navigate(content.path)}
+                className='bg-pink text-[#fff] w-[100px] rounded mt-4'
+              >
                 Know More
               </button>
             </div>

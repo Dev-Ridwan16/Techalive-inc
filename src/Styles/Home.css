@@ -188,10 +188,20 @@
     @apply flex flex-row items-center justify-start transition-transform duration-500 ease-in-out w-full
 }
 
+ .the-about {
+    @apply flex flex-row items-center justify-start transition-transform duration-500 ease-in-out w-full
+}
+
 .about-sect-container .the-about .the-about-wrapper {
     @apply min-h-[500px] min-w-[100%] flex-shrink-0 flex-grow-0 basis-[100%];
     @apply flex flex-row flex-wrap md:flex-nowrap items-center gap-[20px] mt-10 md:mt-0
 }
+
+ .the-about-wrapper {
+     @apply min-h-[500px] min-w-[100%] flex-shrink-0 flex-grow-0 basis-[100%];
+     @apply flex flex-row flex-wrap md:flex-nowrap items-center gap-[20px] mt-10 md:mt-0
+ }
+
 
 /* .about-sect-container .the-about .the-about-wrapper.active {
     @apply flex flex-row items-center 

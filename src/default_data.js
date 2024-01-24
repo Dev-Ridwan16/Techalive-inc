@@ -224,8 +224,30 @@ export const about_contents = [
     header: 'Know who we are',
     intro:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!',
+    path: 'about-us',
+  },
+  {
+    image_url:
+      'https://i.pinimg.com/564x/24/2e/19/242e190fba6b0212207f08487e7cdec0.jpg',
+    header: 'What will have Passion for',
+    intro:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!',
+    path: 'our-mission',
     content: {
-      heading: ['PROBLEM SOLVERS', 'REPUTATION', 'DOMINANCE'],
+      images: [
+        'https://i.pinimg.com/564x/06/a7/1a/06a71ac8b4630f0071549d25501f9fe5.jpg',
+        'https://i.pinimg.com/564x/d8/1e/25/d81e2570d41473e5e6a2dbfdd20ab9ef.jpg',
+        'https://i.pinimg.com/564x/d1/0c/10/d10c10140eb33c69051142f518e18b65.jpg',
+        'https://i.pinimg.com/564x/a4/fe/14/a4fe14932e100ef877cea2eda81874bf.jpg',
+        'https://i.pinimg.com/564x/d4/41/6f/d4416f68de02fec82eb578d582608d75.jpg',
+      ],
+      heading: [
+        'Innovating Connectivity',
+        'Promoting Sustainability',
+        'Ensuring Great Customer Service Satisfaction',
+        'Creating a Dynamic Working Environment',
+        'Empowering Lives Through Integrated Technology Solution',
+      ],
       expl: [
         'we understand the frustration that comes with technological equipment usage.  We have technical aptitude and experience to repair any of your technological equipment.  We specialized in a wide range of computer,electronics and  telecommunication  which includes: Laptops,smartphone,car tracking system,solar cctv system,wireless intercome, solar & inverter system and many more. Every client/customers satisfactionis our priority therefore,we strive to listen to the problem and creat a solution while giving effective and efficent customer  service.',
         'As a limited company that we are,we have created a great interest in  building a good reputation to all our customers. We have a team of expertize to provide effective customer service in both sales and repair department. Our customer satisfaction means everything to us; Therefore, we continuously grow and improve our skills, process and techniques to better services',
@@ -235,17 +257,32 @@ export const about_contents = [
   },
   {
     image_url:
-      'https://i.pinimg.com/564x/24/2e/19/242e190fba6b0212207f08487e7cdec0.jpg',
-    header: 'What will have Passion for',
-    intro:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!',
-  },
-  {
-    image_url:
       'https://i.pinimg.com/564x/45/b1/f3/45b1f3125f515c7c2e4714c35e64d4d5.jpg',
     header: "What we're looking forward to",
     intro:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!',
+    path: 'our-vision',
+    content: {
+      images: [
+        'https://i.pinimg.com/564x/49/c5/32/49c5328ef6a5727882ebd66ff36ab68b.jpg',
+        'https://i.pinimg.com/564x/22/e6/ba/22e6ba8655ca6dbecff2bce60ef36e78.jpg',
+        'https://i.pinimg.com/564x/ed/09/00/ed0900f2ff326823164c988c17b84c5c.jpg',
+        'https://i.pinimg.com/564x/ce/8c/4b/ce8c4be5996f525eb52898207fa43634.jpg',
+        'https://i.pinimg.com/564x/27/e0/eb/27e0eb4173113b355caf9c2ec4519b9b.jpg',
+      ],
+      heading: [
+        'Innovation hub ',
+        'reliable service solution ',
+        'Customer centric approach ',
+        'quality craftmanship ',
+        'digital inclusivity ',
+      ],
+      expl: [
+        'we understand the frustration that comes with technological equipment usage.  We have technical aptitude and experience to repair any of your technological equipment.  We specialized in a wide range of computer,electronics and  telecommunication  which includes: Laptops,smartphone,car tracking system,solar cctv system,wireless intercome, solar & inverter system and many more. Every client/customers satisfactionis our priority therefore,we strive to listen to the problem and creat a solution while giving effective and efficent customer  service.',
+        'As a limited company that we are,we have created a great interest in  building a good reputation to all our customers. We have a team of expertize to provide effective customer service in both sales and repair department. Our customer satisfaction means everything to us; Therefore, we continuously grow and improve our skills, process and techniques to better services',
+        'We focus on beign an asset to every client we serve and we are growing tremendensly with over 1000plus customers as at 2020. We continue to provide repair solution,productsales,supply of laptops &   accessories,effective training and efficient technical consultant services to schools,bussinesses and individual within & the communities. We are happy to recieve feedback from our customers about our quality sales,repairs and services.',
+      ],
+    },
   },
 ]
 
