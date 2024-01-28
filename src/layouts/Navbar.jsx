@@ -81,18 +81,16 @@ export const Navbar = ({ openAppointmentForm }) => {
             <ul className='nav-links'>
               {nav_links.map((nav_link, index) => (
                 <li key={index}>
-                  {window.location.pathname === '/blog-posts' ? (
+                  {/* {window.location.pathname === '/blog-posts' ? (
                     <a href={`/#${nav_link.path}`}>{nav_link.name}</a>
-                  ) : (
-                    <a
-                      href={`/#${nav_link.path}`}
-                      onClick={(e) =>
-                        handleNavLinkClick(e, `#${nav_link.path}`)
-                      }
-                    >
-                      {nav_link.name}
-                    </a>
-                  )}
+                  ) : ( */}
+                  <a
+                    href={`/#${nav_link.path}`}
+                    onClick={(e) => handleNavLinkClick(e, `#${nav_link.path}`)}
+                  >
+                    {nav_link.name}
+                  </a>
+                  {/* )} */}
                 </li>
               ))}
             </ul>

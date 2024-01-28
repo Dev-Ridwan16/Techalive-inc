@@ -218,41 +218,86 @@ export const ProductSect = () => {
         designs, and stay connected effortlessly to enhance your experience.
       </p>
       <div className='product-container'>
-        {productData.slice(0, 5).map((product, index) => (
-          <div
-            key={index}
-            className='product-wrapper-card'
-          >
-            <img
-              src={product.image}
-              alt=''
-            />
-            <p>{product.category}</p>
-            <h4 id='name'>
-              {product.name.length > 20
-                ? product.name.slice(0, 16) + '...'
-                : product.name}
-            </h4>
-            <h4 id='price'>${product.price}</h4>
-            <div className='product-intrested'>
-              <div className='contact-to-get'>
-                <a href='https://wa.me/2348050500466'>
-                  <i className='pi pi-whatsapp'></i>
-                </a>
-                <a href='tel:+2348050500466'>
-                  <i className='pi pi-phone'></i>
-                </a>
-              </div>
-              <button
-                onClick={() => handleShowInfo(product)}
-                className='description-btn'
+        <div className='phase grid grid-cols-5'>
+          {productData.slice(0, 5).map((product, index) => (
+            <div className='flex flex-col'>
+              <div
+                key={index}
+                className='product-wrapper-card'
               >
-                <span>Info </span>
-                <i className='pi pi-info-circle'></i>
-              </button>
+                <img
+                  src={product.image}
+                  alt=''
+                />
+                <p>{product.category}</p>
+                <h4 id='name'>
+                  {product.name.length > 20
+                    ? product.name.slice(0, 16) + '...'
+                    : product.name}
+                </h4>
+                <h4 id='price'>${product.price}</h4>
+                <div className='product-intrested'>
+                  <div className='contact-to-get'>
+                    <a href='https://wa.me/2348050500466'>
+                      <i className='pi pi-whatsapp'></i>
+                    </a>
+                    <a href='tel:+2348050500466'>
+                      <i className='pi pi-phone'></i>
+                    </a>
+                  </div>
+                  <button
+                    onClick={() => handleShowInfo(product)}
+                    className='description-btn'
+                  >
+                    <span>Info </span>
+                    <i className='pi pi-info-circle'></i>
+                  </button>
+                </div>
+              </div>
             </div>
+          ))}
+        </div>
+        {productData.length >= 10 && (
+          <div className='phase grid grid-cols-5'>
+            {productData.slice(5, 10).map((product, index) => (
+              <div className='flex flex-col'>
+                <div
+                  key={index}
+                  className='product-wrapper-card'
+                >
+                  <img
+                    src={product.image}
+                    alt=''
+                  />
+                  <p>{product.category}</p>
+                  <h4 id='name'>
+                    {product.name.length > 20
+                      ? product.name.slice(0, 16) + '...'
+                      : product.name}
+                  </h4>
+                  <h4 id='price'>${product.price}</h4>
+                  <div className='product-intrested'>
+                    <div className='contact-to-get'>
+                      <a href='https://wa.me/2348050500466'>
+                        <i className='pi pi-whatsapp'></i>
+                      </a>
+                      <a href='tel:+2348050500466'>
+                        <i className='pi pi-phone'></i>
+                      </a>
+                    </div>
+                    <button
+                      onClick={() => handleShowInfo(product)}
+                      className='description-btn'
+                    >
+                      <span>Info </span>
+                      <i className='pi pi-info-circle'></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        )}
       </div>
       {showInfo && (
         <ProductInforModal
@@ -281,6 +326,36 @@ export const AboutSect = () => {
   const slideStyle = {
     transform: `translateX(-${(currentAbout * 100) / 1}%)`,
   }
+
+  const handleSmoothScroll = (target) => {
+    const targetElement = document.querySelector(target)
+
+    if (targetElement) {
+      const offset = targetElement.getBoundingClientRect().top + window.scrollY
+
+      window.scrollTo({
+        top: offset,
+        behavior: 'smooth',
+      })
+    }
+  }
+
+  const handleNavLinkClick = (e, target) => {
+    e.preventDefault()
+
+    const handleScroll = () => handleSmoothScroll(target)
+
+    if (location.pathname === '/') {
+      navigate(`/${target}`)
+
+      setTimeout(() => {
+        handleScroll
+      }, 5000)
+    }
+
+    handleScroll()
+  }
+
   return (
     <div
       className='about-sect-container'
@@ -319,12 +394,15 @@ export const AboutSect = () => {
                 {content.header}
               </h5>
               <p>{content.intro}</p>
-              <button
-                onClick={() => navigate(content.path)}
-                className='bg-pink text-[#fff] w-[100px] rounded mt-4'
-              >
-                Know More
-              </button>
+              {window.location.pathname === '/' && (
+                <a
+                  href={`/#${content.path}`}
+                  onClick={(e) => handleNavLinkClick(e, `${content.path}`)}
+                  className='bg-pink text-[#fff] w-[100px] rounded mt-4'
+                >
+                  Know More
+                </a>
+              )}
             </div>
           </div>
         ))}
@@ -519,7 +597,7 @@ export const Why_Choose_Us = () => {
   return (
     <div
       className='why-choose-us-container'
-      id='why-choose-us'
+      id='whychooseus'
     >
       <h1 className='section-subhead text-center'>
         Why <span className='text-pink underline'>Choose Us</span>
@@ -536,8 +614,8 @@ export const Why_Choose_Us = () => {
             key={index}
             className='why_choose_us_wrapper'
           >
-            <i className={content.icon}></i>
-            <h3>{content.header}</h3>
+            <i className={`${content.icon} text-blue`}></i>
+            <h3 className='text-pink'>{content.header}</h3>
             <p>{content.content}</p>
           </div>
         ))}
@@ -885,7 +963,7 @@ export const ContactUsSect = ({ openAppointmentForm }) => {
   return (
     <div
       className='contact-us-container'
-      id='contact-us'
+      id='contactus'
     >
       <h1 className='section-subhead'>
         Contact <span className='text-pink'>Us</span>

@@ -21,7 +21,10 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <section className='max-w-[85%] mx-auto  my-10'>
+      <section
+        className='max-w-[85%] mx-auto  my-10'
+        id='about'
+      >
         <div className=' flex flex-row justify-between items-center'>
           <div className='hidden lg:block w-[35%]'>
             <img

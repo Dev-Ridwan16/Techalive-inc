@@ -73,7 +73,7 @@
     }
 
     .service-sect-container .services-container .service-wrapper img {
-        @apply w-full h-[200px] rounded-xl
+        @apply w-full h-[200px] rounded-xl object-cover
     }
 
     .service-sect-container .services-container .service-wrapper .overlay-content {
@@ -114,56 +114,61 @@
 /* ==================== Product Section Starts here */
 
 .product-sect-container .product-container {
-    @apply flex flex-row items-center justify-between gap-1 overflow-x-scroll mx-2 h-[300px]
+    @apply flex flex-col justify-between gap-1 overflow-x-scroll mx-2 
 }
 
 .product-sect-container .product-container::-webkit-scrollbar {
     @apply hidden
 }
 
-.product-sect-container .product-container .product-wrapper-card {
-    @apply flex-shrink-[0] flex-grow-[0] basis-[65%] md:basis-[40%] lg:flex-shrink-[1] lg:flex-grow-[1] lg:basis-[15%]; 
-    @apply mx-3 h-[300px] px-2 shadow-sm rounded-lg
-    /* @apply w-[500px] lg:w-[250px] h-[250px] lg:h-[340px] p-2 transition-all duration-300 ease-in-out bg-grey bg-opacity-5 rounded-md */
+.product-sect-container .product-container .phase {
+    @apply grid grid-cols-2 lg:grid-cols-5
 }
 
-.product-sect-container .product-container .product-wrapper-card:hover {
+.product-sect-container .product-container .phase .product-wrapper-card {
+    /* @apply flex-shrink-[0] flex-grow-[0] basis-[65%] md:basis-[40%] lg:flex-shrink-[1] lg:flex-grow-[1] lg:basis-[15%];  */
+    @apply mx-3 h-[300px] px-2 shadow-sm rounded-lg mb-5 max-w-[100%]
+    /* @apply w-[500px] lg:w-[250px] h-[250px] lg:h-[340px] p-2 transition-all duration-300 ease-in-out bg-grey bg-opacity-5 rounded-md */
+    /* @apply grid grid-cols-2 lg:grid-cols-5 */
+}
+
+.product-sect-container .product-container .phase .product-wrapper-card:hover {
     @apply shadow-md
 }
 
-.product-sect-container .product-container .product-wrapper-card img {
+.product-sect-container .product-container .phase .product-wrapper-card img {
     @apply  mx-auto scale-[.8] w-full h-[150px]
 }
 
-.product-sect-container .product-container .product-wrapper-card p {
+.product-sect-container .product-container .phase .product-wrapper-card p {
     @apply text-white text-f12 md:text-f14 mt-3
 }
 
-.product-sect-container .product-container .product-wrapper-card h4#name {
+.product-sect-container .product-container .phase .product-wrapper-card h4#name {
     @apply text-blue text-f12 lg:text-f16 font-semibold my-2 h-[25px]
 }
 
-.product-sect-container .product-container .product-wrapper-card h4#price {
+.product-sect-container .product-container .phase .product-wrapper-card h4#price {
     @apply text-pink font-semibold
 }
 
-.product-sect-container .product-container .product-wrapper-card .product-intrested {
+.product-sect-container .product-container .phase .product-wrapper-card .product-intrested {
     @apply flex flex-row justify-between items-center
 }
 
-.product-sect-container .product-container .product-wrapper-card .product-intrested .contact-to-get {
+.product-sect-container .product-container .phase .product-wrapper-card .product-intrested .contact-to-get {
     @apply flex flex-row  items-center gap-3
 }
 
-.product-sect-container .product-container .product-wrapper-card .product-intrested .contact-to-get i.pi-whatsapp {
+.product-sect-container .product-container .phase .product-wrapper-card .product-intrested .contact-to-get i.pi-whatsapp {
     @apply text-green
 }
 
-.product-sect-container .product-container .product-wrapper-card .product-intrested .contact-to-get i.pi-phone {
+.product-sect-container .product-container .phase .product-wrapper-card .product-intrested .contact-to-get i.pi-phone {
     @apply text-indigo-500
 }
 
-.product-sect-container .product-container .product-wrapper-card .product-intrested button.description-btn {
+.product-sect-container .product-container .phase .product-wrapper-card .product-intrested button.description-btn {
     @apply w-[50px] h-[25px] text-f10 bg-grey bg-opacity-10 rounded
 }
 
@@ -292,11 +297,11 @@
 }
 
 .why_choose_us_container .why_choose_us_wrapper i {
-    @apply text-f35 text-blue
+    @apply text-f35 
 }
 
 .why_choose_us_container .why_choose_us_wrapper h3 {
-    @apply text-f20 text-blue font-semibold my-4
+    @apply text-f20  font-semibold my-4
 }
 
 .why_choose_us_container .why_choose_us_wrapper p {

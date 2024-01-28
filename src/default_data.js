@@ -221,46 +221,46 @@ export const about_contents = [
   {
     image_url:
       'https://i.pinimg.com/564x/2d/00/3f/2d003f1afe2eb5a96450b351e664d028.jpg',
-    header: 'Know who we are',
+    header: 'Your Trusted Partner in Technology Solutions',
     intro:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!',
+      'Welcome to [Company Name], your ultimate destination for comprehensive solutions in the ever-evolving realms of technology. As a dynamic and multifaceted company, we take pride in being your one-stop-shop for a diverse range of services, including computer software and hardware troubleshooting, solar and CCTV installation, car tracking, technical consulting, hardware training, smartphone repair, wireless intercom solutions, and the retail of cutting-edge computer gadgets and accessories.',
     path: 'about-us',
   },
   {
     image_url:
       'https://i.pinimg.com/564x/24/2e/19/242e190fba6b0212207f08487e7cdec0.jpg',
-    header: 'What will have Passion for',
+    header: 'Connecting Futures, Innovating Today',
     intro:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!',
-    path: 'our-mission',
-    content: {
-      images: [
-        'https://i.pinimg.com/564x/06/a7/1a/06a71ac8b4630f0071549d25501f9fe5.jpg',
-        'https://i.pinimg.com/564x/d8/1e/25/d81e2570d41473e5e6a2dbfdd20ab9ef.jpg',
-        'https://i.pinimg.com/564x/d1/0c/10/d10c10140eb33c69051142f518e18b65.jpg',
-        'https://i.pinimg.com/564x/a4/fe/14/a4fe14932e100ef877cea2eda81874bf.jpg',
-        'https://i.pinimg.com/564x/d4/41/6f/d4416f68de02fec82eb578d582608d75.jpg',
-      ],
-      heading: [
-        'Innovating Connectivity',
-        'Promoting Sustainability',
-        'Ensuring Great Customer Service Satisfaction',
-        'Creating a Dynamic Working Environment',
-        'Empowering Lives Through Integrated Technology Solution',
-      ],
-      expl: [
-        'we understand the frustration that comes with technological equipment usage.  We have technical aptitude and experience to repair any of your technological equipment.  We specialized in a wide range of computer,electronics and  telecommunication  which includes: Laptops,smartphone,car tracking system,solar cctv system,wireless intercome, solar & inverter system and many more. Every client/customers satisfactionis our priority therefore,we strive to listen to the problem and creat a solution while giving effective and efficent customer  service.',
-        'As a limited company that we are,we have created a great interest in  building a good reputation to all our customers. We have a team of expertize to provide effective customer service in both sales and repair department. Our customer satisfaction means everything to us; Therefore, we continuously grow and improve our skills, process and techniques to better services',
-        'We focus on beign an asset to every client we serve and we are growing tremendensly with over 1000plus customers as at 2020. We continue to provide repair solution,productsales,supply of laptops &   accessories,effective training and efficient technical consultant services to schools,bussinesses and individual within & the communities. We are happy to recieve feedback from our customers about our quality sales,repairs and services.',
-      ],
-    },
+      'We aim to pioneer a transformative era of technology by seamlessly integrating innovation, sustainability, and unparalleled customer service. Guided by a commitment to excellence, we strive to make a lasting impact in the ever-evolving landscape of connectivity. Our mission is encapsulated by the following pillars:',
+    path: 'our-vision',
+    // content: {
+    //   images: [
+    //     'https://i.pinimg.com/564x/06/a7/1a/06a71ac8b4630f0071549d25501f9fe5.jpg',
+    //     'https://i.pinimg.com/564x/d8/1e/25/d81e2570d41473e5e6a2dbfdd20ab9ef.jpg',
+    //     'https://i.pinimg.com/564x/d1/0c/10/d10c10140eb33c69051142f518e18b65.jpg',
+    //     'https://i.pinimg.com/564x/a4/fe/14/a4fe14932e100ef877cea2eda81874bf.jpg',
+    //     'https://i.pinimg.com/564x/d4/41/6f/d4416f68de02fec82eb578d582608d75.jpg',
+    //   ],
+    //   heading: [
+    //     'Innovating Connectivity',
+    //     'Promoting Sustainability',
+    //     'Ensuring Great Customer Service Satisfaction',
+    //     'Creating a Dynamic Working Environment',
+    //     'Empowering Lives Through Integrated Technology Solution',
+    //   ],
+    //   expl: [
+    //     'we understand the frustration that comes with technological equipment usage.  We have technical aptitude and experience to repair any of your technological equipment.  We specialized in a wide range of computer,electronics and  telecommunication  which includes: Laptops,smartphone,car tracking system,solar cctv system,wireless intercome, solar & inverter system and many more. Every client/customers satisfactionis our priority therefore,we strive to listen to the problem and creat a solution while giving effective and efficent customer  service.',
+    //     'As a limited company that we are,we have created a great interest in  building a good reputation to all our customers. We have a team of expertize to provide effective customer service in both sales and repair department. Our customer satisfaction means everything to us; Therefore, we continuously grow and improve our skills, process and techniques to better services',
+    //     'We focus on beign an asset to every client we serve and we are growing tremendensly with over 1000plus customers as at 2020. We continue to provide repair solution,productsales,supply of laptops &   accessories,effective training and efficient technical consultant services to schools,bussinesses and individual within & the communities. We are happy to recieve feedback from our customers about our quality sales,repairs and services.',
+    //   ],
+    // },
   },
   {
     image_url:
       'https://i.pinimg.com/564x/45/b1/f3/45b1f3125f515c7c2e4714c35e64d4d5.jpg',
-    header: "What we're looking forward to",
+    header: 'Envisioning a Connected Future',
     intro:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste odit rerum ab ea odio! Cumque est, accusantium at dolores soluta minima. At ullam voluptatum quidem nulla delectus adipisci fugit soluta blanditiis culpa quod! Officiis doloribus ad quos itaque, consequuntur sint!',
+      "Our vision is not just a distant goal; it's a living, breathing commitment to shape a future where technology becomes a seamless part of our daily lives. Rooted in the core values of innovation, reliability, customer-centricity, quality craftsmanship, and digital inclusivity, our vision is an ambitious yet tangible roadmap that defines the essence of who we are and where we're heading",
     path: 'our-vision',
     content: {
       images: [
@@ -384,28 +384,28 @@ export const blog_posts = [
 
 export const why_choose_us_contents = [
   {
-    icon: 'pi pibolt',
-    header: 'We Fast and Reliable',
+    icon: 'pi pi-bolt',
+    header: 'DIVERSE PRODUCT PORTFOLLIO',
     content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nam, eos perspiciatis quos sit nihil inventore. Sed atque facere unde dolorum. ',
+      'Discover excellence in every aspect. We offer a diverse range of high quality products,from sleeky laptops and smartpnone to advanced car tracking system, to solar cctv cameras and to sustanable solar inverter system which is tailored perfectly to your extensive selection of needs.',
   },
   {
-    icon: 'pi pibolt',
-    header: 'We Fast and Reliable',
+    icon: 'pi pi-star',
+    header: 'EXPERT REPAIR SERVICES',
     content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nam, eos perspiciatis quos sit nihil inventore. Sed atque facere unde dolorum. ',
+      'Technical mastery our skilled technicians bring technical expertize and customer focused mindset to every repair job. trust us to rentilize,restore and renew your device to peak performance through meticulous troubleshooting,diagnostics and efficient repair services.',
   },
   {
-    icon: 'pi pibolt',
-    header: 'We Fast and Reliable',
+    icon: 'pi pi-code',
+    header: 'INNOVATION AND TECHNOLOGY LEADERSHIP',
     content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nam, eos perspiciatis quos sit nihil inventore. Sed atque facere unde dolorum. ',
+      'Stay ahead with the latest technology advancement. We pride ourselves on staying at the forefronts of technological advancements. our commitment to innovation ensures that you always have access to latest features and capabilities, keeping you ahead in the ever evolving techniques.',
   },
   {
-    icon: 'pi pibolt',
-    header: 'We Fast and Reliable',
+    icon: 'pi pi-clock',
+    header: 'RELIABILITY YOU CAN COUNT ON',
     content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nam, eos perspiciatis quos sit nihil inventore. Sed atque facere unde dolorum. ',
+      'Where Dependability Meets Excellence. Every product and services are synonymous with reliability. Wether it is the durability of our tools or device and the effective of our repairs. You can count on us to deliver excellence consistency.',
   },
 ]
 
