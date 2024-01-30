@@ -53,11 +53,11 @@ function App() {
             element={<Blog />}
           />
           <Route
-            path='about-us'
+            path='aboutus'
             element={<AboutUs />}
           />
           <Route
-            path='our-vision'
+            path='ourvision'
             element={<OurVision />}
           />
         </Routes>

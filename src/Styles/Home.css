@@ -73,7 +73,7 @@
     }
 
     .service-sect-container .services-container .service-wrapper img {
-        @apply w-full h-[200px] rounded-xl object-cover
+        @apply w-full h-[200px] max-h-[300px] rounded-xl object-cover
     }
 
     .service-sect-container .services-container .service-wrapper .overlay-content {

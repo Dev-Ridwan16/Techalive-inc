@@ -102,6 +102,7 @@ export const Navbar = ({ openAppointmentForm }) => {
             setIsToggle={setIsToggle}
             handleNavToggle={handleNavToggle}
             openAppointmentForm={openAppointmentForm}
+            handleNavLinkClick={handleNavLinkClick}
           />
         )}
       </div>
@@ -114,6 +115,7 @@ export const MobileNavbar = ({
   setIsToggle,
   handleNavToggle,
   openAppointmentForm,
+  handleNavLinkClick,
 }) => {
   const [isScrolling, setIsScrolling] = useState(true)
   const location = useLocation()

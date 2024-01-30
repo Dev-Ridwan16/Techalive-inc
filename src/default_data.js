@@ -37,7 +37,7 @@ export const hero_slide_contents = [
   {
     header: 'Your Trusted Destination for Tech Solution',
     paragraph:
-      'TechAlive: Your go-to tech solution. Simplify your digital life, stay connected, and excel effortlessly. Welcome to the future of seamless technology!',
+      'Techalive: Your go-to tech solution. Simplify your digital life, stay connected, and excel effortlessly. Welcome to the future of seamless technology!',
     image_url:
       'https://i.pinimg.com/564x/2d/00/3f/2d003f1afe2eb5a96450b351e664d028.jpg',
     active: 'active',
@@ -59,7 +59,7 @@ export const hero_slide_contents = [
   {
     header: 'Embrace Sustainable Power',
     paragraph:
-      '"Join the sustainable energy movement with TechSun. Harness the sun for a greener future. Together, let\'s make the world cleaner and brighter.',
+      "Join the sustainable energy movement with TechSun. Harness the sun for a greener future. Together, let's make the world cleaner and brighter.",
     image_url:
       'https://i.pinimg.com/564x/45/b1/f3/45b1f3125f515c7c2e4714c35e64d4d5.jpg',
   },
@@ -223,16 +223,16 @@ export const about_contents = [
       'https://i.pinimg.com/564x/2d/00/3f/2d003f1afe2eb5a96450b351e664d028.jpg',
     header: 'Your Trusted Partner in Technology Solutions',
     intro:
-      'Welcome to [Company Name], your ultimate destination for comprehensive solutions in the ever-evolving realms of technology. As a dynamic and multifaceted company, we take pride in being your one-stop-shop for a diverse range of services, including computer software and hardware troubleshooting, solar and CCTV installation, car tracking, technical consulting, hardware training, smartphone repair, wireless intercom solutions, and the retail of cutting-edge computer gadgets and accessories.',
-    path: 'about-us',
+      'Welcome to Techalive, your ultimate destination for comprehensive solutions in the ever-evolving realms of technology. As a dynamic and multifaceted company, we...',
+    path: 'aboutus',
   },
   {
     image_url:
       'https://i.pinimg.com/564x/24/2e/19/242e190fba6b0212207f08487e7cdec0.jpg',
     header: 'Connecting Futures, Innovating Today',
     intro:
-      'We aim to pioneer a transformative era of technology by seamlessly integrating innovation, sustainability, and unparalleled customer service. Guided by a commitment to excellence, we strive to make a lasting impact in the ever-evolving landscape of connectivity. Our mission is encapsulated by the following pillars:',
-    path: 'our-vision',
+      'We aim to pioneer a transformative era of technology by seamlessly integrating innovation, sustainability, and unparalleled customer service...',
+    path: 'ourvision',
     // content: {
     //   images: [
     //     'https://i.pinimg.com/564x/06/a7/1a/06a71ac8b4630f0071549d25501f9fe5.jpg',
@@ -260,8 +260,8 @@ export const about_contents = [
       'https://i.pinimg.com/564x/45/b1/f3/45b1f3125f515c7c2e4714c35e64d4d5.jpg',
     header: 'Envisioning a Connected Future',
     intro:
-      "Our vision is not just a distant goal; it's a living, breathing commitment to shape a future where technology becomes a seamless part of our daily lives. Rooted in the core values of innovation, reliability, customer-centricity, quality craftsmanship, and digital inclusivity, our vision is an ambitious yet tangible roadmap that defines the essence of who we are and where we're heading",
-    path: 'our-vision',
+      "Our vision is not just a distant goal; it's a living, breathing commitment to shape a future where technology becomes a seamless part of our daily lives...",
+    path: 'ourvision',
     content: {
       images: [
         'https://i.pinimg.com/564x/49/c5/32/49c5328ef6a5727882ebd66ff36ab68b.jpg',
@@ -385,25 +385,25 @@ export const blog_posts = [
 export const why_choose_us_contents = [
   {
     icon: 'pi pi-bolt',
-    header: 'DIVERSE PRODUCT PORTFOLLIO',
+    header: 'Diverse Product Portfolio',
     content:
       'Discover excellence in every aspect. We offer a diverse range of high quality products,from sleeky laptops and smartpnone to advanced car tracking system, to solar cctv cameras and to sustanable solar inverter system which is tailored perfectly to your extensive selection of needs.',
   },
   {
     icon: 'pi pi-star',
-    header: 'EXPERT REPAIR SERVICES',
+    header: 'Expert Repair Service',
     content:
       'Technical mastery our skilled technicians bring technical expertize and customer focused mindset to every repair job. trust us to rentilize,restore and renew your device to peak performance through meticulous troubleshooting,diagnostics and efficient repair services.',
   },
   {
     icon: 'pi pi-code',
-    header: 'INNOVATION AND TECHNOLOGY LEADERSHIP',
+    header: 'Innovstion And Technology Leadership',
     content:
       'Stay ahead with the latest technology advancement. We pride ourselves on staying at the forefronts of technological advancements. our commitment to innovation ensures that you always have access to latest features and capabilities, keeping you ahead in the ever evolving techniques.',
   },
   {
     icon: 'pi pi-clock',
-    header: 'RELIABILITY YOU CAN COUNT ON',
+    header: 'Reliability You Can Count On',
     content:
       'Where Dependability Meets Excellence. Every product and services are synonymous with reliability. Wether it is the durability of our tools or device and the effective of our repairs. You can count on us to deliver excellence consistency.',
   },

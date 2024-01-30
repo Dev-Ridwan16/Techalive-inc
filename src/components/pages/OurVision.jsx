@@ -35,13 +35,20 @@ const OurVision = () => {
         <div className='absolute z-40 top-[35%] translate-y-[-35%] lg:top-[50%] lg:translate-y-[-50%] left-[25%] translate-x-[-25%] lg:left-[15%] lg:translate-x-[-15%] text-[#fff]'>
           <h1>Our Vision</h1>
           <p className='lg:w-[550px] mt-5'>
-            Transforming visions into reality. Join us for a connected,
-            sustainable future where innovation thrives.
+            Our vision is not just a distant goal; it's a living, breathing
+            commitment to shape a future where technology becomes a seamless
+            part of our daily lives. Rooted in the core values of innovation,
+            reliability, customer-centricity, quality craftsmanship, and digital
+            inclusivity, our vision is an ambitious yet tangible roadmap that
+            defines the essence of who we are and where we're heading
           </p>
         </div>
       </div>
 
-      <section className='max-w-[85%] mx-auto  my-10' id='our-vision'>
+      <section
+        className='max-w-[85%] mx-auto  my-10'
+        id='our-vision'
+      >
         <div className=' flex flex-row justify-between items-center'>
           <div className='hidden lg:block w-[35%]'>
             <img
@@ -164,8 +171,18 @@ const OurVision = () => {
         </div>
       </section>
 
-      <section className='max-w-[85%] mx-auto my-10' id='our-mission'>
+      <section
+        className='max-w-[85%] mx-auto my-10'
+        id='our-mission'
+      >
         <h1 className='text-pink mb-10 text-center'>Our Mission</h1>
+        <p className='w-[800px] mx-auto text-center mb-10'>
+          We aim to pioneer a transformative era of technology by seamlessly
+          integrating innovation, sustainability, and unparalleled customer
+          service. Guided by a commitment to excellence, we strive to make a
+          lasting impact in the ever-evolving landscape of connectivity. Our
+          mission is encapsulated by the following pillars:
+        </p>
         <div className='grid lg:grid-cols-5 gap-1 '>
           {our_mission_data.map((mission, index) => (
             <div
@@ -175,7 +192,7 @@ const OurVision = () => {
               <img
                 src={mission.img}
                 alt={`Image ${index + 1}`}
-                className='h-[200px] w-full'
+                className='h-[200px] max-h-[300px] w-full'
               />
 
               <div className='bg-blue bg-opacity-50 w-full h-[200px] absolute top-0' />

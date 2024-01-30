@@ -129,7 +129,7 @@ export const ServiceSect = () => {
       id='services'
     >
       <h1 className='section-subhead text-center'>
-        Our <span className='text-pink underline'>Services</span>
+        OUR <span className='text-pink underline'>SERVICES</span>
       </h1>
       <p className='text-center my-5 w-full md:w-[800px] mx-auto'>
         An experienced and reliable company that offers a wide range of
@@ -208,7 +208,7 @@ export const ProductSect = () => {
       id='products'
     >
       <h1 className='section-subhead text-center'>
-        Our <span className='text-pink underline'>Product</span>
+        OUR <span className='text-pink underline'>PRODUCTS</span>
       </h1>
       <p className='text-center my-5 w-full md:w-[800px] mx-auto'>
         Immerse yourself in the world of productivity and connectivity, explore
@@ -343,17 +343,15 @@ export const AboutSect = () => {
   const handleNavLinkClick = (e, target) => {
     e.preventDefault()
 
-    const handleScroll = () => handleSmoothScroll(target)
-
-    if (location.pathname === '/') {
+    if (location.pathname !== `${target}`) {
       navigate(`/${target}`)
 
       setTimeout(() => {
-        handleScroll
-      }, 5000)
+        handleSmoothScroll(target)
+      }, 1000)
     }
 
-    handleScroll()
+    handleSmoothScroll(target)
   }
 
   return (
@@ -368,7 +366,7 @@ export const AboutSect = () => {
             onClick={() => setCurrentAbout(index)}
             key={index}
           >
-            {indicator.title}
+            {indicator.title.toUpperCase()}
           </h3>
         ))}
       </div>
@@ -394,15 +392,14 @@ export const AboutSect = () => {
                 {content.header}
               </h5>
               <p>{content.intro}</p>
-              {window.location.pathname === '/' && (
-                <a
-                  href={`/#${content.path}`}
-                  onClick={(e) => handleNavLinkClick(e, `${content.path}`)}
-                  className='bg-pink text-[#fff] w-[100px] rounded mt-4'
-                >
+              <a
+                href={`/#${content.path}`}
+                onClick={(e) => handleNavLinkClick(e, `${content.path}`)}
+              >
+                <button className='bg-pink text-[#fff] w-[100px] h-[30px] rounded mt-4'>
                   Know More
-                </a>
-              )}
+                </button>
+              </a>
             </div>
           </div>
         ))}
@@ -483,7 +480,7 @@ export const BlogSect = () => {
       id='blogs'
     >
       <h1 className='section-subhead text-center'>
-        Our <span className='text-pink underline'>Blog</span>
+        OUR <span className='text-pink underline'>BLOG</span>
       </h1>
       <p className='text-center my-5 w-full md:w-[600px] mx-auto'>
         Discover our colction of insightful articles covering a variety of
@@ -600,7 +597,7 @@ export const Why_Choose_Us = () => {
       id='whychooseus'
     >
       <h1 className='section-subhead text-center'>
-        Why <span className='text-pink underline'>Choose Us</span>
+        WHY <span className='text-pink underline'>CHOOSE US</span>
       </h1>
       <p className='text-center my-5 w-full md:w-[600px] mx-auto'>
         Explore our wide range of services designed to meet your needs. At
@@ -867,7 +864,7 @@ export const ReviewsSect = () => {
       <div className='reviews-wrapper'>
         <div className='section-intro'>
           <h1 className='section-subhead'>
-            What <span className='text-pink'>Our Customers</span> Say
+            WHAT <span className='text-pink'>OUR CUSTOMERS</span> SAY
           </h1>
           <p>
             We care what people say about us. We work hard to gain the trust and
@@ -966,7 +963,7 @@ export const ContactUsSect = ({ openAppointmentForm }) => {
       id='contactus'
     >
       <h1 className='section-subhead'>
-        Contact <span className='text-pink'>Us</span>
+        CONTACT <span className='text-pink'>US</span>
       </h1>
 
       <div className='information'>
