@@ -176,7 +176,7 @@ const OurVision = () => {
         id='our-mission'
       >
         <h1 className='text-pink mb-10 text-center'>Our Mission</h1>
-        <p className='w-[800px] mx-auto text-center mb-10'>
+        <p className='lg:w-[800px] mx-auto text-center mb-10'>
           We aim to pioneer a transformative era of technology by seamlessly
           integrating innovation, sustainability, and unparalleled customer
           service. Guided by a commitment to excellence, we strive to make a

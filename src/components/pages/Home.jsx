@@ -864,7 +864,7 @@ export const ReviewsSect = () => {
       <div className='reviews-wrapper'>
         <div className='section-intro'>
           <h1 className='section-subhead'>
-            WHAT <span className='text-pink'>OUR CUSTOMERS</span> SAY
+            WHAT <span className='text-pink underline'>OUR CUSTOMERS</span> SAY
           </h1>
           <p>
             We care what people say about us. We work hard to gain the trust and
@@ -1000,19 +1000,19 @@ export const ContactUsSect = ({ openAppointmentForm }) => {
         </div>
         <div className='col'>
           <div className='quick-link'>
-            <a href=''>
+            <a href='https://facebook.com/techalive.ltd'>
               <i className='pi pi-facebook'></i>
               <span> Facebook</span>
             </a>
-            <a href=''>
+            <a href='https://x.com/techalive_inc?s=21'>
               <i className='pi pi-twitter'></i>
               <span> Twitter</span>
             </a>
-            <a href=''>
+            <a href='https://www.instagram.com/techalive_inc'>
               <i className='pi pi-instagram'></i>
               <span> Instagram</span>
             </a>
-            <a href=''>
+            <a href='https://t.me/techalive_inc'>
               <i className='pi pi-telegram'></i>
               <span> Telegram</span>
             </a>
