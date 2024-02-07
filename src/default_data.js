@@ -400,19 +400,19 @@ export const why_choose_us_contents = [
     icon: 'pi pi-bolt',
     header: 'Diverse Product Portfolio',
     content:
-      'Discover excellence in every aspect. We offer a diverse range of high quality products,from sleeky laptops and smartpnone to advanced car tracking system, to solar cctv cameras and to sustanable solar inverter system which is tailored perfectly to your extensive selection of needs.',
+      'Discover excellence in every aspect. We offer a diverse range of high quality products, from sleeky laptops and smartpnone to advanced car tracking system, to solar cctv cameras and to sustainable solar inverter system; which is tailored perfectly to your extensive selection of needs.',
   },
   {
     icon: 'pi pi-star',
     header: 'Expert Repair Service',
     content:
-      'Technical mastery our skilled technicians bring technical expertize and customer focused mindset to every repair job. trust us to rentilize,restore and renew your device to peak performance through meticulous troubleshooting,diagnostics and efficient repair services.',
+      'Technical mastery: our skilled technicians bring technical expertise and customer focused mindset to every repair job. Trust us to revitilize, restore and renew your device to peak performance through meticulous troubleshooting, diagnostics, and efficient repair services.',
   },
   {
     icon: 'pi pi-code',
-    header: 'Innovstion And Technology Leadership',
+    header: 'Innovation And Technology Leadership',
     content:
-      'Stay ahead with the latest technology advancement. We pride ourselves on staying at the forefronts of technological advancements. our commitment to innovation ensures that you always have access to latest features and capabilities, keeping you ahead in the ever evolving techniques.',
+      'Stay ahead with the latest technology advancement. We pride ourselves on staying at the forefronts of technological advancements. Our commitment to innovation ensures that you always have access to latest features and capabilities, keeping you ahead in the ever evolving techniques.',
   },
   {
     icon: 'pi pi-clock',

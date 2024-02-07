@@ -132,12 +132,12 @@ export const ServiceSect = () => {
       </h1>
       <p className='text-center my-5 w-full md:w-[800px] mx-auto'>
         An experienced and reliable company that offers a wide range of
-        technology services from computer to electronics,and and
-        telecommunication. we are committed to providing & delievering high
+        technology services from computer to smartphone, to electronics and
+        telecommunication. We are committed to providing & delievering high
         quality services solution tailoured to meet your needs/requirements
-        while offering quick turnaround times explore our top-notch services
-        below and find out we can assist in alleviating your technological
-        concern or stress
+        while offering quick turnaround times. Explore our top-notch services
+        below and find out how we can assist in alleviating your technological
+        concern or stress.
       </p>
 
       <div className='services-container'>
@@ -626,75 +626,6 @@ export const Why_Choose_Us = () => {
   )
 }
 
-export const Archivement = () => {
-  const [counters, setCounters] = useState({
-    workers: 0,
-    contracts: 0,
-    awards: 0,
-    clients: 0,
-  })
-
-  const limit = {
-    workers: 10,
-    contracts: 20,
-    awards: 40,
-    clients: 30,
-  }
-
-  let interval
-
-  const incrementCounts = (counterName) => {
-    setCounters((prevCount) => ({
-      ...prevCount,
-      [counterName]: prevCount[counterName] + 1,
-    }))
-  }
-
-  useEffect(() => {
-    const counterNames = Object.keys(counters)
-
-    interval = setInterval(() => {
-      counterNames.forEach((counterName) => {
-        if (counters[counterName] < limit[counterName]) {
-          incrementCounts(counterName)
-        }
-      })
-    }, 1000)
-
-    return () => clearInterval(interval)
-  }, [counters, limit])
-
-  return (
-    <div className='archievement-container'>
-      <img
-        src='https://i.pinimg.com/564x/7a/e9/e9/7ae9e9fd2b348f03421abc3a6a3a1be9.jpg'
-        alt=''
-      />
-
-      <div className='overlay'></div>
-
-      <div className='content'>
-        <div className='workers'>
-          <h1>{counters.workers}</h1>
-          <p>Workers</p>
-        </div>
-        <div className='contract'>
-          <h1>{counters.contracts}</h1>
-          <p>Contracts</p>
-        </div>
-        <div className='award'>
-          <h1>{counters.awards}</h1>
-          <p>Awards</p>
-        </div>
-        <div className='custormer'>
-          <h1>{counters.clients}</h1>
-          <p>Clients</p>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 export const ReviewsSect = () => {
   const mobile = window.innerWidth <= 767
   const tablet = window.innerWidth <= 1023
@@ -955,6 +886,75 @@ export const ReviewsSect = () => {
               ></div>
             ))}
           </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export const Archivement = () => {
+  const [counters, setCounters] = useState({
+    workers: 0,
+    contracts: 0,
+    awards: 0,
+    clients: 0,
+  })
+
+  const limit = {
+    workers: 10,
+    contracts: 20,
+    awards: 40,
+    clients: 30,
+  }
+
+  let interval
+
+  const incrementCounts = (counterName) => {
+    setCounters((prevCount) => ({
+      ...prevCount,
+      [counterName]: prevCount[counterName] + 1,
+    }))
+  }
+
+  useEffect(() => {
+    const counterNames = Object.keys(counters)
+
+    interval = setInterval(() => {
+      counterNames.forEach((counterName) => {
+        if (counters[counterName] < limit[counterName]) {
+          incrementCounts(counterName)
+        }
+      })
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [counters, limit])
+
+  return (
+    <div className='archievement-container'>
+      <img
+        src='https://i.pinimg.com/564x/7a/e9/e9/7ae9e9fd2b348f03421abc3a6a3a1be9.jpg'
+        alt=''
+      />
+
+      <div className='overlay'></div>
+
+      <div className='content'>
+        <div className='workers'>
+          <h1>{counters.workers}</h1>
+          <p>Workers</p>
+        </div>
+        <div className='contract'>
+          <h1>{counters.contracts}</h1>
+          <p>Contracts</p>
+        </div>
+        <div className='award'>
+          <h1>{counters.awards}</h1>
+          <p>Awards</p>
+        </div>
+        <div className='custormer'>
+          <h1>{counters.clients}</h1>
+          <p>Clients</p>
         </div>
       </div>
     </div>
