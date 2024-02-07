@@ -32,9 +32,11 @@ export const Home = ({ openAppointmentForm }) => {
         <BlogSect />
         <Why_Choose_Us />
       </div>
-      <Archivement />
       <div className='max-w-[85%] mx-auto'>
         <ReviewsSect />
+      </div>
+      <Archivement />
+      <div className='max-w-[85%] mx-auto'>
         <ContactUsSect openAppointmentForm={openAppointmentForm} />
       </div>
       {/* <Footer /> */}
