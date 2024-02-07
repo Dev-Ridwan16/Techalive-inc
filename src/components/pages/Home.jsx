@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../../layouts/Footer'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 // In app API
 import {
@@ -80,8 +80,6 @@ export const HeroSect = () => {
           }`}
           style={slideStyle}
         >
-          <div className='hero-overlay'></div>
-
           <div className='hero-slide'>
             <div className='hero-slide-image'>
               <img
@@ -89,6 +87,7 @@ export const HeroSect = () => {
                 alt=''
               />
             </div>
+            <div className='hero-overlay'></div>
             <div className='hero-slide-content'>
               <h1>{slide_content.header}</h1>
               <p>{slide_content.paragraph}</p>
@@ -219,6 +218,50 @@ export const ProductSect = () => {
       </p>
       <div className='product-container'>
         <div className='phase grid grid-cols-5'>
+          {productData.slice(5, 10).map((product, index) => (
+            <div className='flex flex-col'>
+              <div
+                key={index}
+                className='product-wrapper-card'
+              >
+                <img
+                  src={product.image}
+                  alt=''
+                />
+                <p>{product.category}</p>
+                <h4 id='name'>
+                  {product.name.length > 20
+                    ? product.name.slice(0, 16) + '...'
+                    : product.name}
+                </h4>
+                <h4 id='price'>${product.price}</h4>
+                <div className='product-intrested'>
+                  <div className='contact-to-get'>
+                    <a href='https://wa.me/2348050500466'>
+                      <i className='pi pi-whatsapp'></i>
+                    </a>
+                    <a href='tel:+2348050500466'>
+                      <i className='pi pi-phone'></i>
+                    </a>
+                  </div>
+                  <button
+                    onClick={() => handleShowInfo(product)}
+                    className='description-btn'
+                  >
+                    <span>Info </span>
+                    <i className='pi pi-info-circle'></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className='my-[30px]'>
+          <h1 className='section-subhead text-center font-medium text-[24px]'>
+            LATEST <span className='text-pink underline'>PRODUCTS</span>
+          </h1>
+        </div>
+        <div className='phase grid grid-cols-5'>
           {productData.slice(0, 5).map((product, index) => (
             <div className='flex flex-col'>
               <div
@@ -257,47 +300,6 @@ export const ProductSect = () => {
             </div>
           ))}
         </div>
-        {productData.length >= 10 && (
-          <div className='phase grid grid-cols-5'>
-            {productData.slice(5, 10).map((product, index) => (
-              <div className='flex flex-col'>
-                <div
-                  key={index}
-                  className='product-wrapper-card'
-                >
-                  <img
-                    src={product.image}
-                    alt=''
-                  />
-                  <p>{product.category}</p>
-                  <h4 id='name'>
-                    {product.name.length > 20
-                      ? product.name.slice(0, 16) + '...'
-                      : product.name}
-                  </h4>
-                  <h4 id='price'>${product.price}</h4>
-                  <div className='product-intrested'>
-                    <div className='contact-to-get'>
-                      <a href='https://wa.me/2348050500466'>
-                        <i className='pi pi-whatsapp'></i>
-                      </a>
-                      <a href='tel:+2348050500466'>
-                        <i className='pi pi-phone'></i>
-                      </a>
-                    </div>
-                    <button
-                      onClick={() => handleShowInfo(product)}
-                      className='description-btn'
-                    >
-                      <span>Info </span>
-                      <i className='pi pi-info-circle'></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
       {showInfo && (
         <ProductInforModal
@@ -543,30 +545,33 @@ export const BlogSect = () => {
               key={index}
               className='blog-post-slide'
             >
-              <img
-                src={blog.image}
-                alt=''
-              />
-              <div className='blog-post-content'>
-                <h3>
-                  {blog.title.length > 25
-                    ? blog.title.slice(0, 25) + '...'
-                    : blog.title}
-                </h3>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      blog.blog.length > 20
-                        ? blog.blog.slice(0, 100) + '...'
-                        : blog.blog,
-                  }}
+              <Link to={`/techalive/blog/${blog._id}`}>
+                <img
+                  src={blog.image}
+                  alt=''
                 />
-                {/* <button>Read Post</button> */}
-                <div className='the-footer'>
-                  <i>{blog.author}</i>
-                  <i>{blog.date}</i>
+                <div className='blog-post-content'>
+                  <h3>
+                    {blog.title.length > 25
+                      ? blog.title.slice(0, 25) + '...'
+                      : blog.title}
+                  </h3>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        blog.blog.length > 20
+                          ? blog.blog.slice(0, 100) + '...'
+                          : blog.blog,
+                    }}
+                  />
+                  {/* <button>Read Post</button> */}
+                  <div className='the-footer'>
+                    <Link>
+                      <i className='text-indigo-500'>Read More</i>
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
@@ -1016,9 +1021,9 @@ export const ContactUsSect = ({ openAppointmentForm }) => {
               <i className='pi pi-telegram'></i>
               <span> Telegram</span>
             </a>
-            <a href=''>
-              <i className='pi pi-linkedin'></i>
-              <span> LinkedIn</span>
+            <a href='https://wa.me/2348050500466'>
+              <i className='pi pi-whatsapp'></i>
+              <span> Whatsapp</span>
             </a>
           </div>
         </div>

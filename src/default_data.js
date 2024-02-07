@@ -37,9 +37,9 @@ export const hero_slide_contents = [
   {
     header: 'Your Trusted Destination for Tech Solution',
     paragraph:
-      'Techalive: Your go-to tech solution. Simplify your digital life, stay connected, and excel effortlessly. Welcome to the future of seamless technology!',
+      'Techalive: Welcome to your reliable hub for purchasing, repairing, training, and receiving technical consultations on computers, smartphones, electronics, and telecommunications devices.',
     image_url:
-      'https://i.pinimg.com/564x/2d/00/3f/2d003f1afe2eb5a96450b351e664d028.jpg',
+      'https://i.pinimg.com/564x/cf/94/2f/cf942fe30a6597815d50c5be43574f7a.jpg',
     active: 'active',
   },
   {
@@ -47,21 +47,21 @@ export const hero_slide_contents = [
     paragraph:
       'Experience technical expertise at TechWizards. Transforming ordinary to extraordinary—fixing, enhancing, innovating. Masters behind the magic, your tech transformations await!',
     image_url:
-      'https://i.pinimg.com/564x/24/2e/19/242e190fba6b0212207f08487e7cdec0.jpg',
+      'https://i.pinimg.com/originals/39/e3/d1/39e3d17773b81136804043e213effba0.jpg',
   },
   {
     header: 'Unleash Your Digital Dreams',
     paragraph:
       'Envision seamless connectivity, cutting-edge security, and sustainable energy. At TechVisions, we turn dreams into reality.',
     image_url:
-      'https://images.pexels.com/photos/4066041/pexelsphoto4066041.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://i.pinimg.com/564x/c6/bd/05/c6bd05a25809e3ff4526aa3204d7caae.jpg',
   },
   {
     header: 'Embrace Sustainable Power',
     paragraph:
       "Join the sustainable energy movement with TechSun. Harness the sun for a greener future. Together, let's make the world cleaner and brighter.",
     image_url:
-      'https://i.pinimg.com/564x/45/b1/f3/45b1f3125f515c7c2e4714c35e64d4d5.jpg',
+      'https://i.pinimg.com/564x/57/82/24/5782249da9b3a595486ee75bcf0c3f13.jpg',
   },
 ]
 
@@ -127,6 +127,19 @@ export const services_contents = [
       'up to 5 users',
       'colourful night vision',
       'PIR detection',
+    ],
+  },
+  {
+    image_url:
+      'https://i.pinimg.com/564x/7d/6e/29/7d6e29ef2b424621cddd924492d9e121.jpg',
+    service: 'Solar Inverter Instalation',
+    sub_categories: [
+      'Solar panel installation',
+      'Inverter installation',
+      'Battery storage setup',
+      'Grid-tie and off-grid solutions',
+      'Energy audit and consultation',
+      'Maintenance and repair services',
     ],
   },
   {

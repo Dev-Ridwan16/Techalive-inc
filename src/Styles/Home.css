@@ -19,7 +19,7 @@
 }
 
 .hero-overlay {
-    @apply absolute top-0 h-[70vh] lg:h-screen w-full bg-grey bg-opacity-20
+    @apply absolute top-0 h-[70vh] lg:h-screen w-full bg-blue bg-opacity-50 
 }
 
 .hero-slide-container {
@@ -27,15 +27,15 @@
 }
 
 .hero-slide-container .hero-slide {
-    @apply absolute left-[50%] top-0 h-[70vh] lg:h-screen w-full translate-x-[-50%]
+    @apply absolute left-[50%] top-0 h-[70vh] lg:h-screen w-full translate-x-[-50%] z-[-1]
 }
 
 .hero-slide-container .hero-slide .hero-slide-content {
-    @apply text-[#fff] z-[999] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full max-w-[85%] mx-auto
+    @apply text-[#fff] z-50 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full max-w-[85%] mx-auto
 }
 
 .hero-slide-container .hero-slide .hero-slide-content h1 {
-    @apply w-[300px] md:w-[500px] leading-[40px]
+    @apply w-[300px] md:w-[500px] leading-[40px] z-50
 }
 
 .hero-slide-container .hero-slide .hero-slide-content p {
@@ -65,7 +65,8 @@
 /* ==================== Service Section Starts here */
 
     .service-sect-container .services-container {
-        @apply flex flex-col md:flex-row md:flex-wrap w-full
+        /* @apply flex flex-col md:flex-row md:flex-wrap w-full */
+        @apply grid grid-cols-4
     }
 
     .service-sect-container .services-container .service-wrapper {
@@ -259,7 +260,7 @@
 }
 
 .blog-container .blog-slider .blog-post-slide .blog-post-content p {
-    @apply leading-[30px] px-2
+    @apply leading-[30px] px-2 h-[120px]
 }
 
 .blog-container .blog-slider .blog-post-slide .blog-post-content button {
