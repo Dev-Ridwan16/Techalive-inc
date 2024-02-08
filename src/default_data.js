@@ -45,21 +45,21 @@ export const hero_slide_contents = [
   {
     header: 'Tech Wizardry in Action',
     paragraph:
-      'Experience technical expertise at TechWizards. Transforming ordinary to extraordinary—fixing, enhancing, innovating. Masters behind the magic, your tech transformations await!',
+      'Experience technical expertise at Techalive. Transforming ordinary to extraordinary—fixing, enhancing, innovating. Masters behind the magic, your tech transformations await!',
     image_url:
       'https://i.pinimg.com/originals/39/e3/d1/39e3d17773b81136804043e213effba0.jpg',
   },
   {
     header: 'Unleash Your Digital Dreams',
     paragraph:
-      'Envision seamless connectivity, cutting-edge security, and sustainable energy. At TechVisions, we turn dreams into reality.',
+      'Envision seamless connectivity, cutting-edge security, and sustainable energy. At Techalive, we turn dreams into reality.',
     image_url:
       'https://i.pinimg.com/564x/c6/bd/05/c6bd05a25809e3ff4526aa3204d7caae.jpg',
   },
   {
     header: 'Embrace Sustainable Power',
     paragraph:
-      "Join the sustainable energy movement with TechSun. Harness the sun for a greener future. Together, let's make the world cleaner and brighter.",
+      "Join the sustainable energy movement with Techalive. Harness the sun for a greener future. Together, let's make the world cleaner and brighter.",
     image_url:
       'https://i.pinimg.com/564x/57/82/24/5782249da9b3a595486ee75bcf0c3f13.jpg',
   },

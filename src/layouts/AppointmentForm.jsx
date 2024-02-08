@@ -39,8 +39,8 @@ export const AppointmentForm = ({ closeAppointmentForm }) => {
 
   const appointment_purpose = [
     {
-      value: 'Buy',
-      child: 'Buy',
+      value: 'Purchase',
+      child: 'Purchase',
     },
 
     {
