@@ -46,10 +46,10 @@ const AboutUs = () => {
               We understand the frustration that comes with technological
               equipment usage. We have technical aptitude and experience to
               repair any of your technological equipment. We specialized in a
-              wide range of computer,electronics and telecommunication which
-              includes: Laptops,smartphone,car tracking system,solar cctv
-              system,wireless intercome, solar & inverter system and many more.
-              Every client/customers satisfactionis our priority therefore,we
+              wide range of computer, electronics and telecommunication which
+              includes: Laptops, Smartphone, Car tracking system, Solar CCTV
+              system, Wireless intercome, Solar & Inverter system and many more.
+              Every client/customers satisfactionis our priority therefore, we
               strive to listen to the problem and creat a solution while giving
               effective and efficent customer service.
             </p>
@@ -71,7 +71,7 @@ const AboutUs = () => {
                 alt=''
                 className='lg:hidden w-[100px] h-[100px] rounded-md float-right ml-3'
               />
-              As a limited company that we are,we have created a great interest
+              As a limited company that we are, we have created a great interest
               in building a good reputation to all our customers. We have a team
               of expertize to provide effective customer service in both sales
               and repair department. Our customer satisfaction means everything
@@ -99,10 +99,10 @@ const AboutUs = () => {
               We focus on beign an asset to every client we serve and we are
               growing tremendensly with over 1000plus customers as at 2020. We
               continue to provide repair solution,productsales,supply of laptops
-              & accessories,effective training and efficient technical
-              consultant services to schools,bussinesses and individual within &
-              the communities. We are happy to recieve feedback from our
-              customers about our quality sales,repairs and services.
+              & accessories, effective training and efficient technical
+              consultant services to schools, bussinesses and individual within
+              & the communities. We are happy to recieve feedback from our
+              customers about our quality sales, repairs and services.
             </p>
           </div>
         </div>

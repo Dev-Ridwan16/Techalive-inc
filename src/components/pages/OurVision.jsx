@@ -65,8 +65,8 @@ const OurVision = () => {
                 alt=''
                 className='lg:hidden w-[100px] h-[100px] rounded-md float-left mr-3'
               />
-              Striving to be the four front of technological advancement comma
-              providing our customers with access to cutting edge products that
+              Striving to be the four front of technological advancement.
+              Providing our customers with access to cutting edge products that
               inspires creativity and productivity.
             </p>
           </div>

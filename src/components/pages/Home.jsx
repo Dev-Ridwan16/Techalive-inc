@@ -35,7 +35,7 @@ export const Home = ({ openAppointmentForm }) => {
       <div className='max-w-[85%] mx-auto'>
         <ReviewsSect />
       </div>
-      <Archivement />
+      {/* <Archivement /> */}
       <div className='max-w-[85%] mx-auto'>
         <ContactUsSect openAppointmentForm={openAppointmentForm} />
       </div>
@@ -280,7 +280,7 @@ export const ProductSect = () => {
                     ? product.name.slice(0, 16) + '...'
                     : product.name}
                 </h4>
-                <h4 id='price'>${product.price}</h4>
+                <h4 id='price'>₦{product.price}</h4>
                 <div className='product-intrested'>
                   <div className='contact-to-get'>
                     <a href='https://wa.me/2348050500466'>
@@ -487,56 +487,9 @@ export const BlogSect = () => {
         OUR <span className='text-pink underline'>BLOG</span>
       </h1>
       <p className='text-center my-5 w-full md:w-[600px] mx-auto'>
-        Discover our colction of insightful articles covering a variety of
+        Discover our collection of insightful articles covering a variety of
         topics. Dive into our latest posts below.
       </p>
-
-      {/* <div className="blog-container">
-        <div
-          className="blog-slider"
-          style={slideStyle}
-        >
-          {blog_posts.map((post, index) => (
-            <div
-              key={index}
-              className="blog-post-slide"
-            >
-              <img
-                src={post.image_url}
-                alt=""
-              />
-              <div className="blog-post-content">
-                <h3>{post.title}</h3>
-                <p>
-                  {post.content.length > 20
-                    ? post.content.slice(0, 150) + "..."
-                    : post.content}
-                </p>
-                <button>{post.read_more}</button>
-                <div className="the-footer">
-                  <i>{post.author}</i>
-                  <i>{post.date}</i>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="btns">
-          <div className="blog-page-btn">
-            <button onClick={() => navigate("/blog-posts")}>
-              View all blogs
-            </button>
-          </div>
-          <div className="controller">
-            <button onClick={handlePrev}>
-              <i className="pi pi-angle-left"></i>
-            </button>
-            <button onClick={handleNext}>
-              <i className="pi pi-angle-right"></i>
-            </button>
-          </div>
-        </div>
-      </div> */}
       <div className='blog-container'>
         <div
           className='blog-slider'
