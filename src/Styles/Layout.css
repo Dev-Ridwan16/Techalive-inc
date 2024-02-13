@@ -30,7 +30,7 @@ nav {
 }
 
 .brand .brand-name {
-    @apply font-headFamily font-[900] text-[18px] text-pink
+    @apply font-headFamily font-[800] text-[18px] text-pink
 }
 
 nav .nav-links {

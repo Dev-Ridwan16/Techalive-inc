@@ -130,7 +130,7 @@ export const ServiceSect = () => {
       id='services'
     >
       <h1 className='section-subhead text-center'>
-        OUR <span className='text-pink underline'>SERVICES</span>
+        OUR <span className='text-pink'>SERVICES</span>
       </h1>
       <p className='text-center my-5 w-full md:w-[800px] mx-auto'>
         An experienced and reliable company that offers a wide range of
@@ -175,6 +175,8 @@ export const ProductSect = () => {
   const [productData, setProductData] = useState([])
   const [productInfo, setProductInfo] = useState(null)
   const [showInfo, setShowInfo] = useState(false)
+  const navigate = useNavigate()
+  const windowWidth = window.innerWidth
 
   useEffect(() => {
     const getProducts = async function () {
@@ -209,7 +211,7 @@ export const ProductSect = () => {
       id='products'
     >
       <h1 className='section-subhead text-center'>
-        OUR <span className='text-pink underline'>PRODUCTS</span>
+        OUR <span className='text-pink'>PRODUCTS</span>
       </h1>
       <p className='text-center my-5 w-full md:w-[800px] mx-auto'>
         Immerse yourself in the world of productivity and connectivity, explore
@@ -219,89 +221,53 @@ export const ProductSect = () => {
         designs, and stay connected effortlessly to enhance your experience.
       </p>
       <div className='product-container'>
-        <div className='phase grid grid-cols-5'>
-          {productData.slice(5, 10).map((product, index) => (
-            <div className='flex flex-col'>
-              <div
-                key={index}
-                className='product-wrapper-card'
-              >
-                <img
-                  src={product.image}
-                  alt=''
-                />
-                <p>{product.category}</p>
-                <h4 id='name'>
-                  {product.name.length > 20
-                    ? product.name.slice(0, 16) + '...'
-                    : product.name}
-                </h4>
-                <h4 id='price'>${product.price}</h4>
-                <div className='product-intrested'>
-                  <div className='contact-to-get'>
-                    <a href='https://wa.me/2348050500466'>
-                      <i className='pi pi-whatsapp'></i>
-                    </a>
-                    <a href='tel:+2348050500466'>
-                      <i className='pi pi-phone'></i>
-                    </a>
+        <div className='phase grid grid-cols-2 lg:grid-cols-5'>
+          {productData
+            .slice(0, windowWidth < 768 ? 4 : 5)
+            .map((product, index) => (
+              <div className='flex flex-col'>
+                <div
+                  key={index}
+                  className='product-wrapper-card'
+                >
+                  <img
+                    src={product.image}
+                    alt=''
+                  />
+                  <p>{product.category}</p>
+                  <h4 id='name'>
+                    {product.name.length > 20
+                      ? product.name.slice(0, 16) + '...'
+                      : product.name}
+                  </h4>
+                  <h4 id='price'>₦{product.price}</h4>
+                  <div className='product-intrested'>
+                    <div className='contact-to-get'>
+                      <a href='https://wa.me/2348050500466'>
+                        <i className='pi pi-whatsapp'></i>
+                      </a>
+                      <a href='tel:+2348050500466'>
+                        <i className='pi pi-phone'></i>
+                      </a>
+                    </div>
+                    <button
+                      onClick={() => handleShowInfo(product)}
+                      className='description-btn'
+                    >
+                      <span>Info </span>
+                      <i className='pi pi-info-circle'></i>
+                    </button>
                   </div>
-                  <button
-                    onClick={() => handleShowInfo(product)}
-                    className='description-btn'
-                  >
-                    <span>Info </span>
-                    <i className='pi pi-info-circle'></i>
-                  </button>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
-        <div className='my-[30px]'>
-          <h1 className='section-subhead text-center font-medium text-[24px]'>
-            LATEST <span className='text-pink underline'>PRODUCTS</span>
-          </h1>
-        </div>
-        <div className='phase grid grid-cols-5'>
-          {productData.slice(0, 5).map((product, index) => (
-            <div className='flex flex-col'>
-              <div
-                key={index}
-                className='product-wrapper-card'
-              >
-                <img
-                  src={product.image}
-                  alt=''
-                />
-                <p>{product.category}</p>
-                <h4 id='name'>
-                  {product.name.length > 20
-                    ? product.name.slice(0, 16) + '...'
-                    : product.name}
-                </h4>
-                <h4 id='price'>₦{product.price}</h4>
-                <div className='product-intrested'>
-                  <div className='contact-to-get'>
-                    <a href='https://wa.me/2348050500466'>
-                      <i className='pi pi-whatsapp'></i>
-                    </a>
-                    <a href='tel:+2348050500466'>
-                      <i className='pi pi-phone'></i>
-                    </a>
-                  </div>
-                  <button
-                    onClick={() => handleShowInfo(product)}
-                    className='description-btn'
-                  >
-                    <span>Info </span>
-                    <i className='pi pi-info-circle'></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <button
+          onClick={() => navigate('/all-products')}
+          className='bg-pink w-[150px] h-[35px] text-[#fff] rounded-md mx-auto mt-5'
+        >
+          View all Products
+        </button>
       </div>
       {showInfo && (
         <ProductInforModal
@@ -429,7 +395,7 @@ export const BlogSect = () => {
 
   const handlePrev = () => {
     if (allBlogs.length <= divisionFactor) {
-      // Handle the case where there are fewer items than divisionFactor.
+      // Handle the case where there are fe wer items than divisionFactor.
       return // Optionally, you can disable the "Prev" button in this case.
     }
 
@@ -484,7 +450,7 @@ export const BlogSect = () => {
       id='blogs'
     >
       <h1 className='section-subhead text-center'>
-        OUR <span className='text-pink underline'>BLOG</span>
+        OUR <span className='text-pink'>BLOG</span>
       </h1>
       <p className='text-center my-5 w-full md:w-[600px] mx-auto'>
         Discover our collection of insightful articles covering a variety of
@@ -557,7 +523,7 @@ export const Why_Choose_Us = () => {
       id='whychooseus'
     >
       <h1 className='section-subhead text-center'>
-        WHY <span className='text-pink underline'>CHOOSE US</span>
+        WHY <span className='text-pink'>CHOOSE US</span>
       </h1>
       <p className='text-center my-5 w-full md:w-[600px] mx-auto'>
         Explore our wide range of services designed to meet your needs. At
@@ -755,7 +721,7 @@ export const ReviewsSect = () => {
       <div className='reviews-wrapper'>
         <div className='section-intro'>
           <h1 className='section-subhead'>
-            WHAT <span className='text-pink underline'>OUR CUSTOMERS</span> SAY
+            WHAT <span className='text-pink'>OUR CUSTOMERS</span> SAY
           </h1>
           <p>
             We care what people say about us. We work hard to gain the trust and

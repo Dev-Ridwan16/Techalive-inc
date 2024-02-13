@@ -91,7 +91,7 @@
         } */
 
     .service-sect-container .services-container .service-wrapper .overlay-content h3 {
-        @apply font-bold text-f12 md:text-f14 lg:text-f16 text-[#fff] -mt-2
+        @apply font-bold text-f10 lg:text-f12 text-[#fff] -mt-2
     }
 
     .service-sect-container .services-container .service-wrapper .overlay-content p {

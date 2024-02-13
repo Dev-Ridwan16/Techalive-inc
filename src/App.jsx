@@ -10,6 +10,7 @@ import Footer from './layouts/Footer'
 import ReviewSite from './layouts/ReviewSite'
 import AboutUs from './components/pages/AboutUs'
 import OurVision from './components/pages/OurVision'
+import AllProducts from './components/pages/AllProducts'
 
 function App() {
   const [showAppointmentForm, setShowAppointmentForm] = useState(false)
@@ -59,6 +60,10 @@ function App() {
           <Route
             path='ourvision'
             element={<OurVision />}
+          />
+          <Route
+            path='/all-products'
+            element={<AllProducts />}
           />
         </Routes>
       </div>

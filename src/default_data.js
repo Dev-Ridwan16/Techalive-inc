@@ -87,7 +87,9 @@ export const services_contents = [
       'https://i.pinimg.com/564x/1b/45/16/1b4516037f60bebb7707700cc34eb401.jpg',
     service: 'Smartphone Repair Service',
     sub_categories: [
-      'broken or cracked screen replacement',
+      'Iphones Repair',
+      'Android / Samsung Repair',
+      'broken or cracked screen',
       'phone over-heating',
       'poor battery issues',
       'charging port issue',
@@ -99,7 +101,7 @@ export const services_contents = [
   {
     image_url:
       'https://i.pinimg.com/564x/09/06/d8/0906d8e0edbfe6c1e33424132f3e1949.jpg',
-    service: 'Car Tracking System',
+    service: 'Car Tracking System Installation',
     sub_categories: [
       'car tracking device sales',
       'GSM/GPRS location',
@@ -113,7 +115,7 @@ export const services_contents = [
   {
     image_url:
       'https://i.pinimg.com/564x/0a/bd/90/0abd90cd2dd2c09f7e5c96c7f17e040b.jpg',
-    service: 'Solar and CCTV Instalation',
+    service: 'Solar CCTV System Instalation',
     sub_categories: [
       'device sale',
       'solar powered camera/wireless connection',
@@ -132,7 +134,7 @@ export const services_contents = [
   {
     image_url:
       'https://i.pinimg.com/564x/7d/6e/29/7d6e29ef2b424621cddd924492d9e121.jpg',
-    service: 'Solar Inverter Instalation',
+    service: 'Solar Inverter System Instalation',
     sub_categories: [
       'Solar panel installation',
       'Inverter installation',
@@ -156,7 +158,7 @@ export const services_contents = [
   {
     image_url:
       'https://i.pinimg.com/564x/73/7e/48/737e48ca3e4789beb8cdc38a9ad7033c.jpg',
-    service: 'Wireless Intercom',
+    service: 'Wireless Intercom System',
     sub_categories: [
       'telephone sales',
       '1000m covered distance',
@@ -169,7 +171,7 @@ export const services_contents = [
   {
     image_url:
       'https://i.pinimg.com/564x/ef/4f/cc/ef4fcc2c6808f8582a6c2ea369f65387.jpg',
-    service: 'Hardware Training',
+    service: 'Hardware Trainings',
     sub_categories: [
       'laptop repair training',
       'smartphone repair training',

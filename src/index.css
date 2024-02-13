@@ -29,3 +29,16 @@ body::-webkit-scrollbar-thumb {
     @apply bg-blue bg-opacity-70 rounded-full 
 }
 
+.first-product {
+    animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }    
+    
+    to {
+        transform: rotate(360deg);
+    }
+}
