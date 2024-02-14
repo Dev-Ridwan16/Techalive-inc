@@ -17,7 +17,7 @@ const ProductInforModal = ({ productInfo, handleCloseInfo }) => {
           />
           <div className='flex flex-col '>
             <h1 className='text-f14'>{product.name}</h1>
-            <h3 className='text-12 text-pink font-bold'>${product.price}</h3>
+            <h3 className='text-12 text-pink font-bold'>₦{product.price}</h3>
             <p className='text-f10'>{product.description}</p>
             <div className='flex justify-between items-center w-[50px]'>
               <a href='https://wa.me/2348050500466'>
