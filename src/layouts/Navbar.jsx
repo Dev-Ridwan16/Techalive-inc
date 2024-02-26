@@ -71,7 +71,7 @@ export const Navbar = ({ openAppointmentForm }) => {
       >
         {isDesktop ? (
           <nav>
-            <div className='brand'>
+            <div className='brand' onClick={() => navigate('/')}>
               <img
                 src='https://i.imgur.com/UKGl5Qk.png'
                 alt='techalive-logo'
