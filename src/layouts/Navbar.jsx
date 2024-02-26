@@ -119,6 +119,7 @@ export const MobileNavbar = ({
 }) => {
   const [isScrolling, setIsScrolling] = useState(true)
   const location = useLocation()
+  const navigate = useNavigate()
 
   const closeNavbar = () => {
     setIsToggle(true)
@@ -162,7 +163,7 @@ export const MobileNavbar = ({
       `}
     >
       <nav>
-        <div className='brand'>
+        <div className='brand' onClick={() => navigate('/')}>
           <img
             src='https://i.imgur.com/UKGl5Qk.png'
             alt='techalive-logo'
