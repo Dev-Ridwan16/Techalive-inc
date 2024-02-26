@@ -71,7 +71,7 @@ export const Navbar = ({ openAppointmentForm }) => {
       >
         {isDesktop ? (
           <nav>
-            <div className='brand' onClick={() => navigate('/')}>
+            <div className='brand' onClick={() => navigate(-1)}>
               <img
                 src='https://i.imgur.com/UKGl5Qk.png'
                 alt='techalive-logo'
@@ -163,7 +163,7 @@ export const MobileNavbar = ({
       `}
     >
       <nav>
-        <div className='brand' onClick={() => navigate('/')}>
+        <div className='brand' onClick={() => navigate(-1)}>
           <img
             src='https://i.imgur.com/UKGl5Qk.png'
             alt='techalive-logo'
