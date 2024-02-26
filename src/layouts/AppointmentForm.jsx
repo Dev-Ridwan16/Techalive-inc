@@ -44,8 +44,8 @@ export const AppointmentForm = ({ closeAppointmentForm }) => {
     },
 
     {
-      value: 'Reapirs',
-      child: 'Reapirs',
+      value: 'Repairs',
+      child: 'Repairs',
     },
 
     {
