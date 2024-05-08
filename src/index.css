@@ -1,0 +1,44 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    scroll-behavior: smooth;
+    @apply text-grey font-bodyFamily text-f12 md:text-f14 leading-[30px]
+}
+
+h1 {
+    @apply text-f20 md:text-f30 lg:text-f35 font-bold
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply font-headFamily 
+}
+
+body::-webkit-scrollbar {
+    @apply w-[0.5rem] 
+}
+
+body::-webkit-scrollbar-track {
+    @apply bg-none
+}
+
+body::-webkit-scrollbar-thumb {
+    @apply bg-blue bg-opacity-70 rounded-full 
+}
+
+.first-product {
+    animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }    
+    
+    to {
+        transform: rotate(360deg);
+    }
+}

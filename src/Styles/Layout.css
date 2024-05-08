@@ -1,0 +1,181 @@
+.nav-container {
+    @apply sticky top-0 z-[888] 
+}
+
+.nav-wrapper, .changing-nav-bg, .reading-nav-bg, .nav-wrapper-bg {
+    @apply w-full bg-grey bg-opacity-20 absolute left-[50%] translate-x-[-50%]
+}
+
+.nav-wrapper-bg {
+    @apply bg-blue w-full absolute left-[50%] translate-x-[-50%] 
+}
+
+.changing-nav-bg {
+    @apply lg:bg-blue 
+}
+
+.reading-nav-bg {
+    @apply bg-pink
+}
+
+nav {
+    @apply  w-full flex items-center justify-between  max-w-[90%] lg:max-w-[85%] mx-auto relative z-[999]
+}
+.brand {
+    @apply flex flex-row items-center gap-2 h-[80px]
+}
+
+.brand img {
+    @apply h-[3rem] w-auto
+}
+
+.brand .brand-name {
+    @apply font-headFamily font-[800] text-[18px] text-pink
+}
+
+nav .nav-links {
+    @apply flex flex-row items-center gap-5 text-[#fff]
+}
+
+nav .nav-links li  {
+    @apply cursor-pointer 
+}
+
+
+.nav-wrapper button, .changing-nav-bg button {
+    @apply bg-pink text-[#fff] w-[180px] h-[30px] rounded
+}
+
+.nav-wrapper nav ul.mobile-nav-links .mobile-nav-children, 
+.nav-wrapper nav ul.disactive .mobile-nav-children,  
+.changing-nav-bg nav ul.mobile-nav-links .mobile-nav-children{
+    @apply max-w-[85%] mx-auto my-10 leading-5
+}
+
+.nav-wrapper nav ul.mobile-nav-links,  .changing-nav-bg nav ul.mobile-nav-links{
+    @apply bg-blue w-full fixed left-0 top-[70px] text-[#fff] transition-all duration-500 ease-in-out
+}
+
+.nav-wrapper nav ul.disactive, .changing-nav-bg nav ul.disactive {
+    @apply fixed top-[-350%] w-full left-0 transition-all duration-500 ease-in-out
+}
+
+.nav-wrapper nav ul.mobile-nav-links li, .changing-nav-bg nav ul.mobile-nav-links li {
+    @apply my-5 
+}
+
+/* ==================== APPOINTMENT CSS STARTS HERE */
+
+.appoint-layout {
+    @apply w-full h-screen bg-blue bg-opacity-50 z-[1099] grid place-items-center transition-all duration-500 ease-in-out; 
+    @apply fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] overflow-hidden
+}
+
+.appoint-container {
+    @apply bg-blue w-[350px] md:w-[500px] py-8 rounded-xl shadow-2xl opacity-0 transition-opacity duration-[1s] ease-in-out
+}
+
+.appoint-container.activateForm {
+    @apply opacity-100 
+}
+
+.lead-appoint-head {
+    @apply flex flex-row justify-between items-center max-w-[300px] md:max-w-[450px] mx-auto;
+    @apply text-[#fff]
+}
+
+.lead-appoint-head h1 {
+    @apply text-f16 md:text-f20 font-bold
+}
+
+.lead-appoint-head i {
+    @apply text-f16 md:text-f20
+}
+
+.lead-appoint-head i:hover {
+    @apply text-[#fa4a4a] transition-all duration-500 ease-in-out
+}
+
+.appoint-form {
+    @apply flex flex-col max-w-[300px] md:max-w-[450px] mx-auto
+}
+
+.appoint-form div.appoint-field {
+    @apply flex flex-col my-2
+}
+
+.appoint-form div.appoint-field input, 
+.appoint-form div.appoint-field select,  
+.appoint-form div.appoint-field textarea {
+    @apply bg-inherit bg-blue border border-grey h-[35px] rounded outline-none px-3
+}
+
+.appoint-form div.appoint-field input::placeholder, 
+.appoint-form div.appoint-field select,
+.appoint-container .asides div.appoint-field, 
+    .appoint-form div.appoint-field textarea {
+    @apply text-grey text-f10
+}
+
+.appoint-container .asides {
+    @apply flex flex-row gap-4
+}
+
+.appoint-container .asides div.appoint-field {
+    @apply w-[50%]
+}
+
+.appoint-form div.appoint-field textarea {
+    @apply h-[10px] max-h-[100px] min-h-[100px]
+}
+
+.appoint-form div.appoint-field .error-msg {
+    @apply h-[15px] text-[#f55757] text-f10
+}
+
+.appoint-form button  {
+    @apply bg-pink text-[#fff] w-[200px] mx-auto h-[40px] rounded-md outline-none mt-3
+}
+
+/* ==================== FOOTER CSS STARTS HERE ==================== */
+.footer {
+    @apply bg-blue text-[12px] 
+}
+
+.footer-margin {
+    @apply max-w-[90%] mx-auto
+}
+
+.footer-head {
+    @apply flex items-center justify-between h-[100px]
+}
+
+.footer-head .brand {
+    @apply flex flex-col items-center
+}
+
+.footer-head .quick-link {
+    @apply hidden md:block
+}
+
+.footer-head .quick-link ul, .footer-head .media-link {
+    @apply flex items-center gap-3 lg:gap-5 
+}
+
+.footer-contact-info {
+    @apply flex items-center justify-center 
+}
+
+.footer-contact-info .contact-info {
+    @apply flex flex-col md:flex-row gap-5 lg:gap-10
+}
+
+.footer-contact-info .contact-info div.info {
+    @apply  flex flex-row items-center gap-3
+}
+
+.footer-contact-info .contact-info div.info:nth-child(3) {
+    @apply w-[300px] lg:w-auto
+}
+
+

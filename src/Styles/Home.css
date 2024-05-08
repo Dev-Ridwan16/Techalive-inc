@@ -1,0 +1,424 @@
+.section-subhead {
+    @apply text-f20 md:text-f25 font-bold text-blue
+}
+
+.service-sect-container, .product-sect-container, .about-sect-container, .why-choose-us-container, .reviews-container, .contact-us-container {
+    @apply w-full relative py-10
+}
+
+.hero-sect-container {
+    @apply w-full h-[70vh] lg:h-screen relative
+}
+
+/* .hero-slide-container{
+    @apply hidden opacity-0
+} */
+
+.hero-slide-container.active {
+    @apply block opacity-100
+}
+
+.hero-overlay {
+    @apply absolute top-0 h-[70vh] lg:h-screen w-full bg-blue bg-opacity-50 
+}
+
+.hero-slide-container {
+    @apply transition-transform duration-500 ease-in-out opacity-0
+}
+
+.hero-slide-container .hero-slide {
+    @apply absolute left-[50%] top-0 h-[70vh] lg:h-screen w-full translate-x-[-50%] z-[-1]
+}
+
+.hero-slide-container .hero-slide .hero-slide-content {
+    @apply text-[#fff] z-50 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full max-w-[85%] mx-auto
+}
+
+.hero-slide-container .hero-slide .hero-slide-content h1 {
+    @apply w-[300px] md:w-[500px] leading-[40px] z-50
+}
+
+.hero-slide-container .hero-slide .hero-slide-content p {
+    @apply text-f14 md:text-f14 leading-[30px] w-[300px] md:w-[600px] mt-5
+}
+
+.hero-slide-container .hero-slide .hero-slide-image {
+    @apply h-[70vh] lg:h-screen w-full
+}
+
+.hero-slide-container .hero-slide .hero-slide-image img {
+    @apply w-full h-[70vh] lg:h-screen object-cover
+}
+
+.hero-sect-container .next, .hero-sect-container .prev {
+    @apply absolute top-[50%] transform -translate-y-[50%]
+}
+
+.hero-sect-container .prev {
+    @apply left-[10px]
+}
+
+.hero-sect-container .next {
+    @apply right-[10px]
+}
+
+/* ==================== Service Section Starts here */
+
+    .service-sect-container .services-container {
+        /* @apply flex flex-col md:flex-row md:flex-wrap w-full */
+        @apply grid grid-cols-1 lg:grid-cols-4
+    }
+
+    .service-sect-container .services-container .service-wrapper {
+        @apply relative mt-3 flex-shrink-[1] flex-grow-[1] md:basis-[35%] lg:basis-[20%] mx-2 border
+    }
+
+    .service-sect-container .services-container .service-wrapper img {
+        @apply w-full h-[200px] max-h-[300px] rounded-xl object-cover
+    }
+
+    .service-sect-container .services-container .service-wrapper .overlay-content {
+        @apply absolute top-[100%] translate-y-[-100%] bg-blue;
+        @apply bg-opacity-50 h-[70px] w-full px-5 pt-2 rounded-b-xl transition-all duration-300 ease-in-out
+    }
+
+    /* .service-sect-container .services-container .service-wrapper:hover .overlay-content {
+        @apply h-full
+    } */
+
+        /* .service-sect-container .services-container .service-wrapper img:hover .overlay-content {
+            @apply h-full
+        } */
+
+    .service-sect-container .services-container .service-wrapper .overlay-content h3 {
+        @apply font-bold text-f10 lg:text-f12 text-[#fff] -mt-2
+    }
+
+    .service-sect-container .services-container .service-wrapper .overlay-content p {
+        @apply text-f10 text-[#fff] opacity-0 transition-opacity duration-500 ease-in-out
+    }
+
+    .service-sect-container .services-container .service-wrapper .overlay-content button {
+        @apply bg-inherit text-[#fff] text-opacity-70 text-f12 w-[100px] rounded
+    }
+
+    .service-sect-container .services-container .service-wrapper .overlay-content button:hover {
+        @apply  text-opacity-100 
+    }
+
+    
+
+        
+
+    
+
+/* ==================== Product Section Starts here */
+
+.product-sect-container .product-container {
+    @apply flex flex-col justify-between gap-1 overflow-x-scroll mx-2 
+}
+
+.product-sect-container .product-container::-webkit-scrollbar {
+    @apply hidden
+}
+
+.product-sect-container .product-container .phase {
+    @apply grid grid-cols-2 lg:grid-cols-5
+}
+
+.product-sect-container .product-container .phase .product-wrapper-card {
+    /* @apply flex-shrink-[0] flex-grow-[0] basis-[65%] md:basis-[40%] lg:flex-shrink-[1] lg:flex-grow-[1] lg:basis-[15%];  */
+    @apply mx-3 h-[300px] px-2 shadow-sm rounded-lg mb-5 max-w-[100%]
+    /* @apply w-[500px] lg:w-[250px] h-[250px] lg:h-[340px] p-2 transition-all duration-300 ease-in-out bg-grey bg-opacity-5 rounded-md */
+    /* @apply grid grid-cols-2 lg:grid-cols-5 */
+}
+
+.product-sect-container .product-container .phase .product-wrapper-card:hover {
+    @apply shadow-md
+}
+
+.product-sect-container .product-container .phase .product-wrapper-card img {
+    @apply  mx-auto scale-[.8] w-full h-[150px]
+}
+
+.product-sect-container .product-container .phase .product-wrapper-card p {
+    @apply text-white text-f12 md:text-f14 mt-3
+}
+
+.product-sect-container .product-container .phase .product-wrapper-card h4#name {
+    @apply text-blue text-f12 lg:text-f16 font-semibold my-2 h-[25px]
+}
+
+.product-sect-container .product-container .phase .product-wrapper-card h4#price {
+    @apply text-pink font-semibold
+}
+
+.product-sect-container .product-container .phase .product-wrapper-card .product-intrested {
+    @apply flex flex-row justify-between items-center
+}
+
+.product-sect-container .product-container .phase .product-wrapper-card .product-intrested .contact-to-get {
+    @apply flex flex-row  items-center gap-3
+}
+
+.product-sect-container .product-container .phase .product-wrapper-card .product-intrested .contact-to-get i.pi-whatsapp {
+    @apply text-green
+}
+
+.product-sect-container .product-container .phase .product-wrapper-card .product-intrested .contact-to-get i.pi-phone {
+    @apply text-indigo-500
+}
+
+.product-sect-container .product-container .phase .product-wrapper-card .product-intrested button.description-btn {
+    @apply w-[50px] h-[25px] text-f10 bg-grey bg-opacity-10 rounded
+}
+
+/* ==================== About Section Starts here */
+.about-sect-container {
+    @apply overflow-hidden
+}
+
+.about-sect-container .about-indicators {
+    @apply flex items-center justify-center gap-12
+}
+
+.about-sect-container .about-indicators h3 {
+    @apply text-f14 md:text-f18 lg:text-f20 cursor-pointer transition-all duration-1000 ease-in-out
+}
+
+.about-sect-container .about-indicators h3.active {
+    @apply text-pink font-bold
+}
+
+.about-sect-container .the-about {
+    @apply flex flex-row items-center justify-start transition-transform duration-500 ease-in-out w-full
+}
+
+ .the-about {
+    @apply flex flex-row items-center justify-start transition-transform duration-500 ease-in-out w-full
+}
+
+.about-sect-container .the-about .the-about-wrapper {
+    @apply min-h-[500px] min-w-[100%] flex-shrink-0 flex-grow-0 basis-[100%];
+    @apply flex flex-row flex-wrap md:flex-nowrap items-center gap-[20px] mt-10 md:mt-0
+}
+
+ .the-about-wrapper {
+     @apply min-h-[500px] min-w-[100%] flex-shrink-0 flex-grow-0 basis-[100%];
+     @apply flex flex-row flex-wrap md:flex-nowrap items-center gap-[20px] mt-10 md:mt-0
+ }
+
+
+/* .about-sect-container .the-about .the-about-wrapper.active {
+    @apply flex flex-row items-center 
+} */
+
+.about-sect-container .the-about .the-about-wrapper .img {
+    @apply flex-shrink-[1] flex-grow-[1] basis-[200px] lg:basis-[350px]
+}
+
+.about-sect-container .the-about .the-about-wrapper .img img {
+    @apply w-full h-[300px] lg:w-[500px] lg:h-[450px] rounded-lg
+}
+
+.about-sect-container .the-about .the-about-wrapper .about-content {
+    @apply flex-shrink-[1] flex-grow-[1] basis-[350px]
+}
+
+.about-sect-container .the-about .the-about-wrapper .about-content h5 {
+    @apply mb-3
+}
+
+.about-sect-container .the-about .the-about-wrapper .about-content p {
+    @apply leading-[30px]
+}
+
+/* ==================== Product Section Starts here */
+.blog-container {
+    @apply overflow-hidden
+}
+
+.blog-container .blog-slider {
+    @apply flex flex-row items-center md:gap-2 w-full transition-transform duration-700 ease-in-out
+}
+
+.blog-container .blog-slider .blog-post-slide {
+    @apply flex-shrink-[1] flex-grow-[1] basis-[100%] md:basis-[50%] lg:basis-[24.5%] min-w-[100%] md:min-w-[48.9%] lg:min-w-[24.3%];
+    @apply bg-grey bg-opacity-5 rounded-md h-[450px]
+}
+
+.blog-container .blog-slider .blog-post-slide img {
+    @apply w-full h-[200px] object-fill rounded-t-md
+}
+
+.blog-container .blog-slider .blog-post-slide .blog-post-content {
+    @apply flex flex-col
+}
+
+.blog-container .blog-slider .blog-post-slide .blog-post-content h3 {
+    @apply h-[50px] mt-2 text-f16 text-blue font-semibold px-2
+}
+
+.blog-container .blog-slider .blog-post-slide .blog-post-content p {
+    @apply leading-[30px] px-2 h-[120px]
+}
+
+.blog-container .blog-slider .blog-post-slide .blog-post-content button {
+    @apply bg-blue w-[85%] mx-auto h-[30px] rounded-md
+}
+
+.blog-container .blog-slider .blog-post-slide .blog-post-content .the-footer {
+    @apply flex items-center justify-between px-2 text-f12 my-3
+}
+
+.blog-container .btns {
+    @apply flex items-center mt-5
+}
+
+.blog-container .btns .blog-page-btn {
+    @apply w-[150px] h-[40px] bg-green flex items-center justify-center rounded-md text-[#fff]
+}
+
+.blog-container .btns .controller {
+    @apply flex items-center justify-center gap-10 w-[full] mx-auto
+}
+
+.blog-container .btns .controller button {
+    @apply bg-grey bg-opacity-10 w-[50px] h-[50px] rounded-full
+}
+
+/* ==================== Product Section Starts here */
+
+.why_choose_us_container {
+    @apply flex flex-wrap gap-3 my-10
+}
+
+.why_choose_us_container .why_choose_us_wrapper {
+    @apply bg-grey bg-opacity-5 w-full md:w-[49%] rounded-md flex flex-col items-center justify-center py-5 px-3 text-center
+}
+
+.why_choose_us_container .why_choose_us_wrapper i {
+    @apply text-f35 
+}
+
+.why_choose_us_container .why_choose_us_wrapper h3 {
+    @apply text-f20  font-semibold my-4
+}
+
+.why_choose_us_container .why_choose_us_wrapper p {
+    @apply leading-[30px]
+}
+
+.archievement-container {
+    @apply relative
+}
+
+.archievement-container img {
+    @apply w-full object-fill h-[300px]
+}
+
+.archievement-container .overlay {
+    @apply absolute bg-blue bg-opacity-80 w-full h-full top-0
+}
+
+.archievement-container .content {
+    @apply absolute top-0 z-[50] text-[#fff] flex items-center justify-between;
+    @apply w-[85%] h-full left-[50%] translate-x-[-50%] text-center
+}
+
+.archievement-container .content div {
+    @apply flex flex-col gap-5
+}
+
+/* ==================== Reviews Section Starts here */
+.reviews-container {
+    @apply overflow-hidden
+}
+
+.reviews-wrapper {
+    @apply flex flex-col lg:flex-row lg:items-center lg:justify-between
+}
+
+.reviews-wrapper .section-intro p {
+    @apply w-[500px] mt-5
+}
+
+/* Converted the pixel to percent */
+
+.reviews-slides-wrapper {
+
+    @apply overflow-hidden lg:w-[500px] mt-5 lg:mt-0
+}
+
+.reviews-slides-wrapper .reviews-slides {
+    @apply flex flex-row lg:w-full transition-all duration-500 ease-in-out gap-[1.28%]
+}
+
+.reviews-slides-wrapper .reviews-slides .reviews_slide {
+    @apply flex-shrink-[1] flex-grow-[1] basis-[100%] md:basis-[49%] lg:basis-[100%] min-w-[99%] md:min-w-[49%] lg:min-w-[98.73%] border rounded-md h-[350px] md:h-[380px] lg:h-[300px] p-5
+}
+
+.reviews-slides-wrapper .reviews-slides .reviews_slide .client-details {
+    @apply flex gap-5 items-center mb-3
+}
+
+.reviews-slides-wrapper .reviews-slides .reviews_slide .client-details img {
+    @apply w-[100px] h-[100px] rounded-full
+}
+
+.reviews-slides-wrapper div.indicators {
+    @apply flex justify-center mt-5 gap-3
+}
+
+.reviews-slides-wrapper div.indicators .indicator {
+    @apply border w-[10px] h-[10px] rounded-full
+}
+
+.reviews-slides-wrapper div.indicators .indicator.active {
+    @apply w-[15px] bg-pink
+}
+
+
+.contact-us-container .information {
+    @apply flex flex-row  justify-start mt-5 gap-[50px] md:gap-[200px]
+}
+
+.contact-us-container .information .col-1 {
+    @apply flex flex-col lg:flex-row justify-between w-auto lg:w-full
+}
+
+.contact-us-container .information .col div .wrap {
+    @apply flex items-center gap-3
+}
+
+.contact-us-container .information .col .col .phone,
+.contact-us-container .information .col .mail,
+.contact-us-container .information .col .address,
+.contact-us-container .information .col .quick-link {
+    @apply flex flex-col transition-all duration-200 ease-in-out  
+}
+
+.contact-us-container .information .col .phone a,
+.contact-us-container .information .col .mail a,
+.contact-us-container .information .col .address a,
+.contact-us-container .information .col .quick-link a {
+    @apply transition-all duration-200 ease-in-out 
+}
+
+.contact-us-container .information .col .quick-link a {
+    @apply flex items-center gap-3
+}
+
+.contact-us-container .information .col .phone a:hover,
+.contact-us-container .information .col .mail a:hover,
+.contact-us-container .information .col .address a:hover,
+.contact-us-container .information .col .quick-link a:hover {
+    @apply text-[15px]
+}
+
+.appoint-btn {
+    @apply bg-pink text-[#fff] w-full md:w-[200px] mx-auto h-[40px] rounded-md outline-none mt-5 
+}
+
+
+/* An experienc */

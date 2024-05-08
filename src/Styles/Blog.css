@@ -1,0 +1,63 @@
+.blog-post-container {
+    @apply relative
+}
+
+.blog-post-container img {
+    @apply h-[300px] w-full object-cover
+}
+
+.blog-post-container .overlay {
+    @apply bg-blue bg-opacity-50 absolute top-0 h-[300px] w-full
+}
+
+.blog-post-container .content {
+    @apply text-[#fff] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full text-center
+}
+
+.post-container {
+    @apply relative pt-10
+}
+
+.post-container .head {
+    @apply flex items-center justify-between mb-10
+}
+
+.post-container .head h3 {
+    @apply text-f20 
+}
+
+.post-container .head input {
+    @apply border h-[25px] outline-none w-[160px] md:w-[250px] border-grey rounded-full text-f10 pl-3
+}
+
+.post-container .posts {
+    @apply flex flex-row flex-wrap gap-5
+}
+
+.post-container .posts .post-wrapper {
+    @apply w-full md:w-[315px] lg:w-[272px] 
+}
+
+.post-container .posts .post-wrapper:hover {
+    @apply cursor-pointer
+}
+
+.post-container .posts .post-wrapper img {
+    @apply w-full md:w-[315px] lg:w-[272px] h-[200px] mb-2 object-cover transition-all duration-500 ease-in-out
+}
+
+.post-container .posts .post-wrapper img:hover {
+    @apply object-fill transition-all duration-500 ease-in-out
+}
+
+.post-container .posts .post-wrapper h3 {
+    @apply text-f16 md:text-f16 w-full text-blue
+}
+
+.error-class {
+    @apply w-[200px] md:w-[300px] mx-auto flex flex-col items-center justify-center
+}
+
+.error-class h3 {
+    @apply text-blue text-f16
+}
