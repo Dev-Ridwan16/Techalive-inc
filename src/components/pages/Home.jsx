@@ -133,17 +133,7 @@ export const ServiceSect = () => {
         OUR <span className='text-pink'>SERVICES</span>
       </h1>
       <p className='text-center my-5 w-full md:w-[800px] mx-auto'>
-<<<<<<< HEAD
-        An experienced and reliable company that offers a wide range of
-        technology services from computer to smartphone, to electronics and
-        telecommunication. We are committed to providing & delievering high
-        quality services solution tailoured to meet your needs/requirements
-        while offering quick turnaround times. Explore our top-notch services
-        below and find out how we can assist in alleviating your technological
-        concern or stress.
-=======
         An experienced and reliable company that offers a wide range of Information and Technology products and services comprising computer, smartphone, electronics and telecommunication. We are committed to providing & delivering high quality solutions tailored to meet your needs just-in-time. Explore our top-notch services below and find out how we can assist in alleviating your technological concern or stress.
->>>>>>> a75f3271ff09224332af87444a219cb419c526f8
       </p>
 
       <div className='services-container'>
