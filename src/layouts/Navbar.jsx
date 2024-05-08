@@ -71,11 +71,7 @@ export const Navbar = ({ openAppointmentForm }) => {
       >
         {isDesktop ? (
           <nav>
-<<<<<<< HEAD
-            <div className='brand'>
-=======
             <div className='brand' onClick={() => navigate(-1)}>
->>>>>>> a75f3271ff09224332af87444a219cb419c526f8
               <img
                 src='https://i.imgur.com/UKGl5Qk.png'
                 alt='techalive-logo'
@@ -123,10 +119,7 @@ export const MobileNavbar = ({
 }) => {
   const [isScrolling, setIsScrolling] = useState(true)
   const location = useLocation()
-<<<<<<< HEAD
-=======
   const navigate = useNavigate()
->>>>>>> a75f3271ff09224332af87444a219cb419c526f8
 
   const closeNavbar = () => {
     setIsToggle(true)
@@ -170,11 +163,7 @@ export const MobileNavbar = ({
       `}
     >
       <nav>
-<<<<<<< HEAD
-        <div className='brand'>
-=======
         <div className='brand' onClick={() => navigate(-1)}>
->>>>>>> a75f3271ff09224332af87444a219cb419c526f8
           <img
             src='https://i.imgur.com/UKGl5Qk.png'
             alt='techalive-logo'

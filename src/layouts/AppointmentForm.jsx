@@ -44,13 +44,8 @@ export const AppointmentForm = ({ closeAppointmentForm }) => {
     },
 
     {
-<<<<<<< HEAD
-      value: 'Reapirs',
-      child: 'Reapirs',
-=======
       value: 'Repairs',
       child: 'Repairs',
->>>>>>> a75f3271ff09224332af87444a219cb419c526f8
     },
 
     {
