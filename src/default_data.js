@@ -71,7 +71,7 @@ export const services_contents = [
       'https://i.pinimg.com/564x/2f/20/4b/2f204ba8eaedf419ab53604e31fe39d5.jpg',
     service: 'Computer Repair Service',
     sub_categories: [
-      'window & macbook os installation',
+      'window & macbook OS installation',
       'cracked or broken screen',
       'water damage repair',
       'keyoard & mouse pad issues',
@@ -95,7 +95,7 @@ export const services_contents = [
       'charging port issue',
       'phone board issues',
       'software update & firmware flashing',
-      'we fix it all',
+      'other related service',
     ],
   },
   {
