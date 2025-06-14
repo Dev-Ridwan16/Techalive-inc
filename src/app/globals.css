@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #FF388C;
+  --color-secondary: #272727;
+  --color-accent: #ededed;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #FF388C;
+    --color-secondary: #272727;
+    --color-accent: #ededed;
+    --font-outfit-sans: "Outfit", sans-serif;
+  }
+}
+
+body {
+  color: var(--color-secondary);
+  font-family: var(--font-outfit-sans);
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+body::-webkit-scrollbar {
+  @apply w-3
+}
+
+.product-list-grid {
+    display: grid;
+    grid-template-columns: 4.5fr 1.5fr;
+}
