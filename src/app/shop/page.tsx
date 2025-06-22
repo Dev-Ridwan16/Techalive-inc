@@ -1,3 +1,5 @@
+'use client'
+
 import { Header } from '@/components/Header'
 import { QuickInfo } from '@/components/QuickInfo'
 import { Icon } from '@/components/ui/Icon'
@@ -5,8 +7,10 @@ import { Text } from '@/components/ui/Text'
 import { Wrapper } from '@/components/ui/Wrapper'
 import Aside from './aside'
 import ProductList from './product-list'
+import { useState } from 'react'
 
 export default function Shop() {
+  const [filterBy, setFilterBy] = useState<string>('All')
   return (
     <div>
       <QuickInfo />
@@ -26,12 +30,12 @@ export default function Shop() {
         <div className='product-list-grid h-[500px] w-full my-24 gap-10'>
           <div className='flex flex-col gap-3'>
             <div>
-                <Text text={`Showing All Products`} />
+              <Text text={`Showing All Products`} />
             </div>
-            <ProductList />
+            <ProductList filterBy={filterBy} />
           </div>
           <div className=''>
-            <Aside />
+            <Aside passCategory={(category) => setFilterBy(category)} />
           </div>
         </div>
       </Wrapper>

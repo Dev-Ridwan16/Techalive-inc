@@ -4,7 +4,7 @@ import { Wrapper } from "./ui/Wrapper"
 export const QuickInfo = () => {
   return (
     <Wrapper>
-      <div className="flex justify-between items-center text-[var(--color-secondary)]">
+      <div className="hidden lg:flex justify-between items-center text-[var(--color-secondary)]">
         <div className="flex items-center gap-[10px]">
           <Text text="Need help? Call us" />
           <a href="tel:+2348050500466">+234 805 050 0466</a>

@@ -1,7 +1,7 @@
 import { ProductListType } from '@/app/homepage/product-section/type'
-import mongoose, { Schema } from 'mongoose'
+import mongoose, { model, models, Schema } from 'mongoose'
 
-const productSchema = new Schema<ProductListType>({
+const productSchema = new Schema({
   image: { type: String, required: true },
   name: { type: String, required: true },
   price: { type: String, required: true },
@@ -10,5 +10,5 @@ const productSchema = new Schema<ProductListType>({
 })
 
 const Product =
-  mongoose.models.Product || mongoose.model('Product', productSchema)
+  models.Product || model('Product', productSchema)
 export default Product

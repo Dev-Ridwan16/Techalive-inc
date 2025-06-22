@@ -1,18 +1,33 @@
-import { ProductListType } from '../homepage/product-section/type'
-import Product from '@/models/products/product'
-import connectToDatabase from '@/lib/mongoose'
-import { Text } from '@/components/ui/Text'
+'use client'
 
-export default async function ProductList() {
-  await connectToDatabase()
-  const products: ProductListType[] = await Product.find()
+import { ProductListType } from '../homepage/product-section/type'
+import { useEffect, useState } from 'react'
+import { Text } from '@/components/ui/Text'
+import Link from 'next/link'
+
+export default function ProductList({ filterBy }: { filterBy: string }) {
+  const [products, setProducts] = useState<ProductListType[]>([])
+
+  useEffect(() => {
+    fetch('/api/shop')
+      .then((res) => res.json())
+      .then(setProducts)
+  }, [])
 
   return (
     <div>
       <div className='grid grid-cols-4 gap-6'>
-        {products.map((product, index) => (
-          <ProductCard key={index} product={product} />
-        ))}
+        {products
+          .filter((item) =>
+            filterBy.toLowerCase() === 'all'
+              ? true
+              : item.category.toLowerCase() === filterBy.toLowerCase()
+          )
+          .map((product, index) => (
+            <Link href={`/shop/${product._id}`}>
+              <ProductCard key={index} product={product} />
+            </Link>
+          ))}
       </div>
     </div>
   )

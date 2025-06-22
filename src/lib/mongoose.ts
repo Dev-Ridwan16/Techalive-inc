@@ -1,9 +1,12 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose'
 
-const MONGODB_URI = process.env.MONGODB_URI!
+const MONGODB_URI = `mongodb+srv://techaliveinc:cdTkhQWLSPAHLxMU@cluster0.shjpur1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+console.log(MONGODB_URI)
 
 if (!MONGODB_URI) {
-  throw new Error("Please define the MONGODB_URI environment variable inside .env.local")
+  throw new Error(
+    'Please define the MONGODB_URI environment variable inside .env.local'
+  )
 }
 
 /**
@@ -19,7 +22,7 @@ if (!cached) {
 
 async function connectToDatabase() {
   if (cached.conn) {
-    console.log("Using existing mongoose connection")
+    console.log('Using existing mongoose connection')
     return cached.conn
   }
 
@@ -28,15 +31,15 @@ async function connectToDatabase() {
       bufferCommands: false,
     }
 
-    console.log("Creating new mongoose connection")
+    console.log('Creating new mongoose connection')
     cached.promise = mongoose
       .connect(MONGODB_URI!, opts)
       .then((mongoose) => {
-        console.log("MongoDB connected successfully")
+        console.log('MongoDB connected successfully')
         return mongoose
       })
       .catch((error) => {
-        console.error("MongoDB connection error:", error)
+        console.error('MongoDB connection error:', error)
         throw error
       })
   }
@@ -45,7 +48,7 @@ async function connectToDatabase() {
     cached.conn = await cached.promise
   } catch (e) {
     cached.promise = null
-    console.error("Failed to establish MongoDB connection:", e)
+    console.error('Failed to establish MongoDB connection:', e)
     throw e
   }
 

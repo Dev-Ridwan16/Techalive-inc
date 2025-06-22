@@ -11,7 +11,7 @@ import ProductSection from './homepage/product-section/products'
 import Repair from './homepage/repair-section/repair'
 import Footer from '@/components/layouts/footer'
 
-export const Expectations = () => {
+const Expectations = () => {
   return (
     <div className='w-full py-24'>
       <div className='flex items-center justify-between gap-5'>

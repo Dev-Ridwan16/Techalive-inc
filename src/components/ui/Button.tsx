@@ -16,8 +16,8 @@ export const Button: React.FC<{
     <button
       className={`px-[20px] py-[10px] flex items-center gap-[10px] justify-center rounded-full text-[var(--color-accent)] ${background}`}
     >
-      {name && <Text text={name} size={fontSize} />}
       {icon && <Icon name={icon} />}
+      {name && <Text text={name} size={fontSize} />}
     </button>
   )
 }

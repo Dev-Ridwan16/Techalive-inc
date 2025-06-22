@@ -37,10 +37,10 @@ export default async function ProductSection() {
               <div className='flex flex-col gap-5'>
                 {categoryProducts.length > 0 ? (
                   categoryProducts.map((product, i) => (
-                    <>
-                      <ListCard key={i} product={product} />
+                    <div key={i}>
+                      <ListCard product={product} />
                       {i !== categoryProducts.length - 1 && <hr />}
-                    </>
+                    </div>
                   ))
                 ) : (
                   <Text text='No products available' />

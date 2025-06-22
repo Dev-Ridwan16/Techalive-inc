@@ -5,17 +5,22 @@ import { useState } from 'react'
 
 const categories = [
   'All',
-  'Phones',
+  'Smartphones',
   'Computers',
   'Solar Camera',
   'Solar & Inverter System',
 ]
 
-export default function Aside() {
+export default function Aside({
+  passCategory,
+}: {
+  passCategory: (category: string) => void
+}) {
   const [activeCat, setActiveCat] = useState<number>(0)
 
   function handleSortByCategory(category: string, index: number) {
     setActiveCat(index)
+    passCategory(category)
   }
   return (
     <div className=''>
@@ -38,7 +43,11 @@ export default function Aside() {
           {categories.map((category, index) => (
             <button
               key={index}
-              className={`${activeCat === index ? 'underline text-neutral-800' : 'text-neutral-400'} font-light`}
+              className={`${
+                activeCat === index
+                  ? 'underline text-neutral-800'
+                  : 'text-neutral-400'
+              } font-light`}
               onClick={() => handleSortByCategory(category, index)}
             >
               {category}
