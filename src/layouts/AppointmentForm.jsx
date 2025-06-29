@@ -110,7 +110,7 @@ export const AppointmentForm = ({ closeAppointmentForm }) => {
         dispatch(setLoading(true))
 
         const response = await axios.post(
-          'https://techalive.onrender.com/api/v1/appointment/book-appointment',
+          'https://techalive-backend-service.onrender.com/api/v1/appointment/book-appointment',
           appointment
         )
 

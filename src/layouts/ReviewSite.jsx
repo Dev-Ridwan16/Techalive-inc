@@ -98,7 +98,7 @@ const ReviewSite = () => {
         console.log(review)
 
         const response = await axios.post(
-          "https://techalive.onrender.com/api/v1/review/post-review",
+          "https://techalive-backend-service.onrender.com/api/v1/review/post-review",
           review
         )
 

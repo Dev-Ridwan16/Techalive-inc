@@ -176,7 +176,7 @@ export const ProductSect = () => {
     const getProducts = async function () {
       try {
         const response = await axios.get(
-          'https://techalive.onrender.com/api/v1/product/list-products'
+          'https://techalive-backend-service.onrender.com/api/v1/product/list-products'
         )
 
         const data = response.data
@@ -427,7 +427,7 @@ export const BlogSect = () => {
     ;(async () => {
       try {
         const response = await axios.get(
-          'https://techalive.onrender.com/api/v1/blog-post/other-blogs'
+          'https://techalive-backend-service.onrender.com/api/v1/blog-post/other-blogs'
         )
 
         const data = response.data
@@ -558,7 +558,7 @@ export const ReviewsSect = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       const response = await axios.get(
-        'https://techalive.onrender.com/api/v1/review/get-review'
+        'https://techalive-backend-service.onrender.com/api/v1/review/get-review'
       )
 
       const data = response.data

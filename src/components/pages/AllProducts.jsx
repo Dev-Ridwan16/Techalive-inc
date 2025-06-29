@@ -13,7 +13,7 @@ const AllProducts = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          'https://techalive.onrender.com/api/v1/product/list-products'
+          'https://techalive-backend-service.onrender.com/api/v1/product/list-products'
         )
         const data = response.data
         setProducts(data.products)

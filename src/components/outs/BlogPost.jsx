@@ -24,7 +24,7 @@ const BlogPost = () => {
     const fetchBlogPost = async () => {
       try {
         const response = await axios.get(
-          `https://techalive.onrender.com/api/v1/blog-post/${blogId}`
+          `https://techalive-backend-service.onrender.com/api/v1/blog-post/${blogId}`
         )
 
         const data = response.data.readABlog
@@ -45,7 +45,7 @@ const BlogPost = () => {
     const showOtherPosts = async () => {
       try {
         const response = await axios.get(
-          `https://techalive.onrender.com/api/v1/blog-post/other-blogs`
+          `https://techalive-backend-service.onrender.com/api/v1/blog-post/other-blogs`
         )
 
         const data = response.data

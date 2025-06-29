@@ -53,7 +53,7 @@ export const BlogPosts = () => {
     (async () => {
       try {
         const response = await axios.get(
-          "https://techalive.onrender.com/api/v1/blog-post/other-blogs"
+          "https://techalive-backend-service.onrender.com/api/v1/blog-post/other-blogs"
         );
 
         const data = response.data;
