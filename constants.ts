@@ -18,7 +18,7 @@ export const navLinks = [
   },
   {
     name: 'Repairs',
-    path: '/repair',
+    path: '/repairs',
   },
   {
     name: 'Shop',

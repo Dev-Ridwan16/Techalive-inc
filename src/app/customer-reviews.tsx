@@ -1,7 +1,22 @@
+'use client'
+
 import ReviewCard, { Comment, Customer, Stars } from '@/components/cards/review'
 import { Text } from '@/components/ui/Text'
+import { useKeenSlider } from 'keen-slider/react'
+
+import 'keen-slider/keen-slider.min.css'
+import { useDeviceWidth } from '@/hooks/useDeviceWidth'
 
 export default function CustomerReviews() {
+  const deviceWidth = useDeviceWidth()
+  const isMobile = deviceWidth < 760
+  const [ref] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    slides: {
+      perView: isMobile ? 1 : 3,
+    },
+  })
+
   const reviews = [
     {
       comment:
@@ -29,9 +44,10 @@ Thanks to the management and everyone, I always have a blissful experience with 
   return (
     <div className='flex flex-col gap-6'>
       <Text text='Customer Reviews' size={30} uppercase />
-      <div className='flex items-center justify-between gap-[30px]'>
+      <div ref={ref} className='keen-slider gap-3'>
         {reviews.map((review, index) => (
           <ReviewCard
+            className='keen-slider__slide w-full lg:w-[80%]'
             key={index}
             comment={<Comment>“{review.comment}”</Comment>}
             stars={<Stars number={review.stars} />}

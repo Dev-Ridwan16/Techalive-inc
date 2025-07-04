@@ -16,7 +16,7 @@ export default async function ProductSection() {
 
   return (
     <div>
-      <div className='flex items-center gap-[20px]'>
+      <div className='flex flex-col lg:flex-row lg:items-center gap-[20px]'>
         {categories.map((category, index) => {
           const categoryProducts = products
             .filter(
@@ -28,7 +28,7 @@ export default async function ProductSection() {
           return (
             <div
               key={index}
-              className='w-[25%] h-[350px] rounded-[10px] border p-5'
+              className='lg:w-[25%] h-[350px] rounded-[10px] border p-5'
             >
               <div className='h-[50px]'>
                 <Text text={category.toUpperCase()} />

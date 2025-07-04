@@ -21,11 +21,11 @@ export const Category = () => {
   return (
     <div className='flex flex-col gap-6'>
       <Text text='Category' size={30} uppercase />
-      <div className='flex gap-5'>
+      <div className='grid grid-cols-2 lg:grid-cols-6 gap-5'>
         {categories.map((category, index) => (
           <div
             key={index}
-            className='h-[250px] w-[240px] border border-[#E0E0E0] rounded-lg flex items-center justify-center'
+            className='h-[200px] lg:h-[250px] w-[170px] lg:w-[180px] border border-[#E0E0E0] rounded-lg flex items-center justify-center'
           >
             <CategoryCard image={category.image} category={category.category} />
           </div>

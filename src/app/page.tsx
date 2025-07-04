@@ -14,7 +14,7 @@ import Footer from '@/components/layouts/footer'
 const Expectations = () => {
   return (
     <div className='w-full py-24'>
-      <div className='flex items-center justify-between gap-5'>
+      <div className='flex flex-wrap items-center justify-between gap-5'>
         {expectations.map((expectation, index) => (
           <div key={index} className='flex gap-3'>
             <div>
@@ -52,7 +52,7 @@ export default function Home() {
         <Category />
       </Wrapper>
       <Repair />
-      <Wrapper className='flex flex-col gap-[50px]'>
+      <Wrapper className='flex flex-col gap-[50px] mb-20'>
         <ProductSection />
         <CustomerReviews />
       </Wrapper>
