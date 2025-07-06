@@ -25,6 +25,8 @@ import { Button } from '@/components/ui/_button'
 import TeamMember from './team-member'
 import Achievements from './achievment'
 import MissionValue from './mission-value'
+import { Header } from '@/components/Header'
+import { QuickInfo } from '@/components/QuickInfo'
 
 export default function AboutUsPage() {
   const teamMembers = [
@@ -117,6 +119,12 @@ export default function AboutUsPage() {
 
   return (
     <div className='min-h-screen bg-background'>
+      <div className='border-b w-full'>
+        <QuickInfo />
+      </div>
+      <div className='py-5'>
+        <Header />
+      </div>
       {/* Hero Section */}
       <section className='relative overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 py-20 md:py-32'>
         <div className='absolute inset-0 bg-grid-slate-200 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]' />

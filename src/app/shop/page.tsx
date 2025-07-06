@@ -8,9 +8,14 @@ import { Wrapper } from '@/components/ui/Wrapper'
 import Aside from './aside'
 import ProductList from './product-list'
 import { useState } from 'react'
+import Footer from '@/components/layouts/footer'
+import { useDeviceWidth } from '@/hooks/useDeviceWidth'
 
 export default function Shop() {
   const [filterBy, setFilterBy] = useState<string>('All')
+  const deviceWidth = useDeviceWidth()
+  const isMobile = deviceWidth < 768
+
   return (
     <div>
       <QuickInfo />
@@ -27,18 +32,24 @@ export default function Shop() {
       </div>
 
       <Wrapper>
-        <div className='product-list-grid h-[500px] w-full my-24 gap-10'>
+        <div
+          className={`${
+            isMobile ? '' : 'product-list-grid'
+          } w-full my-24 gap-10`}
+        >
           <div className='flex flex-col gap-3'>
             <div>
               <Text text={`Showing All Products`} />
             </div>
             <ProductList filterBy={filterBy} />
           </div>
-          <div className=''>
+          <div className='hidden lg:block'>
             <Aside passCategory={(category) => setFilterBy(category)} />
           </div>
         </div>
       </Wrapper>
+
+      <Footer />
     </div>
   )
 }

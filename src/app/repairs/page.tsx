@@ -30,6 +30,8 @@ import {
   Wrench,
   Package,
 } from 'lucide-react'
+import { Header } from '@/components/Header'
+import { QuickInfo } from '@/components/QuickInfo'
 
 export default function RepairServicesPage() {
   const repairCategories = [
@@ -157,6 +159,12 @@ export default function RepairServicesPage() {
 
   return (
     <div className='min-h-screen bg-white'>
+      <div className='border-b w-full'>
+        <QuickInfo />
+      </div>
+      <div className='py-5'>
+        <Header />
+      </div>
       {/* Hero Section */}
       <section className='relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 py-20 md:py-32'>
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=800&width=1200')] bg-cover bg-center opacity-5" />

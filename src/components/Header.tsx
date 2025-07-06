@@ -9,6 +9,7 @@ import { Icon } from './ui/Icon'
 
 export const Header = () => {
   const [activeNav, setActiveNav] = useState<number>(0)
+  const [openMenu, setOpenMenu] = useState<boolean>(false)
   const cta: { name: keyof typeof TablerIcons; function: () => void }[] = [
     { name: 'IconSearch', function: () => {} },
     { name: 'IconUser', function: () => {} },
@@ -37,11 +38,15 @@ export const Header = () => {
           ))}
         </div>
 
-        <div>
-          <Icon name={'IconMenu'} />
+        <div onClick={() => setOpenMenu(!openMenu)} className='lg:hidden cursor-pointer'>
+          <Icon name={openMenu ? 'IconX' : 'IconMenu'} />
         </div>
 
-        <div className='lg:hidden w-full absolute z-50 left-0 top-[82px]'>
+        <div
+          className={`lg:hidden w-full absolute z-50 left-0 top-[82px] transition-all duration-300 ${
+            openMenu ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        >
           <div className='max-w-[85%] w-full mx-auto h-[300px] shadow bg-[#fff] rounded-lg'>
             <nav className='flex flex-col items-center justify-center gap-8 h-full'>
               {navLinks.map((link, index) => (
